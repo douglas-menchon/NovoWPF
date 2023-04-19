@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.33529.398
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovoWPF", "NovoWPF\NovoWPF.csproj", "{42E78260-AE79-481D-9468-F0828C732FAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42E78260-AE79-481D-9468-F0828C732FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E78260-AE79-481D-9468-F0828C732FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E78260-AE79-481D-9468-F0828C732FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E78260-AE79-481D-9468-F0828C732FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9DB63BE-3DB5-464F-882B-C5C93371C3F5}
+	EndGlobalSection
+EndGlobal
