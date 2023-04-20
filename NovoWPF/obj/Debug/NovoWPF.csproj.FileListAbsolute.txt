@@ -20,3 +20,5 @@ C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\NovoWPF.cs
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\NovoWPF.exe
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\NovoWPF.pdb
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\View\CadastroProdutoView.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\View\CadastroProdutoView.baml

@@ -27,11 +27,12 @@
                     Background="LightGray" 
                     Height="30" 
                     Margin="0 0 0 10" Click="AbrirPessoa"/>
-            <Button x:Name="btnProduto" 
+            <Button x:Name="btnProduto"
+                    Command="{Binding AbrirProduto}"
                     Content="Produto" 
                     Background="Transparent" 
                     Height="30" 
-                    Margin="0 0 0 10" Click="AbrirProduto"/>
+                    Margin="0 0 0 10" />
 
             <!--Botões Pessoa-->
             <Button x:Name="btnCadastrarPessoa" 

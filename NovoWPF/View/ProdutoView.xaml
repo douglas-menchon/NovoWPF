@@ -55,7 +55,7 @@
 
             <DataGrid Visibility="Visible" x:Name="dataGridProduto" 
                   AutoGenerateColumns="False" CanUserAddRows="False" 
-                  Margin="0,0,0.2,0" Height="350" >
+                  Margin="0, 0, 10, 0" Height="350" >
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" 
@@ -102,6 +102,8 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+
+            <Button Content="Cadastrar"/>
 
         </StackPanel>
         <Grid x:Name="gridCadastrarProduto" Visibility="Collapsed">

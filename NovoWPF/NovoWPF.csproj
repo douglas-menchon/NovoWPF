@@ -55,9 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Base\RelayCommand.cs" />
+    <Compile Include="ViewModel\CadastroProdutoViewModel.cs" />
+    <Compile Include="ViewModel\Commands\ComandosTela.cs" />
     <Compile Include="ViewModel\PedidoViewModel.cs" />
     <Compile Include="ViewModel\PessoaViewModel.cs" />
     <Compile Include="ViewModel\ProdutoViewModel.cs" />
+    <Compile Include="View\CadastroProdutoView.xaml.cs">
+      <DependentUpon>CadastroProdutoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PedidoView.xaml.cs">
       <DependentUpon>PedidoView.xaml</DependentUpon>
     </Compile>
@@ -79,6 +85,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\CadastroProdutoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PedidoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
