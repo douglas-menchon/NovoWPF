@@ -4,23 +4,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NovoWPF.ViewModel
 {
-    class CadastroProdutoViewModel : INotifyPropertyChanged
+    class CadastroProdutoViewModel : ViewModelBase
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        /*private void OnPropertyRaised(string propertyname)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
-            }
-        }*/
-
+        public ICommand SalvarProduto { get; }
+        public ICommand CancelarProduto { get; }
     }
 }

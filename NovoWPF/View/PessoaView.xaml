@@ -7,6 +7,244 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <StackPanel>
+            <Grid x:Name="gridPesquisaPessoa" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Height="20" 
+                           VerticalAlignment="Top" 
+                           Margin="0 0 5 0"  
+                           HorizontalAlignment="Right"
+                           Text="Pesquisar por nome ou CPF:"/>
+                
+                <TextBox Grid.Column="1" 
+                         x:Name="txtBoxPesquisaPessoa" 
+                         Height="20" Width="100" 
+                         VerticalAlignment="Top" 
+                         HorizontalAlignment="Left" 
+                         CharacterCasing="Upper"/>
+                
+                <Button x:Name="btnPesquisarNomeCPF" 
+                        Grid.Column="1" 
+                        HorizontalAlignment="Left" 
+                        Background="Transparent" 
+                        Margin="136,0,0,4.8" 
+                        Height="20" Width="30" 
+                        Grid.ColumnSpan="2">
+                    <!--Image Source="images/Lupa.png" /-->
+                </Button>
+            </Grid>
+
+            <DataGrid CanUserReorderColumns="False" 
+                      CanUserResizeColumns="False" 
+                      Visibility="Collapsed"
+                      x:Name="dataGridPessoa" 
+                      Margin="0,0,0.2,0" Height="280" 
+                      CanUserAddRows="False" 
+                      AutoGenerateColumns="False" 
+                      CanUserDeleteRows="True" 
+                      ItemsSource="{Binding pessoas}">
+
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" 
+                                Value="LightGray" />
+                        <Setter Property="FontWeight" 
+                                Value="Regular" />
+                        <Setter Property="BorderThickness" 
+                                Value="1 1 1 1" />
+                        <Setter Property="BorderBrush" 
+                                Value="DarkGray" />
+                        <Setter Property="Padding" 
+                                Value="3 0 0 0" />
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" 
+                                        IsReadOnly="True" 
+                                        Binding="{Binding IdPessoa}"
+                                        Width="*"/>
+                    <DataGridTextColumn Header="Nome" 
+                                        IsReadOnly="True" 
+                                        Binding="{Binding NomePessoa}"
+                                        Width="3*">
+                        <DataGridTextColumn.EditingElementStyle>
+                            <Style TargetType="TextBox">
+                                <Setter Property="CharacterCasing" 
+                                        Value="Upper"/>
+                            </Style>
+                        </DataGridTextColumn.EditingElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="CPF" 
+                                        IsReadOnly="True" 
+                                        Binding="{Binding CPF}" 
+                                        Width="2*"/>
+                    <DataGridTextColumn Header="Endereço" 
+                                        IsReadOnly="True" 
+                                        Binding="{Binding Endereco}" 
+                                        Width="4*">
+
+                        <DataGridTextColumn.EditingElementStyle>
+                            <Style TargetType="TextBox">
+                                <Setter Property="CharacterCasing" 
+                                        Value="Upper"/>
+                            </Style>
+                        </DataGridTextColumn.EditingElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Incluir" 
+                                            Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btnIncluirPedido" 
+                                        Content="Incluir Pedido"  
+                                        Background="Lime"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Pedido" 
+                                            Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btnVerPedido" 
+                                        Content="Detalhes"  
+                                        Background="Lime"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Editar" Width=".6*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btnEditarPessoa"
+                                        Content="Editar"  
+                                        Background="DeepSkyBlue"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Excluir" 
+                                            Width=".6*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="excluirPessoa" 
+                                        Content="Excluir" 
+                                        Background="{Binding Cor , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        Command="Delete"/>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Grid x:Name="gridCadastrarPessoa" 
+                  Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="8*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock FontSize="20" 
+                           Grid.Column="0"
+                           HorizontalAlignment="Left"
+                           Text="CADASTRO"/>
+
+                <TextBlock x:Name="idPessoaBlock" 
+                           Grid.Column="0" Grid.Row="1" 
+                           Text="Id" Margin="0 0 10 10" 
+                           HorizontalAlignment="Right"/>
+                
+                <TextBox x:Name="idPessoaBox" 
+                         Grid.Column="1" Grid.Row="1" 
+                         Background="#eee" Width="100" 
+                         HorizontalAlignment="Left" 
+                         IsReadOnly="True" 
+                         Margin="0 0 30 10"/>
+
+                <TextBlock x:Name="nomePessoaBlock" 
+                           Grid.Column="0" 
+                           Grid.Row="2" Text="Nome*" 
+                           Margin="0 0 10 10" 
+                           HorizontalAlignment="Right"/>
+                <TextBox x:Name="nomePessoaBox" 
+                         Grid.Column="1" 
+                         Grid.Row="2"
+                         Width="250" 
+                         HorizontalAlignment="Left" 
+                         Margin="0 0 30 10"/>
+
+                <TextBlock x:Name="CPFBlock" 
+                           Grid.Column="0" 
+                           Grid.Row="3" 
+                           Text="CPF*" 
+                           Margin="0 0 10 10" 
+                           HorizontalAlignment="Right" />
+                <TextBox x:Name="CPFBox" 
+                         Grid.Column="1" 
+                         Grid.Row="3"
+                         Width="100"
+                         HorizontalAlignment="Left" 
+                         Margin="0 0 30 10"/>
+
+                <TextBlock x:Name="EnderecoBlock"
+                           Grid.Column="0"
+                           Grid.Row="4" 
+                           Text="Endereço"
+                           Margin="0 0 10 0"
+                           HorizontalAlignment="Right" />
+                <TextBox x:Name="EnderecoBox" 
+                         Grid.Column="1" 
+                         Width="350"
+                         HorizontalAlignment="Left" 
+                         Grid.Row="4" 
+                         Margin="0 0 30 0" />
+
+                <Button Visibility="Visible"
+                        x:Name="btnCancelarPessoa" 
+                        Grid.Row="5"
+                        Grid.Column="0" 
+                        Width="70" 
+                        Content="Cancelar" 
+                        HorizontalAlignment="Right"
+                        Background="Red" 
+                        Height="25"
+                        Margin="-11,50.4,9.8,-1.2"/>
+
+                <Button Visibility="Visible" 
+                        x:Name="btnSalvarNovaPessoa" 
+                        Grid.Row="5" 
+                        Grid.Column="1" 
+                        Width="70" 
+                        Content="Salvar" 
+                        HorizontalAlignment="Right" 
+                        Background="Lime" 
+                        Height="25" 
+                        Margin="0 50 50 0"/>
+
+
+                <Button Visibility="Collapsed"
+                        x:Name="btnSalvarPessoaEdit" 
+                        Grid.Row="5" Grid.Column="1" 
+                        Width="70"
+                        Content="Salvar" 
+                        HorizontalAlignment="Right" 
+                        Background="Lime" 
+                        Height="25" 
+                        Margin="0 50 50 0"/>
+            </Grid>
+        </StackPanel>    
     </Grid>
 </UserControl>

@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace NovoWPF.ViewModel
 {
-    public class PessoaViewModel
+    public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string nomeDaPropriedade)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nomeDaPropriedade));
+        }
+
+       
     }
 }

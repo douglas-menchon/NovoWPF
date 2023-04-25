@@ -9,15 +9,15 @@ using System.Windows.Input;
 
 namespace NovoWPF.ViewModel
 {
-    public class ProdutoViewModel 
+    public class TelaProjetoViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /*public ICommand AbrirTelaProduto { get;}
+        public ICommand AbrirTelaProduto { get; }
 
-        public ProdutoViewModel()
+        public TelaProjetoViewModel()
         {
             AbrirTelaProduto = new AbrirProdutoCommand();
-        }*/
+        }
     }
 }

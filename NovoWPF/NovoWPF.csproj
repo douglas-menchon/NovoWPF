@@ -55,12 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Commands\AbrirProdutoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandBase.cs" />
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
     <Compile Include="ViewModel\CadastroProdutoViewModel.cs" />
-    <Compile Include="ViewModel\Commands\ComandosTela.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PedidoViewModel.cs" />
     <Compile Include="ViewModel\PessoaViewModel.cs" />
     <Compile Include="ViewModel\ProdutoViewModel.cs" />
+    <Compile Include="ViewModel\TelaProjetoViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\CadastroProdutoView.xaml.cs">
       <DependentUpon>CadastroProdutoView.xaml</DependentUpon>
     </Compile>
@@ -72,6 +76,9 @@
     </Compile>
     <Compile Include="View\ProdutoView.xaml.cs">
       <DependentUpon>ProdutoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TelaProjetoView.xaml.cs">
+      <DependentUpon>TelaProjetoView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProdutoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TelaProjetoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,6 +144,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Stores\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

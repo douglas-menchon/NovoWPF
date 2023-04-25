@@ -14,44 +14,8 @@
             <views:ProdutoView DataContext="{Binding}" />
         </DataTemplate>
     </Window.Resources>
-    
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Column="0" Margin="0,50,10,0">
-            <Button x:Name="btnPessoa" 
-                    Content="Pessoa" 
-                    Background="LightGray" 
-                    Height="30" 
-                    Margin="0 0 0 10" Click="AbrirPessoa"/>
-            <Button x:Name="btnProduto"
-                    Command="{Binding AbrirProduto}"
-                    Content="Produto" 
-                    Background="Transparent" 
-                    Height="30" 
-                    Margin="0 0 0 10" />
-
-            <!--Botões Pessoa-->
-            <Button x:Name="btnCadastrarPessoa" 
-                    Visibility="Collapsed" 
-                    Content="Cadastrar" 
-                    Background="Green" 
-                    Height="25" 
-                    Margin="0 50 0 10"/>
-
-            <!--Botões Produto-->
-            <Button x:Name="btnCadastrarProduto" 
-                    Visibility="Collapsed" 
-                    Content="Cadastrar" 
-                    Background="Green" 
-                    Height="25" 
-                    Margin="0 50 0 10"/>
-        </StackPanel>
-
-        <ContentControl Grid.Column="1"  Content="{Binding}"></ContentControl>
-
+        <views:TelaProjetoView DataContext="{Binding ViewModelAtual}" />
     </Grid>
 </Window>
