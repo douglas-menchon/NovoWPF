@@ -1,4 +1,5 @@
-﻿using NovoWPF.ViewModel;
+﻿using NovoWPF.View;
+using NovoWPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,9 @@ namespace NovoWPF.Commands
     {
         public override void Execute(object parameter)
         {
-            MainWindow mainWindow = new MainWindow();
-
-            mainWindow.DataContext = new ProdutoViewModel();
-            
+            ProdutoView produtoView = new ProdutoView();
+            produtoView.DataContext = new ProdutoViewModel();
+            produtoView.Show();
         }
     }
 }

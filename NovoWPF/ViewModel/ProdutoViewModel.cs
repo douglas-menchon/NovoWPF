@@ -13,11 +13,11 @@ namespace NovoWPF.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /*public ICommand AbrirTelaProduto { get;}
+        public ICommand AbrirTelaProduto { get;}
 
         public ProdutoViewModel()
         {
             AbrirTelaProduto = new AbrirProdutoCommand();
-        }*/
+        }
     }
 }

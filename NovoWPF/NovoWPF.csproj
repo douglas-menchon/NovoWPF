@@ -55,9 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Stores\NavigationStore.cs" />
+    <Compile Include="ViewModel\CadastroPessoaViewModel.cs" />
+    <Compile Include="ViewModel\Commands\AbrirPessoaCommand.cs" />
     <Compile Include="ViewModel\Commands\AbrirProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandBase.cs" />
-    <Compile Include="ViewModel\Base\RelayCommand.cs" />
     <Compile Include="ViewModel\CadastroProdutoViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PedidoViewModel.cs" />
@@ -114,11 +116,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Enums\FormaPagamento.cs" />
-    <Compile Include="Model\Enums\Status.cs" />
-    <Compile Include="Model\Pedido.cs" />
-    <Compile Include="Model\Pessoa.cs" />
-    <Compile Include="Model\Produto.cs" />
+    <Compile Include="RegraDeNegocio\Enums\FormaPagamento.cs" />
+    <Compile Include="RegraDeNegocio\Enums\Status.cs" />
+    <Compile Include="RegraDeNegocio\Pedido.cs" />
+    <Compile Include="RegraDeNegocio\Pessoa.cs" />
+    <Compile Include="RegraDeNegocio\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -144,8 +146,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Stores\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

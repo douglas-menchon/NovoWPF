@@ -24,3 +24,29 @@ C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\View\Cadas
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\View\CadastroProdutoView.baml
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\View\TelaProjetoView.g.cs
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\View\TelaProjetoView.baml
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\bin\Debug\NovoWPF.exe.config
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\bin\Debug\NovoWPF.exe
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\bin\Debug\NovoWPF.pdb
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csprojAssemblyReference.cache
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\MainWindow.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\CadastroProdutoView.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\PedidoView.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\PessoaView.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\ProdutoView.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\TelaProjetoView.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\App.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF_MarkupCompile.cache
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF_MarkupCompile.lref
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\MainWindow.baml
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\CadastroProdutoView.baml
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\PedidoView.baml
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\PessoaView.baml
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\ProdutoView.baml
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\View\TelaProjetoView.baml
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF.g.resources
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF.Properties.Resources.resources
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csproj.GenerateResource.cache
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csproj.CoreCompileInputs.cache
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF.exe
+C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\NovoWPF.pdb

@@ -18,7 +18,7 @@ namespace NovoWPF.View
     /// <summary>
     /// Interação lógica para ProdutoView.xam
     /// </summary>
-    public partial class ProdutoView : UserControl
+    public partial class ProdutoView : Window
     {
         public ProdutoView()
         {

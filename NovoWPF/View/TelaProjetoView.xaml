@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Margin="0,50,10,0">
-            <Button x:Name="btnPessoa" 
+            <Button Command="{Binding AbrirTelaPessoa}"
                     Content="Pessoa" 
                     Background="LightGray" 
                     Height="30" 

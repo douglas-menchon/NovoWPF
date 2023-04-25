@@ -18,7 +18,7 @@ namespace NovoWPF.View
     /// <summary>
     /// Interação lógica para PessoaView.xam
     /// </summary>
-    public partial class PessoaView : UserControl
+    public partial class PessoaView : Window
     {
         public PessoaView()
         {

@@ -1,4 +1,5 @@
-﻿using NovoWPF.ViewModel;
+﻿using NovoWPF.Stores;
+using NovoWPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,6 +15,13 @@ namespace NovoWPF
     /// </summary>
     public partial class App : Application
     {
+        private readonly NavigationStore _navigationStore;
+
+        public App()
+        {
+            _navigationStore = new NavigationStore();
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             MainWindow = new MainWindow()
