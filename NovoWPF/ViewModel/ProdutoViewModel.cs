@@ -1,4 +1,5 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,15 +10,14 @@ using System.Windows.Input;
 
 namespace NovoWPF.ViewModel
 {
-    public class ProdutoViewModel 
+    public class ProdutoViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public ICommand AbrirTelaProduto { get;}
+        public ICommand AbrirCadastroProduto{ get; }
 
         public ProdutoViewModel()
         {
-            AbrirTelaProduto = new AbrirProdutoCommand();
+            AbrirCadastroProduto = new AbrirCadastroProdutoCommand();
         }
     }
 }

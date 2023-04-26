@@ -10,11 +10,9 @@ namespace NovoWPF.View
         public string NomePessoa { get; set; }
         public string CPF { get; set; }
         public string Endereco { get; set; }
-        public Brush Cor { get; set; }
 
         public Pessoa()
         {
-            Cor = Brushes.Red;
         }
         public Pessoa(int id, string nome, string cpf, string endereco)
         {
@@ -22,7 +20,6 @@ namespace NovoWPF.View
             NomePessoa = nome;
             CPF = cpf;
             Endereco = endereco;
-            Cor = Brushes.Red;
         }
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NovoWPF.ViewModel
 {
-    class PedidoViewModel
+    public class PedidoViewModel
     {
     }
 }

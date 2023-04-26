@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\obj\Debug\
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\
 NovoWPF
 none
 false
 DEBUG;TRACE
-C:\Users\douglas.menchon\Desktop\Nova pasta - Copia\NovoWPF\NovoWPF\App.xaml
-6499139672
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\App.xaml
+7-1773677020
 
-27365015115
+30403052181
 131569487696
-MainWindow.xaml;View\CadastroProdutoView.xaml;View\PedidoView.xaml;View\PessoaView.xaml;View\ProdutoView.xaml;View\TelaProjetoView.xaml;
+MainWindow.xaml;View\CadastroPessoaView.xaml;View\CadastroProdutoView.xaml;View\PedidoView.xaml;View\PessoaView.xaml;View\ProdutoView.xaml;View\TelaProjetoView.xaml;
 
 False
 

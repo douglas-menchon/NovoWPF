@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NovoWPF.ViewModel.Commands
 {
-    class AbrirPessoaCommand : CommandBase
+    public class AbrirPessoaCommand : CommandBase
     {
         public override void Execute(object parameter)
         {

@@ -10,7 +10,15 @@ namespace NovoWPF.ViewModel
 {
     class CadastroProdutoViewModel : ViewModelBase
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public ICommand SalvarProduto { get; }
         public ICommand CancelarProduto { get; }
+
+        public CadastroProdutoViewModel()
+        {
+
+        }
     }
 }

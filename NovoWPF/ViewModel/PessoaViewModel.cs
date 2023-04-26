@@ -13,11 +13,13 @@ namespace NovoWPF.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ICommand AbrirTelaPessoa { get; }
+        public ICommand AbrirCadastroPessoa { get; }
 
         public PessoaViewModel()
         {
-            AbrirTelaPessoa = new AbrirPessoaCommand();
+            AbrirCadastroPessoa = new AbrirCadastroPessoaCommand();
         }
+
+
     }
 }
