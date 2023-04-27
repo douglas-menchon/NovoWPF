@@ -1,5 +1,6 @@
 ﻿
 
+<<<<<<< HEAD
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\MainWindow.xaml;;
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\CadastroPessoaView.xaml;;
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\CadastroProdutoView.xaml;;
@@ -7,4 +8,13 @@ FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\PedidoView.xam
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\PessoaView.xaml;;
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\ProdutoView.xaml;;
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\TelaProjetoView.xaml;;
+=======
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\MainWindow.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\CadastroPessoaView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\CadastroProdutoView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\PedidoView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\PessoaView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\ProdutoView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\TelaProjetoView.xaml;;
+>>>>>>> mathew
 

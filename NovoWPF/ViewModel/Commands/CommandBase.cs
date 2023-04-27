@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using NovoWPF.Comuns;
 
 namespace NovoWPF.Commands
 {

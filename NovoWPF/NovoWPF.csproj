@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Comuns\VariaveisUniversais.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="ViewModel\CadastroPessoaViewModel.cs" />
     <Compile Include="ViewModel\Commands\AbrirCadastroPessoaCommand.cs" />
@@ -88,7 +89,12 @@
     <Compile Include="ViewModel\Commands\AbrirProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandBase.cs" />
     <Compile Include="ViewModel\CadastroProdutoViewModel.cs" />
+<<<<<<< HEAD
     <Compile Include="ViewModel\Commands\SalvarProdutoCommand.cs" />
+=======
+    <Compile Include="ViewModel\Commands\CommandMap.cs" />
+    <Compile Include="ViewModel\Commands\SalvaPessoaCommand.cs" />
+>>>>>>> mathew
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PedidoViewModel.cs" />
     <Compile Include="ViewModel\PessoaViewModel.cs" />

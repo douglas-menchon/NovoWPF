@@ -42,7 +42,7 @@
                             Width="70" Content="Salvar" HorizontalAlignment="Right" Background="Yellow" 
                             Height="25" Margin="0 50 50 0"/>
 
-                <Button Visibility="Visible" IsCancel="True" x:Name="btnCancelarProduto"  Grid.Row="5" Grid.Column="0" 
+                <Button Visibility="Visible" x:Name="btnCancelarProduto" IsCancel="True"  Grid.Row="5" Grid.Column="0" 
                             Width="70" Content="Cancelar" HorizontalAlignment="Right" Background="Red" 
                             Height="25" Margin="-11,50.4,9.8,-1.2"/>
 

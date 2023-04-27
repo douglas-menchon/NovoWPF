@@ -79,29 +79,29 @@
                          Margin="0 0 30 0" />
 
             <Button Visibility="Visible"
-                    IsCancel="True"
-                    x:Name="btnCancelarPessoa" 
-                    Grid.Row="5"
-                    Grid.Column="0" 
-                    Width="70" 
-                    Content="Cancelar" 
-                    HorizontalAlignment="Right"
-                    Background="Red" 
-                    Height="25"
-                    Margin="-11,50.4,9.8,-1.2"/>
+                        x:Name="btnCancelarPessoa" 
+                        Command="{Binding Comandos.Fechar}"
+                        Grid.Row="5"
+                        Grid.Column="0" 
+                        Width="70" 
+                        Content="Cancelar" 
+                        HorizontalAlignment="Right"
+                        Background="Red" 
+                        Height="25"
+                    Click="BtnCancelarPessoa_Click"
+                        Margin="-11,50.4,9.8,-1.2"/>
 
-            <Button IsCancel="True"
-                    Visibility="Visible" 
-                    x:Name="btnSalvarNovaPessoa" 
-                    Grid.Row="5" 
-                    Grid.Column="1" 
-                    Width="70" 
-                    Content="Salvar" 
-                    HorizontalAlignment="Right" 
-                    Background="Lime" 
-                    Height="25" 
-                    Margin="0 50 50 0"/>
+            <Button Visibility="Visible" 
+                        x:Name="btnSalvarNovaPessoa" 
+                        Command="{Binding SalvarPessoa}"
+                        Grid.Row="5" 
+                        Grid.Column="1" 
+                        Width="70" 
+                        Content="Salvar" 
+                        HorizontalAlignment="Right" 
+                        Background="Lime" 
+                        Height="25" 
+                        Margin="0 50 50 0"/>
         </Grid>
-
     </Grid>
 </Window>
