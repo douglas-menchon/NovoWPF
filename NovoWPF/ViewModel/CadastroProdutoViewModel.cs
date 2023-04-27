@@ -1,24 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NovoWPF.View;
+using NovoWPF.ViewModel.Commands;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace NovoWPF.ViewModel
 {
-    class CadastroProdutoViewModel : ViewModelBase
+    public class CadastroProdutoViewModel : ViewModelBase
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public ObservableCollection<Produto> Produtos { get; set; }
 
         public ICommand SalvarProduto { get; }
         public ICommand CancelarProduto { get; }
 
         public CadastroProdutoViewModel()
         {
-
+            SalvarProduto = new SalvarProdutoCommand();
         }
+
     }
 }

@@ -6,6 +6,11 @@
              xmlns:local="clr-namespace:NovoWPF.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <Window.DataContext>
+        <local:Produto/>
+    </Window.DataContext>
+    
     <Grid>
         <StackPanel Grid.Column="1">
             <Grid x:Name="gridPesquisaProduto" Visibility="Visible">
@@ -53,9 +58,13 @@
                      VerticalAlignment="Top"/>
             </Grid>
 
-            <DataGrid Visibility="Visible" x:Name="dataGridProduto" 
-                  AutoGenerateColumns="False" CanUserAddRows="False" 
-                  Margin="0, 0, 10, 0" Height="350" >
+            <DataGrid Visibility="Visible" 
+                      ItemsSource="{Binding Produtos, UpdateSourceTrigger=PropertyChanged}"
+                      x:Name="dataGridProduto" 
+                      AutoGenerateColumns="False" 
+                      CanUserAddRows="False" 
+                      Margin="0, 0, 10, 0" 
+                      Height="350" >
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" 
@@ -73,13 +82,17 @@
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" 
-                                    Binding="{Binding IdProduto}" Width="*" IsReadOnly="True"/>
+                                        Binding="{Binding IdProduto}" 
+                                        Width="*" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Nome"
-                                    Binding="{Binding NomeProduto}" Width="3*" />
+                                        Binding="{Binding NomeProduto}" 
+                                        Width="3*" />
                     <DataGridTextColumn Header="Codigo" 
-                                    Binding="{Binding Codigo}" Width="2*"/>
+                                        Binding="{Binding Codigo}" 
+                                        Width="2*"/>
                     <DataGridTextColumn Header="Valor" 
-                                    Binding="{Binding Valor, StringFormat=N2}" Width="*"/>
+                                        Binding="{Binding Valor, StringFormat=N2}"
+                                        Width="*"/>
                     <DataGridTemplateColumn Header="Editar">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
