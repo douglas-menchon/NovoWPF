@@ -12,8 +12,9 @@ namespace NovoWPF.ViewModel.Commands
         public override void Execute(object parameter)
         {
             AbrirCadastroProdutoCommand dados = new AbrirCadastroProdutoCommand();
-            dados.DadosProduto();
             MessageBox.Show($"o valor é ");
         }
+
+
     }
 }
