@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NovoWPF.ViewModel
+﻿namespace NovoWPF.ViewModel
 {
-    public class PedidoViewModel
+    public class PedidoViewModel : ViewModelBase
     {
     }
 }

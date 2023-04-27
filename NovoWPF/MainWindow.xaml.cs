@@ -26,6 +26,6 @@ namespace NovoWPF
             InitializeComponent();
             DataContext = new PessoaViewModel();
             DataContext = new ProdutoViewModel();
-        }
+       }
     }
 }

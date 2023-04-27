@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,14 @@ namespace NovoWPF.View
     /// <summary>
     /// Interação lógica para ProdutoView.xam
     /// </summary>
-    public partial class ProdutoView : Window
+public partial class ProdutoView : Window
+{
+    public ObservableCollection<Produto> Produtos { get; set; }
+
+    public ProdutoView(ObservableCollection<Produto> produtos)
     {
-        public ProdutoView()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        Produtos = produtos;
+        dataGridProduto.ItemsSource = Produtos;
     }
-}
+}}

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace NovoWPF.ViewModel
 {
@@ -11,11 +6,9 @@ namespace NovoWPF.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string nomeDaPropriedade)
+        protected virtual void OnPropertyChanged(dynamic nomeDaPropriedade)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nomeDaPropriedade));
         }
-
-       
     }
 }
