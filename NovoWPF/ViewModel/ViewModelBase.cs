@@ -14,8 +14,6 @@ namespace NovoWPF.ViewModel
         protected virtual void OnPropertyChanged(string nomeDaPropriedade)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nomeDaPropriedade));
-        }
-
-       
+        }      
     }
 }

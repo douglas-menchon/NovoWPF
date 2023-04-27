@@ -80,6 +80,7 @@
 
             <Button Visibility="Visible"
                         x:Name="btnCancelarPessoa" 
+                        Command="{Binding Comandos.Fechar}"
                         Grid.Row="5"
                         Grid.Column="0" 
                         Width="70" 
@@ -87,10 +88,12 @@
                         HorizontalAlignment="Right"
                         Background="Red" 
                         Height="25"
+                    Click="BtnCancelarPessoa_Click"
                         Margin="-11,50.4,9.8,-1.2"/>
 
             <Button Visibility="Visible" 
                         x:Name="btnSalvarNovaPessoa" 
+                        Command="{Binding SalvarPessoa}"
                         Grid.Row="5" 
                         Grid.Column="1" 
                         Width="70" 
@@ -100,6 +103,5 @@
                         Height="25" 
                         Margin="0 50 50 0"/>
         </Grid>
-
     </Grid>
 </Window>
