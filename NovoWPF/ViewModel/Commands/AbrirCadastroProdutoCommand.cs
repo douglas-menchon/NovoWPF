@@ -15,8 +15,6 @@ namespace NovoWPF.ViewModel.Commands
         {
             cadastroProdutoView.ShowDialog();
             DadosProduto();
-
-            //antigo
         }
 
         public void DadosProduto()
@@ -35,8 +33,8 @@ namespace NovoWPF.ViewModel.Commands
 
             ProdutoView view = new ProdutoView(Produtos);
             view.dataGridProduto.ItemsSource = Produtos; //aqui
-
-            view.Show();
+            view.dataGridProduto.Items.Refresh();
+            
         }
     }
 }

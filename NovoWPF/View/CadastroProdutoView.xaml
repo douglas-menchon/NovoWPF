@@ -38,7 +38,7 @@
                 <TextBlock Visibility="Visible" x:Name="valorProdutoBlock" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Text="Valor*"  Margin="0 0 10 0" />
                 <TextBox Visibility="Visible" Text="{Binding Produto}" x:Name="valorProdutoBox"  Grid.Column="1" Grid.Row="4" Width="100" HorizontalAlignment="Left" Margin="0 0 30 10"/>
 
-                <Button Visibility="Visible" Command="{Binding SalvarProduto}" x:Name="btnSalvarProduto"  Grid.Row="5" Grid.Column="1" 
+                <Button Visibility="Visible" Click="BtnSalvarProduto_Click" x:Name="btnSalvarProduto"  Grid.Row="5" Grid.Column="1" 
                             Width="70" Content="Salvar" HorizontalAlignment="Right" Background="Yellow" 
                             Height="25" Margin="0 50 50 0"/>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NovoWPF.ViewModel.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace NovoWPF.View
         public CadastroProdutoView()
         {
             InitializeComponent();
+        }
+
+        private void BtnSalvarProduto_Click(object sender, RoutedEventArgs e)
+        {
+            AbrirCadastroProdutoCommand dados = new AbrirCadastroProdutoCommand();
+            dados.DadosProduto();
+            MessageBox.Show("vai");
+            Close();
         }
     }
 }
