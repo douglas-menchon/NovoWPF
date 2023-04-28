@@ -47,7 +47,7 @@
                       CanUserAddRows="False" 
                       AutoGenerateColumns="False" 
                       CanUserDeleteRows="True" 
-                      ItemsSource="{Binding pessoas}">
+                      ItemsSource="{Binding Pessoas}">
 
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
