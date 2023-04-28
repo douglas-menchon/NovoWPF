@@ -12,29 +12,8 @@ using System.Windows;
 
 namespace NovoWPF.ViewModel
 {
-    public class CadastroPessoaViewModel : ICloseWindows
+    public class CadastroPessoaViewModel : CloseWindow
     {
-        private DelegateCommand _closeCommand;
-        public DelegateCommand CloseCommand =>
-            _closeCommand ?? (_closeCommand = new DelegateCommand(CloseWindow));
-        void CloseWindow(object parameter)
-        {
-            Close?.Invoke();
-        }
-
-        public Action Close { get; set; }
-
-        public bool CanClose()
-        {
-            return true;
-        }
+     
     }
-
-    interface ICloseWindows
-    {
-        Action Close { get; set; }
-        bool CanClose();
-    }
-
-   
 }
