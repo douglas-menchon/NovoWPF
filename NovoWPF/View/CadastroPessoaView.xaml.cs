@@ -1,4 +1,5 @@
 ﻿using NovoWPF.ViewModel;
+using NovoWPF.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,20 +24,9 @@ namespace NovoWPF.View
     {
         public CadastroPessoaView()
         {
-            CadastroPessoaViewModel vm = new CadastroPessoaViewModel(); // this creates an instance of the ViewModel
-            DataContext = vm;
-            InitializeComponent();
-            if (vm.CloseAction == null)
-                vm.CloseAction =  () => { Sair(); };
-        }
-        public void Sair()
-        {
-            Close();
+            InitializeComponent();        
         }
 
-        private void BtnCancelarPessoa_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+     
     }
 }

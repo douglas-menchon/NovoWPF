@@ -6,33 +6,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Input;
 using NovoWPF.Comuns;
+using static NovoWPF.ViewModel.Commands.CommandMap;
+using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace NovoWPF.ViewModel
 {
-    public class CadastroPessoaViewModel : VariaveisUniversais
+    public class CadastroPessoaViewModel : CloseWindow
     {
-        public ICommand SalvarPessoa { get; }
-        public Action CloseAction { get; set; }
-
-        public CadastroPessoaViewModel()
-        {
-            GerarComandos();
-        }
-
-        private void GerarComandos()
-        {
-            Comandos = new CommandMap();
-            Comandos.AdicionarComando(Fechar);
-        }
-
-        public void Close()
-        {
-            CloseAction?.Invoke();
-        }
-
-        private void Fechar()
-        {
-            Close();
-        }
+     
     }
 }

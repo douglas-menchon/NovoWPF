@@ -80,9 +80,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Comuns\ICloseWindows.cs" />
     <Compile Include="Comuns\VariaveisUniversais.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="ViewModel\CadastroPessoaViewModel.cs" />
+    <Compile Include="ViewModel\CloseWindow.cs" />
     <Compile Include="ViewModel\Commands\AbrirCadastroPessoaCommand.cs" />
     <Compile Include="ViewModel\Commands\AbrirCadastroProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\AbrirPessoaCommand.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="ViewModel\ProdutoViewModel.cs" />
     <Compile Include="ViewModel\TelaProjetoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\WindowCloser.cs" />
     <Compile Include="View\CadastroPessoaView.xaml.cs">
       <DependentUpon>CadastroPessoaView.xaml</DependentUpon>
     </Compile>

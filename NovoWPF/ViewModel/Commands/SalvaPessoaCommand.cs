@@ -2,6 +2,7 @@
 using NovoWPF.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,24 @@ namespace NovoWPF.ViewModel.Commands
 {
     public class SalvaPessoaCommand : CommandBase
     {
+        public ObservableCollection<Pessoa> Pessoas { get; set; }
+        CadastroPessoaView cadastroPessoaView = new CadastroPessoaView();
+
         public override void Execute(object parameter)
         {
-            
+            Pessoas = new ObservableCollection<Pessoa>();
+            cadastroPessoaView.ShowDialog();
+
+            Pessoas.Add(new Pessoa(int.Parse(cadastroPessoaView.idPessoaBox.Text),
+                                             cadastroPessoaView.nomePessoaBox.Text,
+                                             cadastroPessoaView.CPFBox.Text,
+                                             cadastroPessoaView.EnderecoBox.Text));
+
+            PessoaView pessoaView = new PessoaView(Pessoas);
+            pessoaView.dataGridPessoa.ItemsSource = Pessoas;
+
+            pessoaView.Show();
         }
+     
     }
 }

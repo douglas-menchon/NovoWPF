@@ -22,6 +22,13 @@ namespace NovoWPF.View
             Endereco = endereco;
         }
 
+        public Pessoa(Pessoa pessoa)
+        {
+            IdPessoa = pessoa.IdPessoa;
+            NomePessoa = pessoa.NomePessoa;
+            CPF = pessoa.CPF;
+            Endereco = pessoa.Endereco;
+        }
 
         public static bool ValidaCpf(string cpf)
         {
