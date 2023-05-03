@@ -14,19 +14,35 @@ namespace NovoWPF.ViewModel
 
         public ObservableCollection<Produto> Produtos { get; set; }
 
+        public int IdProdutoLista { get; set; }
+
         public ICommand SalvarProduto { get; }
-        public ICommand CancelarProduto { get; }
+
 
         public CadastroProdutoViewModel(ObservableCollection<Produto> produtos , CadastroProdutoView cadastro)
         {
             Produtos = produtos;
             CadastroProdutoView = cadastro;
+            VerificarProdutoId();
             SalvarProduto = new SalvarProdutoCommand(Produtos, CadastroProdutoView);
         }
 
         public CadastroProdutoViewModel()
         {
+        }
 
+        public void VerificarProdutoId()
+        {
+            if (Produtos.Count < 1)
+            {
+                IdProdutoLista = 1;
+            }
+             CadastroProdutoView.idProdutoBox.Text = $"{IdProdutoLista}";
+        }
+
+        public void IncrementarId()
+        {
+            IdProdutoLista++;
         }
     }
 }

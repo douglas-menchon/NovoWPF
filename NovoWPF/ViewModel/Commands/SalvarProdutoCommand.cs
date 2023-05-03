@@ -9,6 +9,8 @@ namespace NovoWPF.ViewModel.Commands
     {
         public ObservableCollection<Produto> Produtos { get; set; }
         public CadastroProdutoView CadastroProdutoView { get; set; }
+        public CadastroProdutoViewModel CadastroProdutoViewModel { get; set; }
+        public int IdListaProduto { get; set; }
 
         public SalvarProdutoCommand(ObservableCollection<Produto> produtos, CadastroProdutoView cadastroProdutoView)
         {
@@ -18,18 +20,30 @@ namespace NovoWPF.ViewModel.Commands
 
         public override void Execute(object parameter)
         {
-            double valor = 0;
 
-             if (!string.IsNullOrEmpty(CadastroProdutoView.valorProdutoBox.Text))
+            CadastroProdutoViewModel cadastroPessoaViewModel = new CadastroProdutoViewModel();
+
+            if(CadastroProdutoView.nomeProdutoBox.Text != ""  && CadastroProdutoView.codigoProdutoBox.Text != "" 
+                && CadastroProdutoView.valorProdutoBox.Text != "")
             {
-                valor = double.Parse(CadastroProdutoView.valorProdutoBox.Text);
-            }
+                double valor = 0;
+                if (!string.IsNullOrEmpty(CadastroProdutoView.valorProdutoBox.Text))
+                {
+                    valor = double.Parse(CadastroProdutoView.valorProdutoBox.Text);
+                }
 
-            Produtos.Add(new Produto(int.Parse(CadastroProdutoView.idProdutoBox.Text)
-                                            , CadastroProdutoView.nomeProdutoBox.Text
-                                            , CadastroProdutoView.codigoProdutoBox.Text
-                                            , valor));
-            MessageBox.Show($"o ID é: {CadastroProdutoView.idProdutoBox.Text}");
+                Produtos.Add(new Produto(int.Parse(CadastroProdutoView.idProdutoBox.Text)
+                                                , CadastroProdutoView.nomeProdutoBox.Text
+                                                , CadastroProdutoView.codigoProdutoBox.Text
+                                                , valor));
+
+                cadastroPessoaViewModel.IncrementarId();
+                CadastroProdutoView.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                MessageBox.Show("Favor preencher itens obrigatórios");
+            }
         }
     }
 }
