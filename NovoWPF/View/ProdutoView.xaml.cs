@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace NovoWPF.View
 {
     /// <summary>
-    /// Interação lógica para ProdutoView.xam
+    /// Interação lógica para ProdutoView.xaml
     /// </summary>
 public partial class ProdutoView : Window
 {

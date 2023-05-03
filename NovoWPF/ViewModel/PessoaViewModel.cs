@@ -1,5 +1,4 @@
 ﻿using NovoWPF.ViewModel.Commands;
-using System.ComponentModel;
 using System.Windows.Input;
 
 namespace NovoWPF.ViewModel

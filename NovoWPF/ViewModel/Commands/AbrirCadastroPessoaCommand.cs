@@ -9,6 +9,7 @@ namespace NovoWPF.ViewModel.Commands
         public override void Execute(object parameter)
         {
             CadastroPessoaView cadastroPessoaView = new CadastroPessoaView();
+            cadastroPessoaView.DataContext = new CadastroPessoaViewModel();
             cadastroPessoaView.Show();
         }
     }

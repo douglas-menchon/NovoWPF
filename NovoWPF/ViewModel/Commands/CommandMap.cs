@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace NovoWPF.ViewModel.Commands
 {
-    public class CommandMap
+    public class CommandMap 
     {
         public ICommand AdicionarComando(Action metodo)
         {

@@ -1,8 +1,8 @@
-﻿using NovoWPF.View;
-using NovoWPF.ViewModel;
+﻿using NovoWPF.Commands;
+using NovoWPF.View;
 using System.Collections.ObjectModel;
 
-namespace NovoWPF.Commands
+namespace NovoWPF.ViewModel.Commands
 {
 
     public class AbrirProdutoCommand : CommandBase

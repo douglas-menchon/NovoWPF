@@ -11,8 +11,8 @@ namespace NovoWPF.ViewModel
 
         public TelaProjetoViewModel()
         {
-            AbrirTelaProduto = new AbrirProdutoCommand();
             AbrirTelaPessoa = new AbrirPessoaCommand();
+            AbrirTelaProduto = new AbrirProdutoCommand();
         }
         
     }
