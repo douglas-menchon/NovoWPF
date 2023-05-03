@@ -26,7 +26,5 @@ namespace NovoWPF.View
         {
             InitializeComponent();        
         }
-
-     
     }
 }

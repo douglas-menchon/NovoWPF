@@ -13,10 +13,10 @@ namespace NovoWPF.ViewModel.Commands
     public class SalvaPessoaCommand : CommandBase
     {
         public ObservableCollection<Pessoa> Pessoas { get; set; }
-        CadastroPessoaView cadastroPessoaView = new CadastroPessoaView();
 
         public override void Execute(object parameter)
         {
+            CadastroPessoaView cadastroPessoaView = new CadastroPessoaView();
             Pessoas = new ObservableCollection<Pessoa>();
             cadastroPessoaView.ShowDialog();
 

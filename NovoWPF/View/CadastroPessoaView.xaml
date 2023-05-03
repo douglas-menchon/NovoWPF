@@ -8,10 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" local1:WindowCloser.EnableWindowClosing="True">
     
-    <Window.DataContext>
-        <local1:CadastroPessoaViewModel />
-    </Window.DataContext>
-    
     <Grid>
         <Grid x:Name="gridCadastrarPessoa" >
             <Grid.ColumnDefinitions>
@@ -99,7 +95,7 @@
 
             <Button Visibility="Visible" 
                         x:Name="btnSalvarNovaPessoa" 
-                        Command="{Binding salvarPessoa}"
+                        Command="{Binding SalvarPessoa}"
                         Grid.Row="5" 
                         Grid.Column="1" 
                         Width="70" 

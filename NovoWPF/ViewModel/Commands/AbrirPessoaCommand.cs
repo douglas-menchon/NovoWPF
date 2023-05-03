@@ -12,7 +12,7 @@ namespace NovoWPF.ViewModel.Commands
         {
             PessoaView pessoaView = new PessoaView(Pessoas);
             pessoaView.DataContext = new PessoaViewModel();
-            pessoaView.Show();
+            pessoaView.ShowDialog();
         }
     }
 }

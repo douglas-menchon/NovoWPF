@@ -10,8 +10,8 @@ namespace NovoWPF.Commands
         public ObservableCollection<Produto> Produtos { get; set; } = new ObservableCollection<Produto>();
         public override void Execute(object parameter)
         {
-            ProdutoView produtoView = new ProdutoView(Produtos);
-            produtoView.DataContext = new ProdutoViewModel();
+            ProdutoView produtoView = new ProdutoView();
+            produtoView.DataContext = new ProdutoViewModel(produtoView);
             produtoView.Show();
         }
     }
