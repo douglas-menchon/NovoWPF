@@ -120,31 +120,24 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="Editar" Width=".6*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button x:Name="btnEditarPessoa"
-                                        Content="Editar"  
-                                        Background="DeepSkyBlue"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="Excluir" 
-                                            Width=".6*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button x:Name="excluirPessoa" 
-                                        Content="Excluir" 
-                                        Background="Red" 
-                                        Command="Delete"/>
-
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                   
+                  
                 </DataGrid.Columns>
             </DataGrid>
             <Button Command="{Binding AbrirCadastroPessoa}"
                     Content="Cadastrar Pessoa" 
+                    Background="LightGray" 
+                    Height="30" 
+                    Margin="0 0 0 10"/>
+            
+            <Button Command="{Binding AbrirEditarPessoa}"
+                    Content="Editar Pessoa" 
+                    Background="LightGray" 
+                    Height="30" 
+                    Margin="0 0 0 10"/>
+            
+            <Button Command="{Binding DeletarPessoa}"
+                    Content="Deletar Pessoa" 
                     Background="LightGray" 
                     Height="30" 
                     Margin="0 0 0 10"/>

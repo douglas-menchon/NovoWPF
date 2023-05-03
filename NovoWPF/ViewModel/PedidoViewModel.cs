@@ -9,7 +9,7 @@ namespace NovoWPF.ViewModel
 
         public PedidoViewModel()
         {
-            AbrirCadastroProduto = new AbrirCadastroProdutoCommand();
+
         }
     }
 }

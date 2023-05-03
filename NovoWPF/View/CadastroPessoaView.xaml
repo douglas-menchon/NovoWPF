@@ -7,6 +7,10 @@
              xmlns:local1="clr-namespace:NovoWPF.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" local1:WindowCloser.EnableWindowClosing="True">
+
+    <Window.DataContext>
+        <local1:CadastroPessoaViewModel/>
+    </Window.DataContext>
     
     <Grid>
         <Grid x:Name="gridCadastrarPessoa" >
@@ -35,10 +39,9 @@
                            Text="Id" Margin="0 0 10 10" 
                            HorizontalAlignment="Right"/>
 
-            <TextBox x:Name="idPessoaBox" 
-                         Text="3"
+            
             <TextBox x:Name="idPessoaBox"                    
-                         Text="{Binding Pessoa.IdPessoa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding Pessoa.IdPessoa}"
                          Grid.Column="1" Grid.Row="1" 
                          Background="#eee" Width="100" 
                          HorizontalAlignment="Left" 
@@ -50,7 +53,7 @@
                            Margin="0 0 10 10" 
                            HorizontalAlignment="Right"/>
             <TextBox x:Name="nomePessoaBox" 
-                         Text="{Binding Pessoa.NomePessoa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding Pessoa.NomePessoa}"
                          Grid.Column="1" 
                          Grid.Row="2"
                          Width="250" 
@@ -64,7 +67,7 @@
                            Margin="0 0 10 10" 
                            HorizontalAlignment="Right" />
             <TextBox x:Name="CPFBox" 
-                         Text="{Binding Pessoa.CPF, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding Pessoa.CPF}"
                          Grid.Column="1" 
                          Grid.Row="3"
                          Width="100"
@@ -78,7 +81,7 @@
                            Margin="0 0 10 0"
                            HorizontalAlignment="Right" />
             <TextBox x:Name="EnderecoBox" 
-                         Text="{Binding Pessoa.Endereco, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding Pessoa.Endereco}"
                          Grid.Column="1" 
                          Width="350"
                          HorizontalAlignment="Left" 
@@ -105,6 +108,18 @@
                         IsDefault="True"
                         Width="70" 
                         Content="Salvar" 
+                        HorizontalAlignment="Right" 
+                        Background="Lime" 
+                        Height="25"
+                        Margin="0 50 50 0"/>
+            
+            <Button Visibility="Visible" 
+                        x:Name="btnEditarNovaPessoa" 
+                        Command="{Binding EditarPessoa}"
+                        Grid.Row="5" 
+                        Grid.Column="1" 
+                        Width="70" 
+                        Content="Editar" 
                         HorizontalAlignment="Right" 
                         Background="Lime" 
                         Height="25"
