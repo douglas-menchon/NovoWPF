@@ -10,12 +10,9 @@ namespace NovoWPF.ViewModel
     {
         public CadastroProdutoView CadastroProdutoView { get; set; }
 
-        public Produto Produto { get; set; }
-
         public ObservableCollection<Produto> Produtos { get; set; }
 
         public ICommand SalvarProduto { get; }
-        public ICommand CancelarProduto { get; }
 
         public CadastroProdutoViewModel(ObservableCollection<Produto> produtos , CadastroProdutoView cadastro)
         {

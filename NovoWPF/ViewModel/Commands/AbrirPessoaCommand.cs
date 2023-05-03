@@ -6,11 +6,11 @@ namespace NovoWPF.ViewModel.Commands
 {
     public class AbrirPessoaCommand : CommandBase
     {
-        public ObservableCollection<Pessoa> Pessoas { get; set; } = new ObservableCollection<Pessoa>();
 
         public override void Execute(object parameter)
         {
-            PessoaView pessoaView = new PessoaView(Pessoas);
+            PessoaView pessoaView = new PessoaView();
+            pessoaView.DataContext = new PessoaViewModel(pessoaView);
             pessoaView.Show();
         }
     }

@@ -22,10 +22,9 @@ namespace NovoWPF.View
     public partial class PessoaView : Window
     {
 
-        public PessoaView(ObservableCollection<Pessoa> pessoas)
+        public PessoaView()
         {
             InitializeComponent();
-            dataGridPessoa.ItemsSource = pessoas;
         }
     }
 }
