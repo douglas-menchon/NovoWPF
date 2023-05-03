@@ -21,12 +21,8 @@ namespace NovoWPF.View
     /// </summary>
 public partial class ProdutoView : Window
 {
-    public ObservableCollection<Produto> Produtos { get; set; }
-
-    public ProdutoView(ObservableCollection<Produto> produtos)
+    public ProdutoView()
     {
-        InitializeComponent();
-        Produtos = produtos;
-        dataGridProduto.ItemsSource = Produtos;
+        InitializeComponent();       
     }
 }}

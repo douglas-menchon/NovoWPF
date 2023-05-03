@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using static NovoWPF.ViewModel.Commands.CommandMap;
 
 namespace NovoWPF.ViewModel
@@ -23,6 +24,6 @@ namespace NovoWPF.ViewModel
         public bool CanClose()
         {
             return true;
-        }
+        }      
     }
 }

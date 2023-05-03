@@ -6,18 +6,27 @@ using System.Windows.Input;
 
 namespace NovoWPF.ViewModel
 {
-    public class CadastroProdutoViewModel : ViewModelBase
+    public class CadastroProdutoViewModel : CloseWindow
     {
+        public CadastroProdutoView CadastroProdutoView { get; set; }
+
+        public Produto Produto { get; set; }
 
         public ObservableCollection<Produto> Produtos { get; set; }
 
         public ICommand SalvarProduto { get; }
         public ICommand CancelarProduto { get; }
 
-        public CadastroProdutoViewModel()
+        public CadastroProdutoViewModel(ObservableCollection<Produto> produtos , CadastroProdutoView cadastro)
         {
-            SalvarProduto = new SalvarProdutoCommand();
+            Produtos = produtos;
+            CadastroProdutoView = cadastro;
+            SalvarProduto = new SalvarProdutoCommand(Produtos, CadastroProdutoView);
         }
 
+        public CadastroProdutoViewModel()
+        {
+
+        }
     }
 }

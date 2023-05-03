@@ -8,14 +8,18 @@ namespace NovoWPF.ViewModel.Commands
 {
     public class AbrirCadastroProdutoCommand : CommandBase
     {
-        public ObservableCollection<Produto> Produtos { get; set; } = new ObservableCollection<Produto>();
+        public ObservableCollection<Produto> Produtos { get; set; }
 
-        CadastroProdutoView cadastroProdutoView = new CadastroProdutoView();
+        public AbrirCadastroProdutoCommand(ObservableCollection<Produto> produtos)
+        {
+            Produtos = produtos;
+        }
 
         public override void Execute(object parameter)
         {
-            cadastroProdutoView.ShowDialog();
+            CadastroProdutoView cadastroProdutoView = new CadastroProdutoView();
+            cadastroProdutoView.DataContext = new CadastroProdutoViewModel(Produtos, cadastroProdutoView);
+            cadastroProdutoView.Show();
         }
-
     }
 }

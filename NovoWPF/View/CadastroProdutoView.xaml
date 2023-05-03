@@ -4,16 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NovoWPF.View"
-        xmlns:local1="clr-namespace:NovoWPF.ViewModel"
-        mc:Ignorable="d" 
+             xmlns:local1="clr-namespace:NovoWPF.ViewModel"
+            mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" local1:WindowCloser.EnableWindowClosing="True">
+    
     <Window.DataContext>
         <local1:CadastroProdutoViewModel />
     </Window.DataContext>
 
     <Grid>
         <Grid>
-            <Grid x:Name="gridCadastrarProduto" Visibility="Visible">
+            <Grid x:Name="gridCadastrarProduto" Visibility="Visible" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="4*"/>
@@ -58,7 +59,7 @@
                            Margin="0 0 10 0"/>
                 
                 <TextBox Visibility="Visible" 
-                         Text="{Binding Produto}" 
+                         Text="{Binding Produto.NomeProduto}" 
                          x:Name="nomeProdutoBox"
                          Grid.Column="1"
                          Grid.Row="1" 
@@ -75,7 +76,7 @@
                            Margin="0 0 10 0" />
                 
                 <TextBox Visibility="Visible" 
-                         Text="{Binding Produto}" 
+                         Text="{Binding Produto.Codigo}" 
                          x:Name="codigoProdutoBox" 
                          Grid.Column="1"
                          Grid.Row="2"
@@ -92,7 +93,7 @@
                            Margin="0 0 10 0" />
                 
                 <TextBox Visibility="Visible" 
-                         Text="{Binding Produto}" 
+                         Text="{Binding Produto.Valor}" 
                          x:Name="valorProdutoBox"
                          Grid.Column="1" 
                          Grid.Row="4"
