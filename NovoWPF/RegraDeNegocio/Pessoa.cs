@@ -1,15 +1,65 @@
-﻿using System.Windows;
-using System.Windows.Media;
-using System.Collections.Generic;
+﻿using NovoWPF.ViewModel;
 
 namespace NovoWPF.View
 {
-    public class Pessoa
+    public class Pessoa : ViewModelBase
     {
-        public int IdPessoa { get; set; }
-        public string NomePessoa { get; set; }
-        public string CPF { get; set; }
-        public string Endereco { get; set; }
+        public int _idPessoa;
+        public int IdPessoa
+        {
+            get
+            {
+                return _idPessoa;
+            }
+            set
+            {
+                _idPessoa = value;
+                OnPropertyChanged("IdPessoa");
+            }
+        }
+
+        public string _nomePessoa;
+        public string NomePessoa
+        {
+            get
+            {
+                return _nomePessoa;
+            }
+            set
+            {
+                _nomePessoa = value;
+                OnPropertyChanged("NomePessoa");
+            }
+        }
+
+
+        public string _CPF;
+        public string CPF
+        {
+            get
+            {
+                return _CPF;
+            }
+            set
+            {
+                _CPF = value;
+                OnPropertyChanged("CPF");
+            }
+        }
+
+        public string _endereco;
+        public string Endereco
+        {
+            get
+            {
+                return _endereco;
+            }
+            set
+            {
+                _endereco = value;
+                OnPropertyChanged("Endereco");
+            }
+        }
 
         public Pessoa()
         {

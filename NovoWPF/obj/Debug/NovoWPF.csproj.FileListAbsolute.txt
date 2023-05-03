@@ -110,7 +110,6 @@ C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\bin\Debug\System.Memory.xml
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csprojAssemblyReference.cache
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.exe.config
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\MainWindow.g.cs
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\CadastroPessoaView.g.cs
@@ -137,3 +136,4 @@ C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csproj.Cor
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csproj.CopyComplete
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.exe
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.pdb
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csprojAssemblyReference.cache

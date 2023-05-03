@@ -11,7 +11,6 @@ namespace NovoWPF.ViewModel.Commands
         public override void Execute(object parameter)
         {
             PessoaView pessoaView = new PessoaView(Pessoas);
-            pessoaView.DataContext = new PessoaViewModel();
             pessoaView.Show();
         }
     }

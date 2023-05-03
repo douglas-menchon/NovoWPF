@@ -18,7 +18,7 @@ namespace NovoWPF.View
     /// <summary>
     /// Interação lógica para PedidoView.xam
     /// </summary>
-    public partial class PedidoView : UserControl
+    public partial class PedidoView : Window
     {
         public PedidoView()
         {

@@ -17,16 +17,13 @@ using System.Windows.Shapes;
 namespace NovoWPF.View
 {
     /// <summary>
-    /// Interação lógica para ProdutoView.xam
+    /// Interação lógica para ProdutoView.xaml
     /// </summary>
 public partial class ProdutoView : Window
 {
-    public ObservableCollection<Produto> Produtos { get; set; }
-
     public ProdutoView(ObservableCollection<Produto> produtos)
     {
         InitializeComponent();
-        Produtos = produtos;
-        dataGridProduto.ItemsSource = Produtos;
+        dataGridProduto.ItemsSource = produtos;
     }
 }}
