@@ -113,22 +113,12 @@ C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\bin\Debug\System.Threading.T
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csprojAssemblyReference.cache
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.exe.config
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\MainWindow.g.cs
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\CadastroPessoaView.g.cs
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\CadastroProdutoView.g.cs
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\PedidoView.g.cs
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\PessoaView.g.cs
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\ProdutoView.g.cs
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\TelaProjetoView.g.cs
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\App.g.cs
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF_MarkupCompile.cache
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF_MarkupCompile.lref
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\MainWindow.baml
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\CadastroPessoaView.baml
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\CadastroProdutoView.baml
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\PedidoView.baml
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\PessoaView.baml
-C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\ProdutoView.baml
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\TelaProjetoView.baml
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.g.resources
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.Properties.Resources.resources
@@ -137,6 +127,7 @@ C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csproj.Cor
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csproj.CopyComplete
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.exe
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\NovoWPF.pdb
+<<<<<<< HEAD
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\bin\Debug\NovoWPF.exe.config
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\bin\Debug\NovoWPF.exe
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\bin\Debug\NovoWPF.pdb
@@ -276,3 +267,15 @@ C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\NovoWPF.cs
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\NovoWPF.csproj.CopyComplete
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\NovoWPF.exe
 C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\obj\Debug\NovoWPF.pdb
+=======
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Pessoas\CadastroPessoaView.g.cs
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Produto\CadastroProdutoView.g.cs
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Pedido\PedidoView.g.cs
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Pessoas\PessoaView.g.cs
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Produto\ProdutoView.g.cs
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Pessoas\CadastroPessoaView.baml
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Produto\CadastroProdutoView.baml
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Pedido\PedidoView.baml
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Pessoas\PessoaView.baml
+C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\View\Produto\ProdutoView.baml
+>>>>>>> d447c081f277b25a68929b33dcc82686fd3a2140
