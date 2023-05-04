@@ -9,8 +9,8 @@ namespace NovoWPF.ViewModel.Commands
     public class AbrirCadastroProdutoCommand : CommandBase
     {
         public ObservableCollection<Produto> Produtos { get; set; }
-
         public ProdutoViewModel ProdutoViewModel { get; set; }
+
 
         public AbrirCadastroProdutoCommand(ObservableCollection<Produto> produtos, ProdutoViewModel produtoViewModel)
         {
@@ -23,6 +23,8 @@ namespace NovoWPF.ViewModel.Commands
             CadastroProdutoView cadastroProdutoView = new CadastroProdutoView();
             cadastroProdutoView.DataContext = new CadastroProdutoViewModel(Produtos, cadastroProdutoView, ProdutoViewModel);
             cadastroProdutoView.idProdutoBox.Text = ProdutoViewModel.IdProdutoLista.ToString();
+            cadastroProdutoView.btnEditarNovoProduto.Visibility = Visibility.Collapsed;
+            cadastroProdutoView.btnSalvarProdutoEdit.Visibility = Visibility.Visible;
             cadastroProdutoView.Show();
         }
     }

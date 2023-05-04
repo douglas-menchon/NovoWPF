@@ -35,6 +35,7 @@ namespace NovoWPF.ViewModel.Commands
 
                     MessageBox.Show($"Pessoa: {CadastroPessoaView.nomePessoaBox.Text} editada com sucesso");
 
+                    CadastroPessoaView.Visibility = Visibility.Collapsed;
                     
                 }
                 else
@@ -47,7 +48,6 @@ namespace NovoWPF.ViewModel.Commands
                 MessageBox.Show("Campos obrigatórios não preenchidos!!");
             }
 
-            CadastroPessoaView.Visibility = Visibility.Collapsed;
         }
     }   
 }

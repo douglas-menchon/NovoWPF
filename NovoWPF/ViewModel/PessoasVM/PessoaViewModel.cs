@@ -17,7 +17,6 @@ namespace NovoWPF.ViewModel
 
         public PessoaViewModel()
         {
-
         }
 
         public PessoaViewModel(PessoaView pessoaView)

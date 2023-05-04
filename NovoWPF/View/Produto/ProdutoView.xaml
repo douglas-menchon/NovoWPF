@@ -123,6 +123,17 @@
                     Background="LightGray" 
                     Height="30" 
                     Margin="0 0 0 10"/>
+            <Button Command="{Binding AbrirEditarProduto}"
+                    Content="Editar Produto" 
+                    Background="LightGray" 
+                    Height="30" 
+                    Margin="0 0 0 10"/>
+
+            <Button Command="{Binding DeletarProduto}"
+                    Content="Deletar Produto" 
+                    Background="LightGray" 
+                    Height="30" 
+                    Margin="0 0 0 10"/>
         </StackPanel>
     </Grid>
 </Window>
