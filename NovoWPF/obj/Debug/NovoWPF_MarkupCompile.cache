@@ -9,19 +9,11 @@ NovoWPF
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\App.xaml
-7-401351816
-
-45-1435210476
-1271014295503
-=======
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\App.xaml
 7-401351816
 
-471188698209
+49-647642395
 127-1754061458
->>>>>>> mathew
 MainWindow.xaml;View\Pessoas\CadastroPessoaView.xaml;View\Produto\CadastroProdutoView.xaml;View\Pedido\PedidoView.xaml;View\Pessoas\PessoaView.xaml;View\Produto\ProdutoView.xaml;View\TelaProjetoView.xaml;
 
 True

@@ -82,13 +82,10 @@
     </ApplicationDefinition>
     <Compile Include="Comuns\ICloseWindows.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
-<<<<<<< HEAD
     <Compile Include="ViewModel\Commands\CommandProdutos\AbrirTelasProduto\AbrirEditarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\DeletarProduto\DeletarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\EditarProduto\EditarProdutoCommand.cs" />
-=======
     <Compile Include="ViewModel\Commands\CommandPedidos\AbrirPedido\AbrirCadastroPedidoCommand.cs" />
->>>>>>> mathew
     <Compile Include="ViewModel\PessoasVM\CadastroPessoaViewModel.cs" />
     <Compile Include="ViewModel\FecharTelas\CloseWindow.cs" />
     <Compile Include="ViewModel\Commands\CommandPessoas\AbrirTelasPessoa\AbrirCadastroPessoaCommand.cs" />
