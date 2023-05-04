@@ -16,7 +16,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0" Height="20" 
@@ -27,20 +27,31 @@
                 
                 <TextBox Grid.Column="1" 
                          x:Name="txtBoxPesquisaPessoa" 
-                         Height="20" Width="100" 
+                         Height="20" Width="120" 
                          VerticalAlignment="Top" 
                          HorizontalAlignment="Left" 
                          CharacterCasing="Upper"/>
-                
+
                 <Button x:Name="btnPesquisarNomeCPF" 
+                        Command="{Binding CancelarPesquisarPessoa}"
+                        Content="Cancelar"
                         Grid.Column="1" 
                         HorizontalAlignment="Left" 
                         Background="Transparent" 
-                        Margin="136,0,0,4.8" 
-                        Height="20" Width="30" 
-                        Grid.ColumnSpan="2">
-                    <!--Image Source="images/Lupa.png" /-->
-                </Button>
+                        Margin="156,0,0,4.8" 
+                        Height="20" 
+                        Grid.ColumnSpan="2"/>
+                
+                <Button x:Name="btnCancelarPesquisarNomeCPF" 
+                        Command="{Binding PesquisarPessoa}"
+                        Content="Pesquisar"
+                        Grid.Column="2" 
+                        HorizontalAlignment="Left" 
+                        Background="Transparent" 
+                        Margin="60,0,0,4.8" 
+                        Height="20" 
+                        Grid.ColumnSpan="2"/>
+
             </Grid>
 
             <DataGrid CanUserReorderColumns="False" 
