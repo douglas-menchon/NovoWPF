@@ -11,7 +11,7 @@ namespace NovoWPF.View
 {
     public class Produto : ViewModelBase
     {
-        public int _idProduto;
+        private int _idProduto;
         public int IdProduto
         {
             get
@@ -25,7 +25,7 @@ namespace NovoWPF.View
             }
         }
 
-        public string _nomeProduto;
+        private string _nomeProduto;
         public string NomeProduto
         {
             get
@@ -35,12 +35,12 @@ namespace NovoWPF.View
             set
             {
                 _nomeProduto = value;
-                OnPropertyChanged("NomePessoa");
+                OnPropertyChanged("NomeProduto");
             }
         }
 
 
-        public string _codigo;
+        private string _codigo;
         public string Codigo
         {
             get
@@ -54,7 +54,7 @@ namespace NovoWPF.View
             }
         }
 
-        public double _valor;
+        private double _valor;
         public double Valor
         {
             get
@@ -67,7 +67,7 @@ namespace NovoWPF.View
                 OnPropertyChanged("Valor");
             }
         }
-        public int _qntdProduto;
+        private int _qntdProduto;
         public int QntdProduto
         {
             get
@@ -83,6 +83,7 @@ namespace NovoWPF.View
 
         public Produto()
         {
+
         }
 
         public Produto(int idProduto, string nomeProduto, string codigo, double valor)

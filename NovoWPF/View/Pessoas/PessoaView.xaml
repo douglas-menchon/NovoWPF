@@ -111,16 +111,7 @@
                             </Style>
                         </DataGridTextColumn.EditingElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTemplateColumn Header="Incluir" 
-                                            Width="*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button x:Name="btnIncluirPedido" 
-                                        Content="Incluir Pedido"  
-                                        Background="Lime"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                   
                     <DataGridTemplateColumn Header="Pedido" 
                                             Width="*">
                         <DataGridTemplateColumn.CellTemplate>
@@ -149,6 +140,11 @@
             
             <Button Command="{Binding DeletarPessoa}"
                     Content="Deletar Pessoa" 
+                    Background="LightGray" 
+                    Height="30" 
+                    Margin="0 0 0 10"/>
+            <Button Command="{Binding AbrirCadastroPedido}"
+                    Content="Inserir Pedido" 
                     Background="LightGray" 
                     Height="30" 
                     Margin="0 0 0 10"/>
