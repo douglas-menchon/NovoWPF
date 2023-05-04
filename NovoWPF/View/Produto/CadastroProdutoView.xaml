@@ -135,6 +135,18 @@
                         Background="Lime" 
                         Height="25" 
                         Margin="0 50 50 0"/>
+
+                <Button Visibility="Visible" 
+                        x:Name="btnEditarNovoProduto" 
+                        Command="{Binding EditarProduto}"
+                        Grid.Row="5" 
+                        Grid.Column="1" 
+                        Width="70" 
+                        Content="Editar" 
+                        HorizontalAlignment="Right" 
+                        Background="Lime" 
+                        Height="25"
+                        Margin="0 50 50 0"/>
             </Grid>
         </Grid>
     </Grid>

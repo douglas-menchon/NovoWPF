@@ -4,7 +4,7 @@ namespace NovoWPF.View
 {
     public class Pessoa : ViewModelBase
     {
-        public int _idPessoa;
+        private int _idPessoa;
         public int IdPessoa
         {
             get
@@ -18,7 +18,7 @@ namespace NovoWPF.View
             }
         }
 
-        public string _nomePessoa;
+        private string _nomePessoa;
         public string NomePessoa
         {
             get
@@ -33,7 +33,7 @@ namespace NovoWPF.View
         }
 
 
-        public string _CPF;
+        private string _CPF;
         public string CPF
         {
             get
@@ -47,7 +47,7 @@ namespace NovoWPF.View
             }
         }
 
-        public string _endereco;
+        private string _endereco;
         public string Endereco
         {
             get

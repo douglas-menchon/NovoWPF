@@ -38,12 +38,13 @@ namespace NovoWPF.ViewModel.Commands
                                                 , CadastroProdutoView.codigoProdutoBox.Text
                                                 , valor));
 
-                ProdutoViewModel.IncrementarId();
+                MessageBox.Show($"Produto {CadastroProdutoView.nomeProdutoBox.Text} cadastrado com sucesso");
+                ProdutoViewModel.IdProdutoLista++;
                 CadastroProdutoView.Visibility = Visibility.Collapsed;
             }
             else
             {
-                MessageBox.Show("Favor preencher itens obrigatórios");
+                MessageBox.Show("Campos obrigatórios não preenchidos!!");
             }
         }
     }

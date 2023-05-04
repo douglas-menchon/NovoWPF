@@ -1,5 +1,7 @@
 ﻿using NovoWPF.View;
 using NovoWPF.ViewModel.Commands;
+using NovoWPF.ViewModel.Commands.CommandProdutos.AbrirTelasProduto;
+using NovoWPF.ViewModel.Commands.CommandProdutos.DeletarProduto;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -10,6 +12,8 @@ namespace NovoWPF.ViewModel
     {
         public ObservableCollection<Produto> Produtos { get; set; }
         public ICommand AbrirCadastroProduto{ get; }
+        public ICommand AbrirEditarProduto { get; }
+        public ICommand DeletarProduto { get; }
         public int IdProdutoLista { get; set; }
 
         public ProdutoViewModel()
@@ -19,9 +23,13 @@ namespace NovoWPF.ViewModel
         public ProdutoViewModel(ProdutoView produtoView)
         {
             Produtos = new ObservableCollection<Produto>();
-            VerificarProdutoId();
+
             produtoView.dataGridProduto.ItemsSource = Produtos;
+            VerificarProdutoId();
+            AbrirEditarProduto = new AbrirEditarProdutoCommand(Produtos, produtoView);
             AbrirCadastroProduto = new AbrirCadastroProdutoCommand(Produtos, this);
+            DeletarProduto = new DeletarProdutoCommand(Produtos, produtoView);
+
         }
 
         public void VerificarProdutoId()
@@ -34,11 +42,6 @@ namespace NovoWPF.ViewModel
             {
                 IdProdutoLista = Produtos.Count + 1;
             }
-        }
-
-        public void IncrementarId()
-        {
-            IdProdutoLista++;
         }
     }
 }
