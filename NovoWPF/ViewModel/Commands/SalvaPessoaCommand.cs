@@ -12,7 +12,7 @@ namespace NovoWPF.ViewModel.Commands
         public SalvaPessoaCommand(ObservableCollection<Pessoa> pessoas, CadastroPessoaView cadastroPessoaView)
         {
             Pessoas = pessoas;
-            CadastroPessoaView = cadastroPessoaView;
+            CadastroPessoaView = cadastroPessoaView;           
         }
         public override void Execute(object parameter)
         {
@@ -28,6 +28,7 @@ namespace NovoWPF.ViewModel.Commands
                     MessageBox.Show($"Cliente {CadastroPessoaView.nomePessoaBox.Text} cadastrado com sucesso");
 
                     CadastroPessoaView.Visibility = Visibility.Collapsed;
+
                 }
                 else
                 {

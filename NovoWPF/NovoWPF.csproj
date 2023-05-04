@@ -90,9 +90,11 @@
     <Compile Include="ViewModel\Commands\AbrirEditarPessoaCommand.cs" />
     <Compile Include="ViewModel\Commands\AbrirPessoaCommand.cs" />
     <Compile Include="ViewModel\Commands\AbrirProdutoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CancelarPesquisarPessoaCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandBase.cs" />
     <Compile Include="ViewModel\CadastroProdutoViewModel.cs" />
     <Compile Include="ViewModel\Commands\EditarPessoaCommand.cs" />
+    <Compile Include="ViewModel\Commands\PesquisarPessoaCommand.cs" />
     <Compile Include="ViewModel\Commands\SalvarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandMap.cs" />
     <Compile Include="ViewModel\Commands\SalvaPessoaCommand.cs" />
