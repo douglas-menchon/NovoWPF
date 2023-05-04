@@ -83,42 +83,42 @@
     <Compile Include="Comuns\ICloseWindows.cs" />
     <Compile Include="Comuns\VariaveisUniversais.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
-    <Compile Include="ViewModel\CadastroPessoaViewModel.cs" />
-    <Compile Include="ViewModel\CloseWindow.cs" />
-    <Compile Include="ViewModel\Commands\AbrirCadastroPessoaCommand.cs" />
-    <Compile Include="ViewModel\Commands\AbrirCadastroProdutoCommand.cs" />
-    <Compile Include="ViewModel\Commands\AbrirEditarPessoaCommand.cs" />
-    <Compile Include="ViewModel\Commands\AbrirPessoaCommand.cs" />
-    <Compile Include="ViewModel\Commands\AbrirProdutoCommand.cs" />
-    <Compile Include="ViewModel\Commands\CancelarPesquisarPessoaCommand.cs" />
+    <Compile Include="ViewModel\PessoasVM\CadastroPessoaViewModel.cs" />
+    <Compile Include="ViewModel\FecharTelas\CloseWindow.cs" />
+    <Compile Include="ViewModel\Commands\CommandPessoas\AbrirTelasPessoa\AbrirCadastroPessoaCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandProdutos\AbrirTelasProduto\AbrirCadastroProdutoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPessoas\AbrirTelasPessoa\AbrirEditarPessoaCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPessoas\AbrirTelasPessoa\AbrirPessoaCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandProdutos\AbrirTelasProduto\AbrirProdutoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPessoas\PesquisaPessoa\CancelarPesquisarPessoaCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandBase.cs" />
-    <Compile Include="ViewModel\CadastroProdutoViewModel.cs" />
-    <Compile Include="ViewModel\Commands\EditarPessoaCommand.cs" />
-    <Compile Include="ViewModel\Commands\PesquisarPessoaCommand.cs" />
-    <Compile Include="ViewModel\Commands\SalvarProdutoCommand.cs" />
+    <Compile Include="ViewModel\ProdutoVM\CadastroProdutoViewModel.cs" />
+    <Compile Include="ViewModel\Commands\CommandPessoas\EditarPessoa\EditarPessoaCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPessoas\PesquisaPessoa\PesquisarPessoaCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandProdutos\SalvarProduto\SalvarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandMap.cs" />
-    <Compile Include="ViewModel\Commands\SalvaPessoaCommand.cs" />
-    <Compile Include="ViewModel\Commands\DeletarPessoaCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPessoas\SalvarPessoa\SalvaPessoaCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPessoas\DeletarPessoa\DeletarPessoaCommand.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\PedidoViewModel.cs" />
-    <Compile Include="ViewModel\PessoaViewModel.cs" />
-    <Compile Include="ViewModel\ProdutoViewModel.cs" />
+    <Compile Include="ViewModel\PedidosVM\PedidoViewModel.cs" />
+    <Compile Include="ViewModel\PessoasVM\PessoaViewModel.cs" />
+    <Compile Include="ViewModel\ProdutoVM\ProdutoViewModel.cs" />
     <Compile Include="ViewModel\TelaProjetoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="ViewModel\WindowCloser.cs" />
-    <Compile Include="View\CadastroPessoaView.xaml.cs">
+    <Compile Include="ViewModel\FecharTelas\WindowCloser.cs" />
+    <Compile Include="View\Pessoas\CadastroPessoaView.xaml.cs">
       <DependentUpon>CadastroPessoaView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CadastroProdutoView.xaml.cs">
+    <Compile Include="View\Produto\CadastroProdutoView.xaml.cs">
       <DependentUpon>CadastroProdutoView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PedidoView.xaml.cs">
+    <Compile Include="View\Pedido\PedidoView.xaml.cs">
       <DependentUpon>PedidoView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PessoaView.xaml.cs">
+    <Compile Include="View\Pessoas\PessoaView.xaml.cs">
       <DependentUpon>PessoaView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProdutoView.xaml.cs">
+    <Compile Include="View\Produto\ProdutoView.xaml.cs">
       <DependentUpon>ProdutoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TelaProjetoView.xaml.cs">
@@ -136,23 +136,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\CadastroPessoaView.xaml">
+    <Page Include="View\Pessoas\CadastroPessoaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\CadastroProdutoView.xaml">
+    <Page Include="View\Produto\CadastroProdutoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PedidoView.xaml">
+    <Page Include="View\Pedido\PedidoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PessoaView.xaml">
+    <Page Include="View\Pessoas\PessoaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProdutoView.xaml">
+    <Page Include="View\Produto\ProdutoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

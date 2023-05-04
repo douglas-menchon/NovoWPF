@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\App.xaml
-7-1773677020
+7-401351816
 
-42-853147747
+42808177984
 127-1754061458
-MainWindow.xaml;View\CadastroPessoaView.xaml;View\CadastroProdutoView.xaml;View\PedidoView.xaml;View\PessoaView.xaml;View\ProdutoView.xaml;View\TelaProjetoView.xaml;
+MainWindow.xaml;View\Pessoas\CadastroPessoaView.xaml;View\Produto\CadastroProdutoView.xaml;View\Pedido\PedidoView.xaml;View\Pessoas\PessoaView.xaml;View\Produto\ProdutoView.xaml;View\TelaProjetoView.xaml;
 
 False
 
