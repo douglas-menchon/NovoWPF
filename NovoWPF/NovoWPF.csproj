@@ -86,6 +86,8 @@
     <Compile Include="ViewModel\Commands\CommandProdutos\AbrirTelasProduto\AbrirEditarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\DeletarProduto\DeletarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\EditarProduto\EditarProdutoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandProdutos\PesquisaProduto\CancelarPesquisaProdutoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandProdutos\PesquisaProduto\PesquisaProdutoCommand.cs" />
     <Compile Include="ViewModel\PessoasVM\CadastroPessoaViewModel.cs" />
     <Compile Include="ViewModel\FecharTelas\CloseWindow.cs" />
     <Compile Include="ViewModel\Commands\CommandPessoas\AbrirTelasPessoa\AbrirCadastroPessoaCommand.cs" />
@@ -196,8 +198,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\Commands\CommandProdutos\PesquisaProduto\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

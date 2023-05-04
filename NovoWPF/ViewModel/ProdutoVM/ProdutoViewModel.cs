@@ -2,6 +2,7 @@
 using NovoWPF.ViewModel.Commands;
 using NovoWPF.ViewModel.Commands.CommandProdutos.AbrirTelasProduto;
 using NovoWPF.ViewModel.Commands.CommandProdutos.DeletarProduto;
+using NovoWPF.ViewModel.Commands.CommandProdutos.PesquisaProduto;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -14,6 +15,9 @@ namespace NovoWPF.ViewModel
         public ICommand AbrirCadastroProduto{ get; }
         public ICommand AbrirEditarProduto { get; }
         public ICommand DeletarProduto { get; }
+        public ICommand PesquisarProduto { get; }
+        public ICommand CancelarPesquisarProduto { get; }
+
         public int IdProdutoLista { get; set; }
 
         public ProdutoViewModel()
@@ -29,7 +33,8 @@ namespace NovoWPF.ViewModel
             AbrirEditarProduto = new AbrirEditarProdutoCommand(Produtos, produtoView);
             AbrirCadastroProduto = new AbrirCadastroProdutoCommand(Produtos, this);
             DeletarProduto = new DeletarProdutoCommand(Produtos, produtoView);
-
+            PesquisarProduto = new PesquisaProdutoCommand(Produtos, produtoView);
+            CancelarPesquisarProduto = new CancelarPesquisaProdutoCommand(Produtos, produtoView);
         }
 
         public void VerificarProdutoId()
