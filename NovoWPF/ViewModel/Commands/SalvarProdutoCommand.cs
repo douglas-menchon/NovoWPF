@@ -11,11 +11,12 @@ namespace NovoWPF.ViewModel.Commands
         public CadastroProdutoView CadastroProdutoView { get; set; }
         public CadastroProdutoViewModel CadastroProdutoViewModel { get; set; }
         public int IdListaProduto { get; set; }
-
-        public SalvarProdutoCommand(ObservableCollection<Produto> produtos, CadastroProdutoView cadastroProdutoView)
+        public ProdutoViewModel ProdutoViewModel { get; set; }
+        public SalvarProdutoCommand(ObservableCollection<Produto> produtos, CadastroProdutoView cadastroProdutoView, ProdutoViewModel produtoViewModel)
         {
             Produtos = produtos;
             CadastroProdutoView = cadastroProdutoView;
+            ProdutoViewModel = produtoViewModel;
         }
 
         public override void Execute(object parameter)
@@ -37,7 +38,7 @@ namespace NovoWPF.ViewModel.Commands
                                                 , CadastroProdutoView.codigoProdutoBox.Text
                                                 , valor));
 
-                cadastroPessoaViewModel.IncrementarId();
+                ProdutoViewModel.IncrementarId();
                 CadastroProdutoView.Visibility = Visibility.Collapsed;
             }
             else
