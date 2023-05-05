@@ -26,30 +26,40 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.AbrirTelasProduto
             CadastroProdutoView cadastroProdutoView = new CadastroProdutoView();
             cadastroProdutoView.DataContext = new CadastroProdutoViewModel(Produtos, cadastroProdutoView);
 
-
-            if(Produtos.Count > 0) //LEMBRAR
+            if(Produtos.Count > 0)
             {
                 dynamic data = ProdutoView.dataGridProduto.SelectedItem;
-                int indexData = data.IdProduto;
-                int indexList = Produtos.IndexOf(Produtos.Where(p => p.IdProduto == indexData).FirstOrDefault());
 
-                if(indexList != -1)
+                if(data != null)
                 {
-                    cadastroProdutoView.idProdutoBox.Text = Convert.ToString(Produtos[indexList].IdProduto);
-                    cadastroProdutoView.nomeProdutoBox.Text = Produtos[indexList].NomeProduto;
-                    cadastroProdutoView.codigoProdutoBox.Text = Produtos[indexList].Codigo;
-                    cadastroProdutoView.valorProdutoBox.Text = Convert.ToString(Produtos[indexList].Valor);
+                    int indexData = data.IdProduto;
+                    int indexList = Produtos.IndexOf(Produtos.Where(p => p.IdProduto == indexData).FirstOrDefault());
+
+                    if(indexList != -1)
+                    {
+                        cadastroProdutoView.idProdutoBox.Text = Convert.ToString(Produtos[indexList].IdProduto);
+                        cadastroProdutoView.nomeProdutoBox.Text = Produtos[indexList].NomeProduto;
+                        cadastroProdutoView.codigoProdutoBox.Text = Produtos[indexList].Codigo;
+                        cadastroProdutoView.valorProdutoBox.Text = Convert.ToString(Produtos[indexList].Valor);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao carregar os dados");
+                        return;
+                    }
+
+                    cadastroProdutoView.btnSalvarProdutoEdit.Visibility = Visibility.Collapsed;
+                    cadastroProdutoView.btnEditarNovoProduto.Visibility = Visibility.Visible;
+                    cadastroProdutoView.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao carregar os dados");
-                    return;
+                    MessageBox.Show("Favor escolher um produto antes");
                 }
-
-                cadastroProdutoView.btnSalvarProdutoEdit.Visibility = Visibility.Collapsed;
-                cadastroProdutoView.btnEditarNovoProduto.Visibility = Visibility.Visible;
-                cadastroProdutoView.Show();
-
+            }
+            else
+            {
+                MessageBox.Show("Favor cadastrar um produto antes");
             }
         }
     }

@@ -32,6 +32,9 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.PesquisaProduto
             {
                 ProdutoView.dataGridProduto.ItemsSource = dadosValor;
             }
+
+            ProdutoView.minimoTB.Text = "0";
+            ProdutoView.maximoTB.Text = "9999999";
         }
     }
 }
