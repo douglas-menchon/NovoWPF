@@ -1,6 +1,8 @@
-﻿using NovoWPF.ViewModel;
+﻿using NovoWPF.RegraDeNegocio;
+using NovoWPF.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +23,18 @@ namespace NovoWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Produto> Produtos = new ObservableCollection<Produto>();
+        public ObservableCollection<Pessoa> Pessoas   = new ObservableCollection<Pessoa>();
+        public ObservableCollection<Pedido> Pedidos   = new ObservableCollection<Pedido>();
+
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new PessoaViewModel();
-            DataContext = new ProdutoViewModel();
-       }
+            Produtos = new ObservableCollection<Produto>();
+            Pessoas = new ObservableCollection<Pessoa>();
+            Pedidos = new ObservableCollection<Pedido>();
+            DataContext = new PessoaViewModel(Pessoas, Pedidos);
+            DataContext = new ProdutoViewModel(Produtos);
+        }
     }
 }

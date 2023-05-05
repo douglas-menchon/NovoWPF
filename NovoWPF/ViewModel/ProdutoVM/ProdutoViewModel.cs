@@ -25,11 +25,16 @@ namespace NovoWPF.ViewModel
 
         public ProdutoViewModel()
         {
+
+        }
+        public ProdutoViewModel(ObservableCollection<Produto> produtos)
+        {
+            Produtos = produtos;
         }
 
         public ProdutoViewModel(ProdutoView produtoView)
         {
-            Produtos = new ObservableCollection<Produto>();
+            
 
             produtoView.dataGridProduto.ItemsSource = Produtos;
             VerificarProdutoId();
