@@ -1,4 +1,5 @@
-﻿using NovoWPF.View;
+﻿using NovoWPF.RegraDeNegocio;
+using NovoWPF.View;
 using NovoWPF.ViewModel.Commands;
 using System.Collections.ObjectModel;
 using System.Windows.Input;

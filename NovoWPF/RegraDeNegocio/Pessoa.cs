@@ -1,6 +1,6 @@
 ﻿using NovoWPF.ViewModel;
 
-namespace NovoWPF.View
+namespace NovoWPF.RegraDeNegocio
 {
     public class Pessoa : ViewModelBase
     {

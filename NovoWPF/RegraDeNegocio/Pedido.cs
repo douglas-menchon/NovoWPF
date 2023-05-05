@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NovoWPF.View
+namespace NovoWPF.RegraDeNegocio
 {
     public class Pedido
     {

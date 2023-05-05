@@ -1,4 +1,5 @@
-﻿using NovoWPF.View;
+﻿using NovoWPF.RegraDeNegocio;
+using NovoWPF.View;
 using NovoWPF.ViewModel.Commands;
 using NovoWPF.ViewModel.Commands.CommandProdutos.EditarProduto;
 using System.Collections.ObjectModel;

@@ -1,4 +1,4 @@
-﻿namespace NovoWPF.View
+﻿namespace NovoWPF.RegraDeNegocio
 {
     public enum Status
     {

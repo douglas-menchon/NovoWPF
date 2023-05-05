@@ -1,4 +1,5 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 using System;
 using System.Collections.Generic;
@@ -27,23 +28,30 @@ namespace NovoWPF.ViewModel.Commands
             cadastroPessoaView.DataContext = new CadastroPessoaViewModel(Pessoas, cadastroPessoaView);
 
             dynamic data = PessoaView.dataGridPessoa.SelectedItem;
-            int indexData = data.IdPessoa;
-            int indexList = Pessoas.IndexOf(Pessoas.Where(p => p.IdPessoa == indexData).FirstOrDefault());
-
-            if (indexList != -1)
+            if (data != null)
             {
-               
-                cadastroPessoaView.idPessoaBox.Text = Convert.ToString(Pessoas[indexList].IdPessoa);
-                cadastroPessoaView.nomePessoaBox.Text = Pessoas[indexList].NomePessoa;
-                cadastroPessoaView.CPFBox.Text = Pessoas[indexList].CPF;
-                cadastroPessoaView.EnderecoBox.Text = Pessoas[indexList].Endereco;
+                int indexData = data.IdPessoa;
+                int indexList = Pessoas.IndexOf(Pessoas.Where(p => p.IdPessoa == indexData).FirstOrDefault());
+
+                if (indexList != -1)
+                {
+
+                    cadastroPessoaView.idPessoaBox.Text = Convert.ToString(Pessoas[indexList].IdPessoa);
+                    cadastroPessoaView.nomePessoaBox.Text = Pessoas[indexList].NomePessoa;
+                    cadastroPessoaView.CPFBox.Text = Pessoas[indexList].CPF;
+                    cadastroPessoaView.EnderecoBox.Text = Pessoas[indexList].Endereco;
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao carregar os dados");
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("Erro ao carregar os dados");
+                MessageBox.Show("Selecioone uma pessoa para editar!");
                 return;
             }
-
 
             cadastroPessoaView.btnSalvarNovaPessoa.Visibility = Visibility.Collapsed;
             cadastroPessoaView.btnEditarNovaPessoa.Visibility = Visibility.Visible;
