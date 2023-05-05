@@ -1,4 +1,5 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 using System;
 using System.Collections.Generic;

@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using NovoWPF.Commands;
+using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 
 namespace NovoWPF.ViewModel.Commands.CommandProdutos.DeletarProduto

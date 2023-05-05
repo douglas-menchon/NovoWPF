@@ -1,4 +1,4 @@
-﻿C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 
 FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\MainWindow.xaml;;
 FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Pessoas\CadastroPessoaView.xaml;;
@@ -7,4 +7,6 @@ FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Pedido\PedidoView.xaml
 FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Pessoas\PessoaView.xaml;;
 FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Produto\ProdutoView.xaml;;
 FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\TelaProjetoView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Pedido\InserirPedidoView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Pedido\PedidoExpandidoView.xaml;;
 

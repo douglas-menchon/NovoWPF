@@ -1,4 +1,5 @@
-﻿using NovoWPF.View;
+﻿using NovoWPF.RegraDeNegocio;
+using NovoWPF.View;
 using NovoWPF.ViewModel.Commands;
 using NovoWPF.ViewModel.Commands.CommandProdutos.AbrirTelasProduto;
 using NovoWPF.ViewModel.Commands.CommandProdutos.DeletarProduto;
