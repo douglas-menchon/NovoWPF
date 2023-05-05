@@ -7,14 +7,15 @@
         xmlns:local1="clr-namespace:NovoWPF.Comuns"
         xmlns:local2="clr-namespace:NovoWPF.ViewModel"
         mc:Ignorable="d"
-        Title="InserirPedidoView" Height="900" Width="900">
+        Title="InserirPedidoView" Height="500" Width="900">
     <Grid>
+      <StackPanel>
         <TextBlock FontSize="20" Grid.Column="0" HorizontalAlignment="Left">INSERIR PEDIDO</TextBlock>
 
         <Grid x:Name="gridPedido">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width=".55*" />
+                <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
@@ -30,15 +31,15 @@
             </Grid.RowDefinitions>
 
             <TextBlock  Visibility="Visible" x:Name="idPedidoBlock" Grid.Column="0" Grid.Row="0" Text="Id" HorizontalAlignment="Right" Margin="0 0 10 0"/>
-            <TextBox Visibility="Visible" x:Name="idPedidoBox" Grid.Column="1" Grid.Row="0" Background="#eee" Width="70" HorizontalAlignment="Left" IsReadOnly="True" Margin="0 0 30 10"/>
+            <TextBox Visibility="Visible" x:Name="idPedidoBox" Grid.Column="1" Grid.Row="0" Background="#eee"  Width="70" HorizontalAlignment="Left" IsReadOnly="True" Margin="0 0 30 10"/>
 
             <TextBlock Visibility="Visible" x:Name="nomePedidoPessoaBlock" Grid.Column="0" Grid.Row="1" Text="Pessoa*" HorizontalAlignment="Right" Margin="0 0 10 0"/>
             <TextBox Visibility="Visible" x:Name="nomePedidoPessoaBox" Grid.Column="1" Grid.Row="1" Background="#eee" IsReadOnly="True" Width="250" HorizontalAlignment="Left" Margin="0 0 30 10"/>
 
             <TextBlock Visibility="Visible" x:Name="PedProdutosBlock" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Text="Nome do produto*"  Margin="0 0 10 0" />
             <TextBox Visibility="Visible" x:Name="PedProdutosBox" CharacterCasing="Upper" Grid.Column="1" Grid.Row="2" Width="200" HorizontalAlignment="Left" Margin="0 0 30 10"/>
-            <Button x:Name="IncluirProdutoPedido" Command="{Binding InserirProduto}" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" Content="ok" Grid.Column="1" Grid.Row="2"
-                        Width="30" Margin="0 0 0 0"/>
+            <Button x:Name="IncluirProdutoPedido" Command="{Binding InserirProduto}" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Content="ok" Grid.Column="1" Grid.Row="2"
+                        Width="30" Margin="0 0 80 0"/>
 
             <TextBlock Visibility="Visible" x:Name="produtosPedidoBlock" Grid.Column="0" 
                            Grid.Row="4" Text="Produtos*" HorizontalAlignment="Right" Margin="0 0 10 0" />
@@ -54,9 +55,9 @@
             <TextBlock Visibility="Visible" x:Name="produtosBlock" Grid.Column="2" 
                            Grid.Row="3" Text="Produtos disponíveis" HorizontalAlignment="Left" Margin="0 0 10 0" />
             <TextBlock Visibility="Visible" x:Name="valorBlock" Grid.Column="2" 
-                           Grid.Row="3" Text="Valor(R$):" HorizontalAlignment="Right" Margin="0 0 60 0" />
+                           Grid.Row="3" Text="Valor(R$):" HorizontalAlignment="Right" Margin="0 0 100 0" />
             <ListBox Visibility="Visible" x:Name="produtosPedListBox" Grid.Column="2" HorizontalAlignment="Left" 
-                         Grid.Row="4" Width="385" Height="150" Margin="0 0 30 10">
+                         Grid.Row="4" Width="300" Height="150" Margin="0 0 30 10">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="IsEnabled" Value="False"/>
@@ -66,7 +67,7 @@
                     <DataTemplate>
                         <Grid Width="350">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="1.5*" />
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
@@ -88,11 +89,12 @@
 
             <Button Visibility="Visible" x:Name="btnCancelarPedido" Command="{Binding CloseCommand}" Grid.Row="7" Grid.Column="0" 
                         Width="70" Content="Cancelar" HorizontalAlignment="Right" Background="Red" 
-                        Height="25" Margin="0 50 50 0"/>
+                        Height="25" Margin="0 50 15 0"/>
 
-            <Button Visibility="Visible" x:Name="btnSalvaPedido" Command="{Binding SalvarPedido}" Grid.Row="7" Grid.Column="1"
+            <Button Visibility="Visible" x:Name="btnSalvaPedido" Command="{Binding SalvarPedido}" Grid.Row="7" Grid.Column="2"
                         Width="70" Content="Salvar" HorizontalAlignment="Right" Background="Lime"
-                        Height="25" Margin="-11,50.4,9.8,-1.2"/>
+                        Height="25" Margin="0 50 80 0"/>
         </Grid>
+       </StackPanel>
     </Grid>
 </Window>

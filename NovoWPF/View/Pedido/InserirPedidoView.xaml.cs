@@ -23,5 +23,7 @@ namespace NovoWPF.View.Pedido
         {
             InitializeComponent();
         }
+
+
     }
 }

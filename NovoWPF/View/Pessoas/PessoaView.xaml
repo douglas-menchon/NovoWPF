@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              Title="Pessoas"
              d:DesignHeight="450" d:DesignWidth="800" WindowStartupLocation="CenterScreen"
-             Height="450" Width="800"> 
+             Height="510" Width="800"> 
     
     <Window.DataContext>
         <local1:PessoaViewModel/>
@@ -147,7 +147,7 @@
                         HorizontalAlignment="Left"
                         Margin="0 0 0 10"/>
             
-<<<<<<< HEAD
+
                 <Button Command="{Binding DeletarPessoa}"
                         Content="Deletar Pessoa" 
                         Grid.Column="4"
@@ -175,7 +175,6 @@
                         HorizontalAlignment="Left"
                         Margin="0 0 0 10"/>
             </Grid>
-=======
             <Button Command="{Binding DeletarPessoa}"
                     Content="Deletar Pessoa" 
                     Background="LightGray" 
@@ -186,7 +185,6 @@
                     Background="LightGray" 
                     Height="30" 
                     Margin="0 0 0 10"/>
->>>>>>> mathew
         </StackPanel>    
     </Grid>
 </Window>

@@ -112,6 +112,30 @@ namespace NovoWPF.View {
         #line default
         #line hidden
         
+        
+        #line 86 "..\..\..\..\View\Pedido\PedidoView.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnMarcarEnviado;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 87 "..\..\..\..\View\Pedido\PedidoView.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnMarcarRecebido;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 88 "..\..\..\..\View\Pedido\PedidoView.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnMarcarPago;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -168,6 +192,15 @@ namespace NovoWPF.View {
             return;
             case 9:
             this.StatusDetalhes = ((System.Windows.Controls.DataGridComboBoxColumn)(target));
+            return;
+            case 10:
+            this.btnMarcarEnviado = ((System.Windows.Controls.Button)(target));
+            return;
+            case 11:
+            this.btnMarcarRecebido = ((System.Windows.Controls.Button)(target));
+            return;
+            case 12:
+            this.btnMarcarPago = ((System.Windows.Controls.Button)(target));
             return;
             }
             this._contentLoaded = true;
