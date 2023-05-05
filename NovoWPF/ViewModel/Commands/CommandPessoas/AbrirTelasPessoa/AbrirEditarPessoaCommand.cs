@@ -49,7 +49,7 @@ namespace NovoWPF.ViewModel.Commands
             }
             else
             {
-                MessageBox.Show("Selecioone uma pessoa para editar!");
+                MessageBox.Show("Selecione uma pessoa para editar!");
                 return;
             }
 

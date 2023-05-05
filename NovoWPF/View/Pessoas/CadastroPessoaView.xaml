@@ -6,89 +6,120 @@
              xmlns:local="clr-namespace:NovoWPF.View"
              xmlns:local1="clr-namespace:NovoWPF.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" local1:WindowCloser.EnableWindowClosing="True">
+             Title="Cadastrar Pessoa"
+             d:DesignHeight="300" d:DesignWidth="350"  WindowStartupLocation="CenterScreen"
+             Height="300" Width="350" local1:WindowCloser.EnableWindowClosing="True">
 
     <Window.DataContext>
         <local1:CadastroPessoaViewModel/>
     </Window.DataContext>
     
     <Grid>
-        <Grid x:Name="gridCadastrarPessoa" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="8*"/>
-
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+        <StackPanel x:Name="gridCadastrarPessoa" >
 
             <TextBlock FontSize="20" 
                            Grid.Column="0"
-                           HorizontalAlignment="Left"
-                           Text="CADASTRO"/>
+                           HorizontalAlignment="Left"/>
 
-            <TextBlock x:Name="idPessoaBlock" 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="idPessoaBlock" 
                            Grid.Column="0" Grid.Row="1" 
-                           Text="Id" Margin="0 0 10 10" 
-                           HorizontalAlignment="Right"/>
-
-            
-            <TextBox x:Name="idPessoaBox"                    
+                           Text="Id" 
+                           Margin="10 0 0 10" 
+                           HorizontalAlignment="Left"/>
+                
+                <TextBox x:Name="idPessoaBox"                    
                          Text="{Binding Pessoa.IdPessoa}"
-                         Grid.Column="1" Grid.Row="1" 
-                         Background="#eee" Width="100" 
+                         Grid.Column="1" 
+                         Grid.Row="1" 
+                         Background="#eee" 
+                         Height="20"
+                         Width="25" 
                          HorizontalAlignment="Left" 
                          Margin="0 0 30 10"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
 
             <TextBlock x:Name="nomePessoaBlock" 
-                           Grid.Column="0" 
-                           Grid.Row="2" Text="Nome*" 
-                           Margin="0 0 10 10" 
-                           HorizontalAlignment="Right"/>
+                       Grid.Column="0" 
+                       Grid.Row="2" 
+                       Text="Nome*" 
+                       Margin="10 0 0 10" 
+                       HorizontalAlignment="Left"/>
+                
             <TextBox x:Name="nomePessoaBox" 
-                         Text="{Binding Pessoa.NomePessoa}"
-                         Grid.Column="1" 
-                         Grid.Row="2"
-                         Width="250" 
-                         HorizontalAlignment="Left" 
-                         Margin="0 0 30 10"/>
+                     Text="{Binding Pessoa.NomePessoa}"
+                     Grid.Column="1" 
+                     Grid.Row="2"
+                     Height="20"
+                     Width="250" 
+                     CharacterCasing="Upper"
+                     HorizontalAlignment="Left" 
+                     Margin="0 0 0 10"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
 
             <TextBlock x:Name="CPFBlock" 
                            Grid.Column="0" 
                            Grid.Row="3" 
                            Text="CPF*" 
-                           Margin="0 0 10 10" 
-                           HorizontalAlignment="Right" />
+                           Margin="10 0 0 10" 
+                           HorizontalAlignment="Left" />
             <TextBox x:Name="CPFBox" 
-                         Text="{Binding Pessoa.CPF}"
-                         Grid.Column="1" 
-                         Grid.Row="3"
-                         Width="100"
-                         HorizontalAlignment="Left" 
-                         Margin="0 0 30 10"/>
+                     Text="{Binding Pessoa.CPF}"
+                     Grid.Column="1" 
+                     Grid.Row="3"
+                     Height="20"
+                     Width="100"
+                     HorizontalAlignment="Left" 
+                     Margin="0 0 0 10"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
 
             <TextBlock x:Name="EnderecoBlock"
                            Grid.Column="0"
                            Grid.Row="4" 
                            Text="Endereço"
-                           Margin="0 0 10 0"
-                           HorizontalAlignment="Right" />
+                           Margin="10 0 0 10"
+                           HorizontalAlignment="Left" />
+                
             <TextBox x:Name="EnderecoBox" 
-                         Text="{Binding Pessoa.Endereco}"
-                         Grid.Column="1" 
-                         Width="350"
-                         HorizontalAlignment="Left" 
-                         Grid.Row="4" 
-                         Margin="0 0 30 0" />
+                     Text="{Binding Pessoa.Endereco}"
+                     Grid.Column="1" 
+                     Height="20"
+                     Width="250"
+                     HorizontalAlignment="Left" 
+                     CharacterCasing="Upper"
+                     Grid.Row="4" 
+                     Margin="0 0 10 0" />
+            </Grid>
 
-            <Button Visibility="Visible"
+            <Grid HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Visibility="Visible"
                         x:Name="btnCancelarPessoa" 
                         Command="{Binding CloseCommand}"
                         Grid.Row="5"
@@ -98,7 +129,7 @@
                         HorizontalAlignment="Right"
                         Background="Red" 
                         Height="25"
-                        Margin="-11,50.4,9.8,-1.2"/>
+                        Margin="0 0 0 0"/>
 
             <Button Visibility="Visible" 
                         x:Name="btnSalvarNovaPessoa" 
@@ -111,7 +142,7 @@
                         HorizontalAlignment="Right" 
                         Background="Lime" 
                         Height="25"
-                        Margin="0 50 50 0"/>
+                        Margin="10"/>
             
             <Button Visibility="Visible" 
                         x:Name="btnEditarNovaPessoa" 
@@ -123,7 +154,8 @@
                         HorizontalAlignment="Right" 
                         Background="Lime" 
                         Height="25"
-                        Margin="0 50 50 0"/>
-        </Grid>
+                        Margin="10"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

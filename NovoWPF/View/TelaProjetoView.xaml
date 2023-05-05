@@ -43,7 +43,7 @@
                     Margin="0 50 0 10"/>
         </StackPanel>
 
-        <ContentControl Grid.Column="1"  Content="{Binding}"></ContentControl>
+        <!--ContentControl Grid.Column="1"  Content="{Binding}"></-->
 
     </Grid>
 </UserControl>
