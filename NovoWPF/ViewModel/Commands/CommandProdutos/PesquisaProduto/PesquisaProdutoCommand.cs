@@ -22,11 +22,16 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.PesquisaProduto
             var dadosGrid = Produtos.Where(p => p.NomeProduto.Contains(ProdutoView.txtBoxPesquisaProduto.Text)).ToList();
 
             if (dadosGrid.Count > 0 && ProdutoView.txtBoxPesquisaProduto.Text != "")
+            {
                 ProdutoView.dataGridProduto.ItemsSource = dadosGrid;
-            else
-                MessageBox.Show("Produto não encontrada!");
+            }
 
-            ProdutoView.txtBoxPesquisaProduto.Text = "";
+            var dadosValor = Produtos.Where(p => p.Valor >= double.Parse(ProdutoView.minimoTB.Text) && p.Valor <= double.Parse(ProdutoView.maximoTB.Text)).ToList();
+
+            if (dadosValor.Count > 0)
+            {
+                ProdutoView.dataGridProduto.ItemsSource = dadosValor;
+            }
         }
     }
 }

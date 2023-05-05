@@ -105,27 +105,6 @@
                     <DataGridTextColumn Header="Valor" 
                                         Binding="{Binding Valor, StringFormat=N2}"
                                         Width="*"/>
-                    
-                    <DataGridTemplateColumn Header="Editar">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button x:Name="editarProduto" 
-                                    Content="Editar" 
-                                    Background="DeepSkyBlue"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-                    <DataGridTemplateColumn Header="Excluir">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button x:Name="excluirProduto" 
-                                    Content="Excluir" 
-                                    Background="Red" 
-                                    Command="Delete"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
 

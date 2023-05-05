@@ -5,6 +5,8 @@ using NovoWPF.ViewModel.Commands.CommandProdutos.DeletarProduto;
 using NovoWPF.ViewModel.Commands.CommandProdutos.PesquisaProduto;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace NovoWPF.ViewModel
@@ -35,6 +37,13 @@ namespace NovoWPF.ViewModel
             DeletarProduto = new DeletarProdutoCommand(Produtos, produtoView);
             PesquisarProduto = new PesquisaProdutoCommand(Produtos, produtoView);
             CancelarPesquisarProduto = new CancelarPesquisaProdutoCommand(Produtos, produtoView);
+
+            if (produtoView.minimoTB.Text == "" || produtoView.maximoTB.Text == "")
+            {
+                produtoView.minimoTB.Text = "0";
+                produtoView.maximoTB.Text = "9999999";
+            }
+
         }
 
         public void VerificarProdutoId()
@@ -46,6 +55,15 @@ namespace NovoWPF.ViewModel
             else
             {
                 IdProdutoLista = Produtos.Count + 1;
+            }
+        }
+
+        public  void AceitarApenasNumeros(TextBox textBox)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, "[^0-9]")) //LEMBRAR
+            {
+                MessageBox.Show("Digite apenas números");
+                textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
             }
         }
     }
