@@ -147,6 +147,7 @@
                         HorizontalAlignment="Left"
                         Margin="0 0 0 10"/>
             
+<<<<<<< HEAD
                 <Button Command="{Binding DeletarPessoa}"
                         Content="Deletar Pessoa" 
                         Grid.Column="4"
@@ -174,6 +175,18 @@
                         HorizontalAlignment="Left"
                         Margin="0 0 0 10"/>
             </Grid>
+=======
+            <Button Command="{Binding DeletarPessoa}"
+                    Content="Deletar Pessoa" 
+                    Background="LightGray" 
+                    Height="30" 
+                    Margin="0 0 0 10"/>
+            <Button Command="{Binding AbrirIncluirPedido}"
+                    Content="Inserir Pedido" 
+                    Background="LightGray" 
+                    Height="30" 
+                    Margin="0 0 0 10"/>
+>>>>>>> mathew
         </StackPanel>    
     </Grid>
 </Window>
