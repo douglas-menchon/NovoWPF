@@ -83,6 +83,7 @@ namespace NovoWPF.View
 
         public Produto()
         {
+
         }
 
         public Produto(int idProduto, string nomeProduto, string codigo, double valor)

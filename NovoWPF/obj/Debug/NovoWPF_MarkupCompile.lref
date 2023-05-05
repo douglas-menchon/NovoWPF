@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\MainWindow.xaml;;
@@ -8,3 +9,25 @@ FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\Pessoas\Pessoa
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\Produto\ProdutoView.xaml;;
 FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\TelaProjetoView.xaml;;
 
+=======
+﻿C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+
+<<<<<<< HEAD
+FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\MainWindow.xaml;;
+FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\Pessoas\CadastroPessoaView.xaml;;
+FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\Produto\CadastroProdutoView.xaml;;
+FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\Pedido\PedidoView.xaml;;
+FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\Pessoas\PessoaView.xaml;;
+FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\Produto\ProdutoView.xaml;;
+FC:\Users\douglas.menchon\Desktop\Nova pasta\NovoWPF\NovoWPF\View\TelaProjetoView.xaml;;
+=======
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\MainWindow.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Pessoas\CadastroPessoaView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Produto\CadastroProdutoView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Pedido\PedidoView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Pessoas\PessoaView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\Produto\ProdutoView.xaml;;
+FC:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\View\TelaProjetoView.xaml;;
+>>>>>>> mathew
+
+>>>>>>> 31358cd0cda007c16c12d5fe7e50e8d5013177f1

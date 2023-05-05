@@ -63,6 +63,7 @@ namespace NovoWPF.View
 
         public Pessoa()
         {
+
         }
         public Pessoa(int id, string nome, string cpf, string endereco)
         {

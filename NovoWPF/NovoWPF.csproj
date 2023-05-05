@@ -81,13 +81,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Comuns\ICloseWindows.cs" />
-    <Compile Include="Comuns\VariaveisUniversais.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
+<<<<<<< HEAD
     <Compile Include="ViewModel\Commands\CommandProdutos\AbrirTelasProduto\AbrirEditarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\DeletarProduto\DeletarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\EditarProduto\EditarProdutoCommand.cs" />
+<<<<<<< HEAD
     <Compile Include="ViewModel\Commands\CommandProdutos\PesquisaProduto\CancelarPesquisaProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\PesquisaProduto\PesquisaProdutoCommand.cs" />
+=======
+=======
+    <Compile Include="ViewModel\Commands\CommandPedidos\AbrirPedido\AbrirCadastroPedidoCommand.cs" />
+>>>>>>> mathew
+>>>>>>> 31358cd0cda007c16c12d5fe7e50e8d5013177f1
     <Compile Include="ViewModel\PessoasVM\CadastroPessoaViewModel.cs" />
     <Compile Include="ViewModel\FecharTelas\CloseWindow.cs" />
     <Compile Include="ViewModel\Commands\CommandPessoas\AbrirTelasPessoa\AbrirCadastroPessoaCommand.cs" />
