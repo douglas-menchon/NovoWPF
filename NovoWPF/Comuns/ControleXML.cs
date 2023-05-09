@@ -19,8 +19,6 @@ namespace NovoWPF.Comuns
         public PessoaViewModel PessoaViewModel { get; set; }
         public ProdutoViewModel ProdutoViewModel { get; set; }
 
-        public int IdProdutoLista { get; set; }
-
         public ControleXML(ObservableCollection<Produto> produtos)
         {
             Produtos = produtos;
@@ -48,10 +46,11 @@ namespace NovoWPF.Comuns
             );
             xml.Save(fileName);
         }
-        public void ExportarXmlPessoa(string fileName)
+        public void ExportarXmlPessoa(ObservableCollection<Pessoa> Pessoas, int idPessoaLista)
         {
+            string fileName = "C:\\Pessoas.xml";
             var xml = new XElement("Pessoas",
-                new XElement("IdPessoaLista", PessoaViewModel.IdPessoaLista),
+                new XElement("IdPessoaLista", idPessoaLista),
                 from p in Pessoas
                 select new XElement("Pessoa",
                     new XElement("IdPessoa", p.IdPessoa),
@@ -72,6 +71,35 @@ namespace NovoWPF.Comuns
                 serializador.Serialize(stream, Produtos);
             }
         }*/
+
+        public void LerXmlProduto()
+        {
+            TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
+            string fileName = "C:\\Pessoas.xml";
+            try
+            {
+                var xml = XElement.Load(fileName);
+
+                telaProjetoViewModel.IdProdutoLista = int.Parse(xml.Element("IdProdutoLista").Value);
+
+                foreach (var element in xml.Elements("Produto"))
+                {
+                    var produtoLerXml = new Produto
+                    {
+                        IdProduto = int.Parse(element.Element("IdProduto").Value),
+                        NomeProduto = element.Element("NomeProduto").Value,
+                        Codigo = element.Element("Codigo").Value,
+                        Valor = double.Parse(element.Element("Valor").Value),
+                    };
+
+                    Produtos.Add(produtoLerXml);
+                }
+            }
+            catch
+            {
+                return;
+            }
+        }
 
     }
 }

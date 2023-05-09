@@ -11,16 +11,19 @@ namespace NovoWPF.ViewModel.Commands
         public ObservableCollection<Pedido> Pedidos = new ObservableCollection<Pedido>();
         public ObservableCollection<Produto> Produtos = new ObservableCollection<Produto>();
 
-        public AbrirPessoaCommand(ObservableCollection<Pessoa> pessoas, ObservableCollection<Pedido> pedidos, ObservableCollection<Produto> produtos)
+        public int IdPessoaLista { get; set; }
+
+        public AbrirPessoaCommand(ObservableCollection<Pessoa> pessoas, ObservableCollection<Pedido> pedidos, ObservableCollection<Produto> produtos, int idPessoaLista)
         {
             Pessoas = pessoas;
             Pedidos = pedidos;
             Produtos = produtos;
+            IdPessoaLista = idPessoaLista;
         }
         public override void Execute(object parameter)
         {
             PessoaView pessoaView = new PessoaView();
-            pessoaView.DataContext = new PessoaViewModel(pessoaView, Pessoas, Pedidos, Produtos);
+            pessoaView.DataContext = new PessoaViewModel(pessoaView, Pessoas, Pedidos, Produtos, IdPessoaLista);
             pessoaView.Show();
         }
     }

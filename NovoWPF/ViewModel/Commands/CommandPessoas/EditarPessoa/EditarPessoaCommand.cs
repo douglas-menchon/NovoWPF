@@ -1,4 +1,5 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.Comuns;
 using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 using System;
@@ -15,14 +16,17 @@ namespace NovoWPF.ViewModel.Commands
     {
         public ObservableCollection<Pessoa> Pessoas { get; set; }
         private CadastroPessoaView CadastroPessoaView { get; set; }
+        public PessoaViewModel PessoaViewModel { get; set; }
 
-        public EditarPessoaCommand(ObservableCollection<Pessoa> pessoas, CadastroPessoaView cadastroPessoaView)
+        public EditarPessoaCommand(ObservableCollection<Pessoa> pessoas, CadastroPessoaView cadastroPessoaView, PessoaViewModel pessoaViewModel)
         {
             Pessoas = pessoas;
             CadastroPessoaView = cadastroPessoaView;
+            PessoaViewModel = pessoaViewModel;
         }
         public override void Execute(object parameter)
         {
+            ControleXML controleXML = new ControleXML(Pessoas);
             if (CadastroPessoaView.nomePessoaBox.Text != "" && CadastroPessoaView.CPFBox.Text != "")
             {
                 if (Pessoa.ValidaCpf(CadastroPessoaView.CPFBox.Text))
@@ -37,7 +41,7 @@ namespace NovoWPF.ViewModel.Commands
                     MessageBox.Show($"Pessoa: {CadastroPessoaView.nomePessoaBox.Text} editada com sucesso");
 
                     CadastroPessoaView.Visibility = Visibility.Collapsed;
-                    
+                    controleXML.ExportarXmlPessoa(Pessoas, PessoaViewModel.IdPessoaLista);
                 }
                 else
                 {
@@ -48,7 +52,6 @@ namespace NovoWPF.ViewModel.Commands
             {
                 MessageBox.Show("Campos obrigatórios não preenchidos!!");
             }
-
         }
     }   
 }
