@@ -29,10 +29,8 @@ namespace NovoWPF.ViewModel
             IdPessoaLista = idPessoaLista;
             pessoaView.dataGridPessoa.ItemsSource = pessoas;
             VerificaIdListaPessoa(pessoas);
-            AbrirEditarPessoa = new AbrirEditarPessoaCommand(pessoas, pessoaView);
-            AbrirCadastroPessoa = new AbrirCadastroPessoaCommand(pessoas, this);
             AbrirEditarPessoa = new AbrirEditarPessoaCommand(pessoas, pessoaView, this);
-            AbrirCadastroPessoa = new AbrirCadastroPessoaCommand(pessoas, this, IdPessoaLista);
+            AbrirCadastroPessoa = new AbrirCadastroPessoaCommand(pessoas, this);
             DeletarPessoa = new DeletarPessoaCommand(pessoas, pessoaView);
             PesquisarPessoa = new PesquisarPessoaCommand(pessoas, pessoaView);
             CancelarPesquisarPessoa = new CancelarPesquisarPessoaCommand(pessoas, pessoaView);

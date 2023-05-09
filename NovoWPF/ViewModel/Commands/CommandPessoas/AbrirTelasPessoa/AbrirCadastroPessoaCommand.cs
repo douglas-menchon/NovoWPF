@@ -10,13 +10,11 @@ namespace NovoWPF.ViewModel.Commands
     {
         public ObservableCollection<Pessoa> Pessoas { get; set; }
         public PessoaViewModel PessoaViewModel { get; set; }
-        public int IdPessoaLista { get; set; }
 
-        public AbrirCadastroPessoaCommand(ObservableCollection<Pessoa> pessoas, PessoaViewModel pessoaViewModel, int idPessoaLista)
+        public AbrirCadastroPessoaCommand(ObservableCollection<Pessoa> pessoas, PessoaViewModel pessoaViewModel)
         {
             Pessoas = pessoas;
             PessoaViewModel = pessoaViewModel;
-            IdPessoaLista = idPessoaLista;
         }
         public override void Execute(object parameter) 
         {
