@@ -33,15 +33,16 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido
         public override void Execute(object parameter)
         { //aqui
             InserirPedidoView inserirPedidoView = new InserirPedidoView();
-            inserirPedidoView.DataContext = new InserirPedidoViewModel(inserirPedidoView, Pedidos, Produtos);
+            inserirPedidoView.DataContext = new InserirPedidoViewModel(inserirPedidoView, Pedidos, Produtos, PessoaViewModel);
 
             dynamic data = PessoaView.dataGridPessoa.SelectedItem;
             if (data != null)
             {
                 string indexData = data.NomePessoa;
         
-                inserirPedidoView.idPedidoBox.Text = $"{PessoaViewModel.IdPedidoLista}";
+                inserirPedidoView.idPedidoBox.Text = PessoaViewModel.IdPedidoLista.ToString();
 
+                inserirPedidoView.produtosPedListBox.ItemsSource = Produtos;
                 inserirPedidoView.nomePedidoPessoaBox.Text = indexData;
                 inserirPedidoView.DataPedidoBox.Text = DateTime.Now.ToString("dd-MM-yyyy");
 

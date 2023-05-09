@@ -25,25 +25,6 @@
                     Background="Transparent" 
                     Height="30" 
                     Margin="0 0 0 10" />
-
-            <!--Botões Pessoa-->
-            <Button x:Name="btnCadastrarPessoa" 
-                    Visibility="Collapsed" 
-                    Content="Cadastrar" 
-                    Background="Green" 
-                    Height="25" 
-                    Margin="0 50 0 10"/>
-
-            <!--Botões Produto-->
-            <Button x:Name="btnCadastrarProduto" 
-                    Visibility="Collapsed" 
-                    Content="Cadastrar" 
-                    Background="Green" 
-                    Height="25" 
-                    Margin="0 50 0 10"/>
         </StackPanel>
-
-        <!--ContentControl Grid.Column="1"  Content="{Binding}"></-->
-
     </Grid>
 </UserControl>

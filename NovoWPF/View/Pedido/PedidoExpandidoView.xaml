@@ -5,12 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NovoWPF.View.Pedido"
         mc:Ignorable="d"
-        Title="PedidoExpandidoView" Height="450" Width="800">
+        Title="PedidoExpandidoView" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid>
             <StackPanel>
                 <Grid>
                     <DataGrid x:Name="dataGridPedidoExpandido" ItemsSource="{Binding Pedidos}" Height="150" AutoGenerateColumns="False" CanUserAddRows="False" >
+                        
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" 
+                                Value="LightGray" />
+                                <Setter Property="FontWeight" 
+                                Value="Regular" />
+                                <Setter Property="BorderThickness" 
+                                Value="1 1 1 1" />
+                                <Setter Property="BorderBrush" 
+                                Value="DarkGray" />
+                                <Setter Property="Padding" 
+                                Value="3 0 0 0" />
+                            </Style>
+                        </DataGrid.Resources>
+                        
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Produto" 
                                                     Binding="{Binding NomeProduto}" Width="*" />

@@ -18,7 +18,7 @@ namespace NovoWPF.ViewModel.Commands
         public PessoaView PessoaView { get; set; }
         public int IdPessoaLista { get; set; }
 
-        public AbrirEditarPessoaCommand(ObservableCollection<Pessoa> pessoas, PessoaView pessoaView, PessoaViewModel pessoaViewModel )
+        public AbrirEditarPessoaCommand(ObservableCollection<Pessoa> pessoas, PessoaView pessoaView, PessoaViewModel pessoaViewModel)
         {
             Pessoas = pessoas;
             PessoaView = pessoaView;

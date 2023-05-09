@@ -12,17 +12,16 @@ using System.Windows.Input;
 
 namespace NovoWPF.ViewModel.PedidosVM
 {
-    public class InserirPedidoViewModel : ViewModelBase
+    public class InserirPedidoViewModel : CloseWindow
     {
         public List<Produto> ProdutosPedido { get; set; }
         public ICommand InserirProduto { get; }
         public ICommand SalvarPedido { get; }
-        public InserirPedidoViewModel(InserirPedidoView inserirPedidoView, ObservableCollection<Pedido> pedidos, ObservableCollection<Produto> produtos)
+        public InserirPedidoViewModel(InserirPedidoView inserirPedidoView, ObservableCollection<Pedido> pedidos, ObservableCollection<Produto> produtos, PessoaViewModel pessoaViewModel)
         {
             ProdutosPedido = new List<Produto>();
-            PessoaViewModel PessoaViewModel = new PessoaViewModel();
             InserirProduto = new InserirProdutoCommand(inserirPedidoView, this, produtos);
-            SalvarPedido = new SalvarPedidoCommand(inserirPedidoView, this, PessoaViewModel, pedidos);
+            SalvarPedido = new SalvarPedidoCommand(inserirPedidoView, this, pessoaViewModel, pedidos);
         }
     }
 }
