@@ -15,17 +15,18 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.AbrirTelasProduto
     {
         public ObservableCollection<Produto> Produtos { get; set; }
         public ProdutoView ProdutoView { get; set; }
-
-        public AbrirEditarProdutoCommand(ObservableCollection<Produto> produtos, ProdutoView produtoView)
+        public ProdutoViewModel ProdutoViewModel { get; set; }
+        public AbrirEditarProdutoCommand(ObservableCollection<Produto> produtos, ProdutoView produtoView, ProdutoViewModel produtoViewModel)
         {
             Produtos = produtos;
             ProdutoView = produtoView;
+            ProdutoViewModel = produtoViewModel;
         }
 
         public override void Execute(object parameter)
         {
             CadastroProdutoView cadastroProdutoView = new CadastroProdutoView();
-            cadastroProdutoView.DataContext = new CadastroProdutoViewModel(Produtos, cadastroProdutoView);
+            cadastroProdutoView.DataContext = new CadastroProdutoViewModel(Produtos, cadastroProdutoView, ProdutoViewModel);
 
             if(Produtos.Count > 0)
             {

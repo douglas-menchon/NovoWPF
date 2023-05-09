@@ -5,9 +5,6 @@ using NovoWPF.ViewModel.Commands.CommandProdutos.AbrirTelasProduto;
 using NovoWPF.ViewModel.Commands.CommandProdutos.DeletarProduto;
 using NovoWPF.ViewModel.Commands.CommandProdutos.PesquisaProduto;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace NovoWPF.ViewModel
@@ -27,12 +24,13 @@ namespace NovoWPF.ViewModel
         {
         }
 
-        public ProdutoViewModel(ProdutoView produtoView, ObservableCollection<Produto> produtos)
+        public ProdutoViewModel(ProdutoView produtoView, ObservableCollection<Produto> produtos, int idProdutoLista)
         {
+            IdProdutoLista = idProdutoLista;
             produtoView.dataGridProduto.ItemsSource = produtos;
             VerificarProdutoId(produtos);
-            AbrirEditarProduto = new AbrirEditarProdutoCommand(produtos, produtoView);
-            AbrirCadastroProduto = new AbrirCadastroProdutoCommand(produtos, this);
+            AbrirEditarProduto = new AbrirEditarProdutoCommand(produtos, produtoView, this);
+            AbrirCadastroProduto = new AbrirCadastroProdutoCommand(produtos, this, IdProdutoLista);
             DeletarProduto = new DeletarProdutoCommand(produtos, produtoView);
             PesquisarProduto = new PesquisaProdutoCommand(produtos, produtoView);
             CancelarPesquisarProduto = new CancelarPesquisaProdutoCommand(produtos, produtoView);

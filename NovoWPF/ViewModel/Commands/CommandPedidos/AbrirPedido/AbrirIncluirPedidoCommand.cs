@@ -36,14 +36,21 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido
             inserirPedidoView.DataContext = new InserirPedidoViewModel(inserirPedidoView, Pedidos, Produtos);
 
             dynamic data = PessoaView.dataGridPessoa.SelectedItem;
-            string indexData = data.NomePessoa;
+            if (data != null)
+            {
+                string indexData = data.NomePessoa;
         
-            inserirPedidoView.idPedidoBox.Text = $"{PessoaViewModel.IdPedidoLista}";
+                inserirPedidoView.idPedidoBox.Text = $"{PessoaViewModel.IdPedidoLista}";
 
-            inserirPedidoView.nomePedidoPessoaBox.Text = indexData;
-            inserirPedidoView.DataPedidoBox.Text = DateTime.Now.ToString("dd-MM-yyyy");
+                inserirPedidoView.nomePedidoPessoaBox.Text = indexData;
+                inserirPedidoView.DataPedidoBox.Text = DateTime.Now.ToString("dd-MM-yyyy");
 
-            inserirPedidoView.Show();
+                inserirPedidoView.Show();
+            }
+            else
+            {
+                MessageBox.Show("Favor selecionar uma pessoa");
+            }
         }
     }
 }

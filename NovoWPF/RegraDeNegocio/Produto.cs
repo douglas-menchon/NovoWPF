@@ -39,7 +39,6 @@ namespace NovoWPF.RegraDeNegocio
             }
         }
 
-
         private string _codigo;
         public string Codigo
         {
@@ -81,17 +80,31 @@ namespace NovoWPF.RegraDeNegocio
             }
         }
 
-        public Produto()
+        private int _idProdutoLista;
+        public int IdProdutoLista
         {
-
+            get
+            {
+                return _idProdutoLista;
+            }
+            set
+            {
+                _idProdutoLista = value;
+                OnPropertyChanged("IdProdutoLista");
+            }
         }
 
-        public Produto(int idProduto, string nomeProduto, string codigo, double valor)
+        public Produto()
+        {
+        }
+
+        public Produto(int idProduto, string nomeProduto, string codigo, double valor, int idProdutoLista)
         {
             IdProduto = idProduto;
             NomeProduto = nomeProduto;
             Codigo = codigo;
             Valor = valor;
+            IdProdutoLista = idProdutoLista;
         }
 
         public Produto(int idProduto, string nomeProduto, double valor, int qntdProduto)
