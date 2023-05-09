@@ -20,6 +20,7 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido
         public PessoaView PessoaView { get; set; }
         public PessoaViewModel PessoaViewModel { get; set; }
         public int IdPedidoLista { get; set; }
+
         public AbrirIncluirPedidoCommand(ObservableCollection<Pessoa> pessoas, PessoaView pessoaView, ObservableCollection<Pedido> pedidos, PessoaViewModel pessoaViewModel)
         {
             Pessoas = pessoas;
@@ -29,7 +30,7 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido
         }
 
         public override void Execute(object parameter)
-        {
+        { //aqui
             InserirPedidoView inserirPedidoView = new InserirPedidoView();
             inserirPedidoView.DataContext = new InserirPedidoViewModel(inserirPedidoView, Pedidos);
 

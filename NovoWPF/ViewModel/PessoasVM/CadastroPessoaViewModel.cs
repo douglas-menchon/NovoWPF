@@ -24,7 +24,6 @@ namespace NovoWPF.ViewModel
 
         public CadastroPessoaViewModel()
         {
-
         }
     }
 }

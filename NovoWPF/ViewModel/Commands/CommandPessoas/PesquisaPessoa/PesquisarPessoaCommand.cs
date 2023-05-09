@@ -16,7 +16,6 @@ namespace NovoWPF.ViewModel.Commands
         public ObservableCollection<Pessoa> Pessoas { get; set; }
         public PessoaView PessoaView { get; set; }
 
-
         public PesquisarPessoaCommand(ObservableCollection<Pessoa> pessoas, PessoaView pessoaView)
         {
             Pessoas = pessoas;

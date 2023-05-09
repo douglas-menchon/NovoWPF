@@ -3,6 +3,8 @@ using NovoWPF.View;
 using NovoWPF.ViewModel.Commands;
 using NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido;
 using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace NovoWPF.ViewModel
@@ -46,17 +48,42 @@ namespace NovoWPF.ViewModel
 
         public void VerificaIdListaPessoa()
         {
+            try
+            {
             if (Pessoas.Count < 1)
                 IdPessoaLista = 1;
             else
                 IdPessoaLista = Pessoas.Count + 1;
+
+            }
+            catch
+            {
+                 IdPessoaLista = 1;
+            }
         }
         public void VerificaIdListaPedido()
         {
+            try
+            {
             if (Pedidos.Count < 1)
                 IdPedidoLista = 1;
             else
                 IdPedidoLista = Pedidos.Count + 1;
+
+            }
+            catch
+            {
+                IdPessoaLista = 1;
+            }
+        }
+
+        public void AceitarApenasNumeros(TextBox textBox)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Digite apenas números");
+                textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
+            }
         }
     }
 }
