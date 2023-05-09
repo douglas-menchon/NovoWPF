@@ -25,13 +25,10 @@ namespace NovoWPF.ViewModel
 
         public ProdutoViewModel()
         {
-
         }
 
         public ProdutoViewModel(ProdutoView produtoView, ObservableCollection<Produto> produtos)
         {
-            
-
             produtoView.dataGridProduto.ItemsSource = produtos;
             VerificarProdutoId(produtos);
             AbrirEditarProduto = new AbrirEditarProdutoCommand(produtos, produtoView);
@@ -45,7 +42,6 @@ namespace NovoWPF.ViewModel
                 produtoView.minimoTB.Text = "0";
                 produtoView.maximoTB.Text = "9999999";
             }
-
         }
 
         public void VerificarProdutoId(ObservableCollection<Produto> produtos)
@@ -57,15 +53,6 @@ namespace NovoWPF.ViewModel
             else
             {
                 IdProdutoLista = produtos.Count + 1;
-            }
-        }
-
-        public  void AceitarApenasNumeros(TextBox textBox)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, "[^0-9]")) //LEMBRAR
-            {
-                MessageBox.Show("Digite apenas números");
-                textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
             }
         }
     }

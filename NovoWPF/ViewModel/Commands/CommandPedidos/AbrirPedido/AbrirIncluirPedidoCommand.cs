@@ -31,7 +31,7 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido
         }
 
         public override void Execute(object parameter)
-        {
+        { //aqui
             InserirPedidoView inserirPedidoView = new InserirPedidoView();
             inserirPedidoView.DataContext = new InserirPedidoViewModel(inserirPedidoView, Pedidos, Produtos);
 

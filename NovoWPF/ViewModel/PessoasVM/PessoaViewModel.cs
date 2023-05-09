@@ -23,18 +23,18 @@ namespace NovoWPF.ViewModel
         {
 
         }
-        
+
         public PessoaViewModel(PessoaView pessoaView, ObservableCollection<Pessoa> pessoas, ObservableCollection<Pedido> pedidos, ObservableCollection<Produto> produtos)
         {
             Pedidos = pedidos;
             pessoaView.dataGridPessoa.ItemsSource = pessoas;
             VerificaIdListaPessoa(pessoas);
-            AbrirEditarPessoa       = new AbrirEditarPessoaCommand(pessoas, pessoaView);
-            AbrirCadastroPessoa     = new AbrirCadastroPessoaCommand(pessoas, this);
-            DeletarPessoa           = new DeletarPessoaCommand(pessoas, pessoaView);
-            PesquisarPessoa         = new PesquisarPessoaCommand(pessoas, pessoaView);
+            AbrirEditarPessoa = new AbrirEditarPessoaCommand(pessoas, pessoaView);
+            AbrirCadastroPessoa = new AbrirCadastroPessoaCommand(pessoas, this);
+            DeletarPessoa = new DeletarPessoaCommand(pessoas, pessoaView);
+            PesquisarPessoa = new PesquisarPessoaCommand(pessoas, pessoaView);
             CancelarPesquisarPessoa = new CancelarPesquisarPessoaCommand(pessoas, pessoaView);
-            AbrirIncluirPedido      = new AbrirIncluirPedidoCommand(pessoas, pessoaView, pedidos, this, produtos);
+            AbrirIncluirPedido = new AbrirIncluirPedidoCommand(pessoas, pessoaView, pedidos, this, produtos);
         }
 
         public void VerificaIdListaPessoa(ObservableCollection<Pessoa> pessoas)
