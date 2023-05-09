@@ -7,7 +7,7 @@ namespace NovoWPF.RegraDeNegocio
     {
         public int IdPedido { get; set; }
         public Pessoa Pessoas { get; set; }
-        public string NomePessoa { get; set; } // aqui
+        public string NomePessoa { get; set; } 
         public List<Produto> Produtos { get; set; }
         public double ValorTotal { get; set; }
         public string DataVenda { get; set; }

@@ -21,7 +21,7 @@ namespace NovoWPF.ViewModel.Commands
         }
         public override void Execute(object parameter)
         {
-            ControleXML controleXML = new ControleXML(Pessoas);
+            ControleXML controleXML = new ControleXML();
             if (CadastroPessoaView.CPFBox.Text != "" && CadastroPessoaView.nomePessoaBox.Text != "")
             {
                 if (Pessoa.ValidaCpf(CadastroPessoaView.CPFBox.Text))

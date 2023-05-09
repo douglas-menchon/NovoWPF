@@ -14,21 +14,14 @@ namespace NovoWPF.Comuns
 {
     public class ControleXML
     {
-        public ObservableCollection<Pessoa> Pessoas { get; set; }
         public ObservableCollection<Produto> Produtos { get; set; }
-        public PessoaViewModel PessoaViewModel { get; set; }
-        public ProdutoViewModel ProdutoViewModel { get; set; }
+        public ObservableCollection<Pessoa> Pessoas { get; set; }
+        public int IdProdutoLista { get; set; }
+        public int IdPessoaLista { get; set; }
 
-        public ControleXML(ObservableCollection<Produto> produtos)
+        public ControleXML()
         {
-            Produtos = produtos;
         }
-
-        public ControleXML(ObservableCollection<Pessoa> pessoas)
-        {
-            Pessoas = pessoas;
-        }
-
 
         public void ExportarXmlProduto(ObservableCollection<Produto> Produtos, int idProdutoLista)
         {
@@ -64,23 +57,26 @@ namespace NovoWPF.Comuns
 
         /*public void ExportarXmlProduto()
         {
-            var arquivoXml = @"C:\\Produtos.xml";
+            var arquivoXml = @"C:\\Pedidos.xml";
             using (var stream = new StreamWriter(arquivoXml))
             {
-                XmlSerializer serializador = new XmlSerializer(typeof(ObservableCollection<Produto>));
+                XmlSerializer serializador = new XmlSerializer(typeof(ObservableCollection<Pedido>));
                 serializador.Serialize(stream, Produtos);
             }
         }*/
 
-        public void LerXmlProduto()
+        public void LerXmlProduto(int idProdutoLista, ObservableCollection<Produto> produtos)
         {
-            TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
-            string fileName = "C:\\Pessoas.xml";
+            Produtos = produtos;
+            IdProdutoLista = idProdutoLista;
+
+            string fileName = "C:\\Produtos.xml";
+
             try
             {
                 var xml = XElement.Load(fileName);
 
-                telaProjetoViewModel.IdProdutoLista = int.Parse(xml.Element("IdProdutoLista").Value);
+                IdProdutoLista = int.Parse(xml.Element("IdProdutoLista").Value);
 
                 foreach (var element in xml.Elements("Produto"))
                 {
@@ -91,8 +87,38 @@ namespace NovoWPF.Comuns
                         Codigo = element.Element("Codigo").Value,
                         Valor = double.Parse(element.Element("Valor").Value),
                     };
-
                     Produtos.Add(produtoLerXml);
+                }
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        public void LerXmlPessoa(int idPessoaLista, ObservableCollection<Pessoa> pessoas)
+        {
+            Pessoas = pessoas;
+            IdPessoaLista = idPessoaLista;
+
+            string fileName = "C:\\Pessoas.xml";
+
+            try
+            {
+                var xml = XElement.Load(fileName);
+
+                IdPessoaLista = int.Parse(xml.Element("IdPessoaLista").Value);
+
+                foreach (var element in xml.Elements("Pessoa"))
+                {
+                    var pessoa = new Pessoa
+                    {
+                        IdPessoa = int.Parse(element.Element("IdPessoa").Value),
+                        NomePessoa = element.Element("NomePessoa").Value,
+                        CPF = element.Element("CPF").Value,
+                        Endereco = element.Element("Endereco").Value,
+                    };
+                    Pessoas.Add(pessoa);
                 }
             }
             catch

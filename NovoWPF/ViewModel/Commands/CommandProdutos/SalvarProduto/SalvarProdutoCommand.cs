@@ -24,7 +24,7 @@ namespace NovoWPF.ViewModel.Commands
 
         public override void Execute(object parameter)
         {
-            ControleXML controleXML = new ControleXML(Produtos);
+            ControleXML controleXML = new ControleXML();
 
             if (CadastroProdutoView.nomeProdutoBox.Text != ""  && CadastroProdutoView.codigoProdutoBox.Text != "" 
                 && CadastroProdutoView.valorProdutoBox.Text != "")
