@@ -22,7 +22,7 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.PesquisaStatus
         }
         public override void Execute(object parameter)
         {
-            var dado = Pedidos.Where(p => p.Status == (Status)3 && p.NomePessoa == PedidoView.txtNomePedido.Text).ToList();
+            var dado = Pedidos.Where(p => p.Status == (Status)4 && p.NomePessoa == PedidoView.txtNomePedido.Text).ToList();
 
             if (dado.Count > 0)
                 PedidoView.dataGridPedidos.ItemsSource = dado;

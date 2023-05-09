@@ -8,7 +8,7 @@
         xmlns:local2="clr-namespace:NovoWPF.ViewModel"
         xmlns:local3="clr-namespace:NovoWPF.RegraDeNegocio"
         mc:Ignorable="d"
-        Title="InserirPedidoView" Height="500" Width="900">
+        Title="InserirPedidoView" Height="500" Width="900" local2:WindowCloser.EnableWindowClosing="True" WindowStartupLocation="CenterScreen">
     <Grid>
       <StackPanel>
         <TextBlock FontSize="20" Grid.Column="0" HorizontalAlignment="Left">INSERIR PEDIDO</TextBlock>
@@ -66,7 +66,7 @@
                 </ListBox.ItemContainerStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid Width="350">
+                        <Grid Width="280">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1.5*" />
                                 <ColumnDefinition Width="*"/>

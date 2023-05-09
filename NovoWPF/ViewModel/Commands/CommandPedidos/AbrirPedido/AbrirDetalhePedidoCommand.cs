@@ -27,21 +27,30 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido
             PedidoView pedidoView = new PedidoView();
 
             dynamic data = PessoaView.dataGridPessoa.SelectedItem;
-            string indexData = data.NomePessoa;
-            var indexList = Pedidos.Where(p => p.NomePessoa == indexData).ToList();
-
-            if (indexList.Count > 0)
+            if(data != null)
             {
-                pedidoView.txtNomePedido.Text = indexData;
-                pedidoView.dataGridPedidos.ItemsSource = indexList;
-                pedidoView.DataContext = new DetalhePedidoViewModel(indexData, Pedidos, pedidoView);
-                pedidoView.Show();
+                string indexData = data.NomePessoa;
+                var indexList = Pedidos.Where(p => p.NomePessoa == indexData).ToList();
+
+                if (indexList.Count > 0)
+                {
+                    pedidoView.txtNomePedido.Text = indexData;
+                    pedidoView.dataGridPedidos.ItemsSource = indexList;
+                    pedidoView.DataContext = new DetalhePedidoViewModel(indexData, Pedidos, pedidoView);
+                    pedidoView.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum Pedido Encontrado");
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("Nenhum Pedido Encontrado");
+                MessageBox.Show("Nenhum Pessoa Selecionada");
                 return;
             }
+
         }
     }
 }

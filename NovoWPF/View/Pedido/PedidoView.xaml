@@ -5,27 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NovoWPF.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel>
         <Grid x:Name="gridPesquisaStatus">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width=".5*"/>
-                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="*"/>
+ 
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="NOME" x:Name="txtNomePedido" Visibility="Visible"/>
+            <TextBlock FontSize="20" Text="Nome:" Visibility="Visible" Margin="0 0 0 0"/>
+            <TextBlock FontSize="20" x:Name="txtNomePedido" Visibility="Visible" Margin="65 0 0 0"/>
 
-            <Button Grid.Column="0" Command="{Binding PesquisarTodos}" x:Name="btnPedidoTodos" Content="Todos os pedidos" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
-            <Button Grid.Column="1" Command="{Binding PesquisarPendente}" x:Name="btnPedidoPendente" Content="Pedidos pendentes" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
-            <Button Grid.Column="2" Command="{Binding PesquisarPago}" x:Name="btnPedidoPago" Content="Pedidos pagos" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
-            <Button Grid.Column="3" Command="{Binding PesquisarEntregue}" x:Name="btnPedidoEntregue" Content="Pedidos entregues" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
-        </Grid>
+            <Button Grid.Column="0" Command="{Binding PesquisarTodos}" x:Name="btnPedidoTodos" Content="Todos os pedidos" Height="20" Margin="0 0 5 0" HorizontalAlignment="Right"/>
+               
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                    <Button Command="{Binding PesquisarPendente}" x:Name="btnPedidoPendente" Content="Pedidos pendentes" Height="20" Margin="0 0 5 0" HorizontalAlignment="Right"/>
+                    <Button Command="{Binding PesquisarPago}" x:Name="btnPedidoPago" Content="Pedidos pagos" Height="20" Margin="0 0 5 0" HorizontalAlignment="Right"/>
+                    <Button Command="{Binding PesquisarEntregue}" x:Name="btnPedidoEntregue" Content="Pedidos entregues" Height="20" Margin="0 0 5 0" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </Grid>
 
         <DataGrid CanUserReorderColumns="False" CanUserResizeColumns="False" 
-                      x:Name="dataGridPedidos" Margin="0,0,0.2,0" Height="280" CanUserAddRows="False" 
+                      x:Name="dataGridPedidos" Margin="0 10 0 0" Height="280" CanUserAddRows="False" 
                       AutoGenerateColumns="False" CanUserDeleteRows="True" DataContext="{Binding Pedidos}">
 
             <DataGrid.Resources>
@@ -80,19 +83,19 @@
                 </DataGridTextColumn>                
             </DataGrid.Columns>
         </DataGrid>
-            <Grid Margin="10 0 0 10">
+            <Grid Margin="10 10 0 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="expandirPedido" Command="{Binding ExpandirPedido}" Grid.Column="0" Height="30" Width="90" HorizontalAlignment="Left" Content="Expandir" Background="DeepSkyBlue"/>
+                <Button x:Name="expandirPedido" Command="{Binding ExpandirPedido}" Grid.Column="0" Height="30" Width="90" HorizontalAlignment="Left" Content="Expandir Dados" Background="DeepSkyBlue"/>
 
-                <Button x:Name="btnMarcarEnviado" Command="{Binding MarcarEnviado}" Grid.Column="1" Height="30" Width="90"  HorizontalAlignment="Right" Content="Marcar Enviado" Background="Yellow"/>
-                <Button x:Name="btnMarcarRecebido" Command="{Binding MarcarRecebido}" Grid.Column="2" Height="30" Width="90" HorizontalAlignment="Right" Content="Marcar Recebido" Background="Lime"/>
-                <Button x:Name="btnMarcarPago" Command="{Binding MarcarPago}" Grid.Column="3" Height="30" Width="90" HorizontalAlignment="Right" Content="Marcar Pago" Background="Gray"/>
+                <Button x:Name="btnMarcarEnviado" Command="{Binding MarcarEnviado}" Grid.Column="1" Height="30" Width="90"  HorizontalAlignment="Right" Content="Marcar Enviado" Margin="0 0 10 0" Background="Yellow"/>
+                <Button x:Name="btnMarcarRecebido" Command="{Binding MarcarRecebido}" Grid.Column="2" Height="30" Width="102" HorizontalAlignment="Right" Content="Marcar Recebido" Margin="0 0 10 0" Background="Lime"/>
+                <Button x:Name="btnMarcarPago" Command="{Binding MarcarPago}" Grid.Column="3" Height="30" Width="90" HorizontalAlignment="Left" Content="Marcar Pago" Margin="0 0 10 0" Background="Gray"/>
             </Grid>
         </StackPanel>
     </Grid>
