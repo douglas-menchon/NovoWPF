@@ -23,18 +23,11 @@ namespace NovoWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<Produto> Produtos = new ObservableCollection<Produto>();
-        public ObservableCollection<Pessoa> Pessoas   = new ObservableCollection<Pessoa>();
-        public ObservableCollection<Pedido> Pedidos   = new ObservableCollection<Pedido>();
-
         public MainWindow()
         {
             InitializeComponent();
-            Produtos = new ObservableCollection<Produto>();
-            Pessoas = new ObservableCollection<Pessoa>();
-            Pedidos = new ObservableCollection<Pedido>();
-            DataContext = new PessoaViewModel(Pessoas, Pedidos);
-            DataContext = new ProdutoViewModel(Produtos);
+            DataContext = new PessoaViewModel();
+            DataContext = new ProdutoViewModel();
         }
     }
 }

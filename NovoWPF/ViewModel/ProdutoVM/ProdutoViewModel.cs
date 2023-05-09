@@ -27,22 +27,18 @@ namespace NovoWPF.ViewModel
         {
 
         }
-        public ProdutoViewModel(ObservableCollection<Produto> produtos)
-        {
-            Produtos = produtos;
-        }
 
-        public ProdutoViewModel(ProdutoView produtoView)
+        public ProdutoViewModel(ProdutoView produtoView, ObservableCollection<Produto> produtos)
         {
             
 
-            produtoView.dataGridProduto.ItemsSource = Produtos;
-            VerificarProdutoId();
-            AbrirEditarProduto = new AbrirEditarProdutoCommand(Produtos, produtoView);
-            AbrirCadastroProduto = new AbrirCadastroProdutoCommand(Produtos, this);
-            DeletarProduto = new DeletarProdutoCommand(Produtos, produtoView);
-            PesquisarProduto = new PesquisaProdutoCommand(Produtos, produtoView);
-            CancelarPesquisarProduto = new CancelarPesquisaProdutoCommand(Produtos, produtoView);
+            produtoView.dataGridProduto.ItemsSource = produtos;
+            VerificarProdutoId(produtos);
+            AbrirEditarProduto = new AbrirEditarProdutoCommand(produtos, produtoView);
+            AbrirCadastroProduto = new AbrirCadastroProdutoCommand(produtos, this);
+            DeletarProduto = new DeletarProdutoCommand(produtos, produtoView);
+            PesquisarProduto = new PesquisaProdutoCommand(produtos, produtoView);
+            CancelarPesquisarProduto = new CancelarPesquisaProdutoCommand(produtos, produtoView);
 
             if (produtoView.minimoTB.Text == "" || produtoView.maximoTB.Text == "")
             {
@@ -52,15 +48,15 @@ namespace NovoWPF.ViewModel
 
         }
 
-        public void VerificarProdutoId()
+        public void VerificarProdutoId(ObservableCollection<Produto> produtos)
         {
-            if (Produtos.Count < 1)
+            if (produtos.Count < 1)
             {
                 IdProdutoLista = 1;
             }
             else
             {
-                IdProdutoLista = Produtos.Count + 1;
+                IdProdutoLista = produtos.Count + 1;
             }
         }
 

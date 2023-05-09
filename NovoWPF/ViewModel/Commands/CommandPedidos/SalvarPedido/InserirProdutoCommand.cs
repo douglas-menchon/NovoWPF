@@ -4,6 +4,7 @@ using NovoWPF.View.Pedido;
 using NovoWPF.ViewModel.PedidosVM;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,25 +14,25 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.SalvarPedido
 {
     public class InserirProdutoCommand : CommandBase
     {
-        public ProdutoViewModel ProdutoViewModel { get; set; }
+        public ObservableCollection<Produto> Produtos { get; set; }
         public InserirPedidoView InserirPedidoView { get; set; }
         public InserirPedidoViewModel InserirPedidoViewModel { get; set; }
-        public InserirProdutoCommand(ProdutoViewModel produtoViewModel, InserirPedidoView inserirPedidoView, InserirPedidoViewModel inserirPedidoViewModel)
+        public InserirProdutoCommand(InserirPedidoView inserirPedidoView, InserirPedidoViewModel inserirPedidoViewModel, ObservableCollection<Produto> produtos)
         {
-            ProdutoViewModel = produtoViewModel;
             InserirPedidoView = inserirPedidoView;
             InserirPedidoViewModel = inserirPedidoViewModel;
+            Produtos = produtos;
         }
         public override void Execute(object parameter)
         {
-            var dadoProduto = ProdutoViewModel.Produtos.IndexOf(ProdutoViewModel.Produtos.Where(p => p.NomeProduto == InserirPedidoView.PedProdutosBox.Text).FirstOrDefault());
+            var dadoProduto = Produtos.IndexOf(Produtos.Where(p => p.NomeProduto == InserirPedidoView.PedProdutosBox.Text).FirstOrDefault());
 
 
             if (dadoProduto != -1 && InserirPedidoView.PedProdutosBox.Text != "" && InserirPedidoView.qntdProdPedBox.Text != "" && int.Parse(InserirPedidoView.qntdProdPedBox.Text) >= 1)
             {
-                InserirPedidoView.produtosListBox.Items.Add($"{InserirPedidoView.PedProdutosBox.Text}  Qntd: {InserirPedidoView.qntdProdPedBox.Text}   R$ {ProdutoViewModel.Produtos[dadoProduto].Valor}");
+                InserirPedidoView.produtosListBox.Items.Add($"{InserirPedidoView.PedProdutosBox.Text}  Qntd: {InserirPedidoView.qntdProdPedBox.Text}   R$ {Produtos[dadoProduto].Valor}");
 
-                InserirPedidoViewModel.ProdutosPedido.Add(new Produto(ProdutoViewModel.Produtos[dadoProduto].IdProduto, InserirPedidoView.PedProdutosBox.Text, ProdutoViewModel.Produtos[dadoProduto].Valor, int.Parse(InserirPedidoView.qntdProdPedBox.Text)));
+                InserirPedidoViewModel.ProdutosPedido.Add(new Produto(Produtos[dadoProduto].IdProduto, InserirPedidoView.PedProdutosBox.Text, Produtos[dadoProduto].Valor, int.Parse(InserirPedidoView.qntdProdPedBox.Text)));
             }
             else
             {

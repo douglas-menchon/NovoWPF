@@ -17,12 +17,11 @@ namespace NovoWPF.ViewModel.PedidosVM
         public List<Produto> ProdutosPedido { get; set; }
         public ICommand InserirProduto { get; }
         public ICommand SalvarPedido { get; }
-        public InserirPedidoViewModel(InserirPedidoView inserirPedidoView, ObservableCollection<Pedido> pedidos)
+        public InserirPedidoViewModel(InserirPedidoView inserirPedidoView, ObservableCollection<Pedido> pedidos, ObservableCollection<Produto> produtos)
         {
             ProdutosPedido = new List<Produto>();
-            ProdutoViewModel ProdutoViewModel = new ProdutoViewModel();
             PessoaViewModel PessoaViewModel = new PessoaViewModel();
-            InserirProduto = new InserirProdutoCommand(ProdutoViewModel, inserirPedidoView, this);
+            InserirProduto = new InserirProdutoCommand(inserirPedidoView, this, produtos);
             SalvarPedido = new SalvarPedidoCommand(inserirPedidoView, this, PessoaViewModel);
         }
 
