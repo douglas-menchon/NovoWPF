@@ -18,15 +18,15 @@
 
             <TextBlock Text="NOME" x:Name="txtNomePedido" Visibility="Visible"/>
 
-            <Button Grid.Column="0" x:Name="btnPedidoTodos" Content="Todos os pedidos" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
-            <Button Grid.Column="1" x:Name="btnPedidoPendente" Content="Pedidos pendentes" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
-            <Button Grid.Column="2" x:Name="btnPedidoPago" Content="Pedidos pagos" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
-            <Button Grid.Column="3" x:Name="btnPedidoEntregue" Content="Pedidos entregues" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
+            <Button Grid.Column="0" Command="{Binding PesquisarTodos}" x:Name="btnPedidoTodos" Content="Todos os pedidos" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
+            <Button Grid.Column="1" Command="{Binding PesquisarPendente}" x:Name="btnPedidoPendente" Content="Pedidos pendentes" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
+            <Button Grid.Column="2" Command="{Binding PesquisarPago}" x:Name="btnPedidoPago" Content="Pedidos pagos" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
+            <Button Grid.Column="3" Command="{Binding PesquisarEntregue}" x:Name="btnPedidoEntregue" Content="Pedidos entregues" Height="20" VerticalAlignment="Top" Margin="0 0 5 0"  HorizontalAlignment="Right"/>
         </Grid>
 
         <DataGrid CanUserReorderColumns="False" CanUserResizeColumns="False" 
                       x:Name="dataGridPedidos" Margin="0,0,0.2,0" Height="280" CanUserAddRows="False" 
-                      AutoGenerateColumns="False" CanUserDeleteRows="True" DataContext="{Binding pedidos}">
+                      AutoGenerateColumns="False" CanUserDeleteRows="True" DataContext="{Binding Pedidos}">
 
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -41,14 +41,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" x:Name="IdPedidoData" IsReadOnly="True" 
                                         Binding="{Binding IdPedido}" Width=".5*"/>
-
-                <DataGridTemplateColumn Header="Produtos">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="expandirPedido" Content="Expandir" Background="DeepSkyBlue"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+        
 
                 <DataGridTextColumn Header="Data" IsReadOnly="True" 
                                         Binding="{Binding DataVenda}" Width="*">
@@ -68,11 +61,16 @@
                     </DataGridTextColumn.EditingElementStyle>
                 </DataGridTextColumn>
 
-                <DataGridComboBoxColumn Header="Status" IsReadOnly="True" x:Name="StatusDetalhes" SelectedItemBinding="{Binding Status, Mode=TwoWay}"
-                                       Width="*">
-                </DataGridComboBoxColumn>
+                    <DataGridTextColumn Header="Pagamento" IsReadOnly="True" 
+                                        Binding="{Binding Status}" Width="*">
+                        <DataGridTextColumn.EditingElementStyle>
+                            <Style TargetType="TextBox">
+                                <Setter Property="CharacterCasing" Value="Upper"/>
+                            </Style>
+                        </DataGridTextColumn.EditingElementStyle>
+                    </DataGridTextColumn>
 
-                <DataGridTextColumn Header="Valor total" IsReadOnly="True" 
+                    <DataGridTextColumn Header="Valor total" IsReadOnly="True" 
                                         Binding="{Binding ValorTotal, StringFormat=N2}" Width="*">
                     <DataGridTextColumn.EditingElementStyle>
                         <Style TargetType="TextBox">
@@ -87,11 +85,14 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="btnMarcarEnviado"  Grid.Column="0" Height="30" Width="90"  HorizontalAlignment="Right" Content="Marcar Enviado" Background="Yellow"/>
-                <Button x:Name="btnMarcarRecebido"   Grid.Column="1" Height="30" Width="90" HorizontalAlignment="Right" Content="Marcar Recebido" Background="Lime"/>
-                <Button x:Name="btnMarcarPago"  Grid.Column="2" Height="30" Width="90" HorizontalAlignment="Right" Content="Marcar Pago" Background="Gray"/>
+                <Button x:Name="expandirPedido" Command="{Binding ExpandirPedido}" Grid.Column="0" Height="30" Width="90" HorizontalAlignment="Left" Content="Expandir" Background="DeepSkyBlue"/>
+
+                <Button x:Name="btnMarcarEnviado" Command="{Binding MarcarEnviado}" Grid.Column="1" Height="30" Width="90"  HorizontalAlignment="Right" Content="Marcar Enviado" Background="Yellow"/>
+                <Button x:Name="btnMarcarRecebido" Command="{Binding MarcarRecebido}" Grid.Column="2" Height="30" Width="90" HorizontalAlignment="Right" Content="Marcar Recebido" Background="Lime"/>
+                <Button x:Name="btnMarcarPago" Command="{Binding MarcarPago}" Grid.Column="3" Height="30" Width="90" HorizontalAlignment="Right" Content="Marcar Pago" Background="Gray"/>
             </Grid>
         </StackPanel>
     </Grid>

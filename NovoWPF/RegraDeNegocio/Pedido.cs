@@ -27,7 +27,7 @@ namespace NovoWPF.RegraDeNegocio
             Produtos = produtos.ConvertAll(x => new Produto { IdProduto = x.IdProduto, NomeProduto = x.NomeProduto, Valor = x.Valor, QntdProduto = x.QntdProduto });
 
             this.IdPedido = id;
-            this.Pessoas.NomePessoa = nomePessoa;
+            this.NomePessoa = nomePessoa;
             this.ValorTotal = valorTotal;
             this.DataVenda = DateTime.Now.ToString("dd-MM-yyyy");
             this.FormaPagamento = (FormaPagamento)formaPagamento;

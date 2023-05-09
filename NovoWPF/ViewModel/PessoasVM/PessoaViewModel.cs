@@ -9,11 +9,11 @@ namespace NovoWPF.ViewModel
 {
     public class PessoaViewModel : ViewModelBase
     {
-        public ObservableCollection<Pedido> Pedidos = new ObservableCollection<Pedido>();
         public int IdPessoaLista { get; set; }
         public int IdPedidoLista { get; set; }
         public ICommand AbrirCadastroPessoa { get; }
         public ICommand AbrirIncluirPedido { get; }
+        public ICommand AbrirDetalhePedido { get; }
         public ICommand AbrirEditarPessoa { get; }
         public ICommand DeletarPessoa { get; }
         public ICommand PesquisarPessoa { get; }
@@ -27,15 +27,17 @@ namespace NovoWPF.ViewModel
             ObservableCollection<Pedido> pedidos, ObservableCollection<Produto> produtos, int idPessoaLista)
         {
             IdPessoaLista = idPessoaLista;
-            Pedidos = pedidos;
             pessoaView.dataGridPessoa.ItemsSource = pessoas;
             VerificaIdListaPessoa(pessoas);
+            AbrirEditarPessoa = new AbrirEditarPessoaCommand(pessoas, pessoaView);
+            AbrirCadastroPessoa = new AbrirCadastroPessoaCommand(pessoas, this);
             AbrirEditarPessoa = new AbrirEditarPessoaCommand(pessoas, pessoaView, this);
             AbrirCadastroPessoa = new AbrirCadastroPessoaCommand(pessoas, this, IdPessoaLista);
             DeletarPessoa = new DeletarPessoaCommand(pessoas, pessoaView);
             PesquisarPessoa = new PesquisarPessoaCommand(pessoas, pessoaView);
             CancelarPesquisarPessoa = new CancelarPesquisarPessoaCommand(pessoas, pessoaView);
             AbrirIncluirPedido = new AbrirIncluirPedidoCommand(pessoas, pessoaView, pedidos, this, produtos);
+            AbrirDetalhePedido = new AbrirDetalhePedidoCommand(pessoaView, pedidos);
         }
 
         public void VerificaIdListaPessoa(ObservableCollection<Pessoa> pessoas)
@@ -45,6 +47,7 @@ namespace NovoWPF.ViewModel
             else
                 IdPessoaLista = pessoas.Count + 1;
         }
+
         public void VerificaIdListaPessoa(ObservableCollection<Pedido> pedidos)
         {
             if (pedidos.Count < 1)

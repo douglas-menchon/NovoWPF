@@ -33,6 +33,8 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.SalvarPedido
                 InserirPedidoView.produtosListBox.Items.Add($"{InserirPedidoView.PedProdutosBox.Text}  Qntd: {InserirPedidoView.qntdProdPedBox.Text}   R$ {Produtos[dadoProduto].Valor}");
 
                 InserirPedidoViewModel.ProdutosPedido.Add(new Produto(Produtos[dadoProduto].IdProduto, InserirPedidoView.PedProdutosBox.Text, Produtos[dadoProduto].Valor, int.Parse(InserirPedidoView.qntdProdPedBox.Text)));
+                InserirPedidoView.PedProdutosBox.Text = "";
+                InserirPedidoView.qntdProdPedBox.Text = "";
             }
             else
             {
