@@ -22,9 +22,7 @@ namespace NovoWPF.ViewModel.PedidosVM
             ProdutosPedido = new List<Produto>();
             PessoaViewModel PessoaViewModel = new PessoaViewModel();
             InserirProduto = new InserirProdutoCommand(inserirPedidoView, this, produtos);
-            SalvarPedido = new SalvarPedidoCommand(inserirPedidoView, this, PessoaViewModel);
+            SalvarPedido = new SalvarPedidoCommand(inserirPedidoView, this, PessoaViewModel, pedidos);
         }
-
-
     }
 }

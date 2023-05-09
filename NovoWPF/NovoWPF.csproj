@@ -83,7 +83,16 @@
     <Compile Include="Comuns\EnumBindingSourceExtension.cs" />
     <Compile Include="Comuns\ICloseWindows.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\AbrirPedido\AbrirDetalhePedidoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandPedidos\AbrirPedido\AbrirIncluirPedidoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\AlterarStatus\MarcarEnviadoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\AlterarStatus\MarcarPagoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\AlterarStatus\MarcarRecebidoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\ExpandirPedido\ExpandirPedidoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\PesquisaStatus\PesquisarEntregueCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\PesquisaStatus\PesquisarPagoCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\PesquisaStatus\PesquisarPendenteCommand.cs" />
+    <Compile Include="ViewModel\Commands\CommandPedidos\PesquisaStatus\PesquisarTodosCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandPedidos\SalvarPedido\InserirProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandPedidos\SalvarPedido\SalvarPedidoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\AbrirTelasProduto\AbrirEditarProdutoCommand.cs" />
@@ -91,7 +100,9 @@
     <Compile Include="ViewModel\Commands\CommandProdutos\EditarProduto\EditarProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\PesquisaProduto\CancelarPesquisaProdutoCommand.cs" />
     <Compile Include="ViewModel\Commands\CommandProdutos\PesquisaProduto\PesquisaProdutoCommand.cs" />
+    <Compile Include="ViewModel\PedidosVM\DetalhePedidoViewModel.cs" />
     <Compile Include="ViewModel\PedidosVM\InserirPedidoViewModel.cs" />
+    <Compile Include="ViewModel\PedidosVM\PedidoExpandidoViewModel.cs" />
     <Compile Include="ViewModel\PessoasVM\CadastroPessoaViewModel.cs" />
     <Compile Include="ViewModel\FecharTelas\CloseWindow.cs" />
     <Compile Include="ViewModel\Commands\CommandPessoas\AbrirTelasPessoa\AbrirCadastroPessoaCommand.cs" />
@@ -221,5 +232,6 @@
   <ItemGroup>
     <Resource Include="Images\X.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

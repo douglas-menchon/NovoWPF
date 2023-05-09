@@ -4,6 +4,7 @@ using NovoWPF.View.Pedido;
 using NovoWPF.ViewModel.PedidosVM;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,13 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.SalvarPedido
         public InserirPedidoView InserirPedidoView { get; set; }
         public InserirPedidoViewModel InserirPedidoViewModel { get; set; }
         public PessoaViewModel PessoaViewModel { get; set; }
-        public SalvarPedidoCommand(InserirPedidoView inserirPedidoView, InserirPedidoViewModel inserirPedidoViewModel, PessoaViewModel pessoaViewModel)
+        public ObservableCollection<Pedido> Pedidos { get; set; }
+        public SalvarPedidoCommand(InserirPedidoView inserirPedidoView, InserirPedidoViewModel inserirPedidoViewModel, PessoaViewModel pessoaViewModel, ObservableCollection<Pedido> pedidos)
         {
             InserirPedidoView = inserirPedidoView;
             InserirPedidoViewModel = inserirPedidoViewModel;
             PessoaViewModel = pessoaViewModel;
+            Pedidos = pedidos;
         }
         public override void Execute(object parameter)
         {
@@ -37,13 +40,13 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.SalvarPedido
                     valorPedido += valorPorQntd;
                 }
 
-                PessoaViewModel.Pedidos.Add(new Pedido(PessoaViewModel.IdPedidoLista, InserirPedidoView.nomePedidoPessoaBox.Text.ToUpper(), InserirPedidoViewModel.ProdutosPedido, valorPedido, Convert.ToInt32(InserirPedidoView.FormaPagPedidoBox.SelectedValue), 0, PessoaViewModel.IdPedidoLista + 1));
+                Pedidos.Add(new Pedido(PessoaViewModel.IdPedidoLista, InserirPedidoView.nomePedidoPessoaBox.Text.ToUpper(), InserirPedidoViewModel.ProdutosPedido, valorPedido, Convert.ToInt32(InserirPedidoView.FormaPagPedidoBox.SelectedValue), 0, PessoaViewModel.IdPedidoLista + 1));
                              
                 MessageBox.Show("Cadastro efetuado com sucesso");
 
                 PessoaViewModel.IdPedidoLista++;
                 InserirPedidoViewModel.ProdutosPedido.Clear();
-
+                InserirPedidoView.Visibility = Visibility.Collapsed;
             }
             else
             {

@@ -10,7 +10,7 @@
         <Grid>
             <StackPanel>
                 <Grid>
-                    <DataGrid x:Name="dataGridPedidoExpandido" ItemsSource="{Binding pedidos}" Visibility="Collapsed" Height="150" AutoGenerateColumns="False" CanUserAddRows="False" >
+                    <DataGrid x:Name="dataGridPedidoExpandido" ItemsSource="{Binding Pedidos}" Height="150" AutoGenerateColumns="False" CanUserAddRows="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Produto" 
                                                     Binding="{Binding NomeProduto}" Width="*" />

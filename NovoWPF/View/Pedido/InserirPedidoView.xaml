@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:NovoWPF.View"
         xmlns:local1="clr-namespace:NovoWPF.Comuns"
         xmlns:local2="clr-namespace:NovoWPF.ViewModel"
+        xmlns:local3="clr-namespace:NovoWPF.RegraDeNegocio"
         mc:Ignorable="d"
         Title="InserirPedidoView" Height="500" Width="900">
     <Grid>
@@ -85,7 +86,7 @@
             <TextBox Visibility="Visible" x:Name="DataPedidoBox" IsReadOnly="True" Grid.Column="1" Grid.Row="5" Width="100" HorizontalAlignment="Left" Margin="0 0 30 10"/>
 
             <TextBlock Visibility="Visible" x:Name="FormaPagPedidoBlock" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Text="Forma de Pagamento*"  Margin="0 0 10 0" />
-            <ComboBox  Visibility="Visible" x:Name="FormaPagPedidoBox"  Grid.Column="1" Grid.Row="6" Width="120" HorizontalAlignment="Left" Margin="0 0 30 10" />
+            <ComboBox  Visibility="Visible" x:Name="FormaPagPedidoBox" ItemsSource="{Binding Source={local1:EnumBindingSource {x:Type local3:FormaPagamento}}}" Grid.Column="1" Grid.Row="6" Width="120" HorizontalAlignment="Left" Margin="0 0 30 10" />
 
             <Button Visibility="Visible" x:Name="btnCancelarPedido" Command="{Binding CloseCommand}" Grid.Row="7" Grid.Column="0" 
                         Width="70" Content="Cancelar" HorizontalAlignment="Right" Background="Red" 
