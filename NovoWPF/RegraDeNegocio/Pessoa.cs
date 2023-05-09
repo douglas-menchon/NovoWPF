@@ -61,16 +61,31 @@ namespace NovoWPF.RegraDeNegocio
             }
         }
 
+        private int _idPessoaLista;
+        public int IdPessoaLista
+        {
+            get
+            {
+                return _idPessoaLista;
+            }
+            set
+            {
+                _idPessoaLista = value;
+                OnPropertyChanged("IdPessoaLista");
+            }
+        }
+
         public Pessoa()
         {
 
         }
-        public Pessoa(int id, string nome, string cpf, string endereco)
+        public Pessoa(int id, string nome, string cpf, string endereco, int idPessoaLista)
         {
             IdPessoa = id;
             NomePessoa = nome;
             CPF = cpf;
             Endereco = endereco;
+            IdPessoaLista = idPessoaLista;
         }
 
         public Pessoa(Pessoa pessoa)

@@ -1,4 +1,5 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.Comuns;
 using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 using System.Collections.ObjectModel;
@@ -20,6 +21,7 @@ namespace NovoWPF.ViewModel.Commands
         }
         public override void Execute(object parameter)
         {
+            ControleXML controleXML = new ControleXML(Pessoas);
             if (CadastroPessoaView.CPFBox.Text != "" && CadastroPessoaView.nomePessoaBox.Text != "")
             {
                 if (Pessoa.ValidaCpf(CadastroPessoaView.CPFBox.Text))
@@ -27,11 +29,13 @@ namespace NovoWPF.ViewModel.Commands
                     Pessoas.Add(new Pessoa(int.Parse(CadastroPessoaView.idPessoaBox.Text)
                                                    , CadastroPessoaView.nomePessoaBox.Text.ToUpper()
                                                    , CadastroPessoaView.CPFBox.Text
-                                                   , CadastroPessoaView.EnderecoBox.Text.ToUpper()));
+                                                   , CadastroPessoaView.EnderecoBox.Text.ToUpper()
+                                                   , PessoaViewModel.IdPessoaLista));
 
                     MessageBox.Show($"Cliente {CadastroPessoaView.nomePessoaBox.Text} cadastrado com sucesso");
                     PessoaViewModel.IdPessoaLista++;
                     CadastroPessoaView.Visibility = Visibility.Collapsed;
+                    controleXML.ExportarXmlPessoa(Pessoas, PessoaViewModel.IdPessoaLista);
                 }
                 else
                 {

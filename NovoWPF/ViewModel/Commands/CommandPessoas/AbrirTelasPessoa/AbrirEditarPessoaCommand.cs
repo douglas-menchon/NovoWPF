@@ -14,18 +14,21 @@ namespace NovoWPF.ViewModel.Commands
     public class AbrirEditarPessoaCommand : CommandBase
     {
         public ObservableCollection<Pessoa> Pessoas { get; set; }
+        public PessoaViewModel PessoaViewModel { get; set; }
         public PessoaView PessoaView { get; set; }
+        public int IdPessoaLista { get; set; }
 
-        public AbrirEditarPessoaCommand(ObservableCollection<Pessoa> pessoas, PessoaView pessoaView)
+        public AbrirEditarPessoaCommand(ObservableCollection<Pessoa> pessoas, PessoaView pessoaView, PessoaViewModel pessoaViewModel )
         {
             Pessoas = pessoas;
             PessoaView = pessoaView;
+            PessoaViewModel = pessoaViewModel;
         }
 
         public override void Execute(object parameter)
         {
             CadastroPessoaView cadastroPessoaView = new CadastroPessoaView();
-            cadastroPessoaView.DataContext = new CadastroPessoaViewModel(Pessoas, cadastroPessoaView);
+            cadastroPessoaView.DataContext = new CadastroPessoaViewModel(Pessoas, cadastroPessoaView, PessoaViewModel);
 
             dynamic data = PessoaView.dataGridPessoa.SelectedItem;
             if (data != null)

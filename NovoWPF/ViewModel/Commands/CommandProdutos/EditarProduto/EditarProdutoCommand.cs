@@ -1,4 +1,5 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.Comuns;
 using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 using System;
@@ -15,16 +16,18 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.EditarProduto
     {
         public ObservableCollection<Produto> Produtos { get; set; }
         private CadastroProdutoView CadastroProdutoView { get; set; }
+        public ProdutoViewModel ProdutoViewModel { get; set; }
 
-
-        public EditarProdutoCommand(ObservableCollection<Produto> produtos, CadastroProdutoView cadastroProdutoView)
+        public EditarProdutoCommand(ObservableCollection<Produto> produtos, CadastroProdutoView cadastroProdutoView, ProdutoViewModel produtoViewModel)
         {
             Produtos = produtos;
             CadastroProdutoView = cadastroProdutoView;
+            ProdutoViewModel = produtoViewModel;
         }
 
         public override void Execute(object parameter)
         {
+            ControleXML controleXML = new ControleXML(Produtos);
             if (CadastroProdutoView.nomeProdutoBox.Text != "" && CadastroProdutoView.codigoProdutoBox.Text != "" && CadastroProdutoView.valorProdutoBox.Text != "")
             {
 
@@ -43,6 +46,8 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.EditarProduto
                 MessageBox.Show($"Produto: {CadastroProdutoView.nomeProdutoBox.Text} editado com sucesso");
           
                 CadastroProdutoView.Visibility = Visibility.Collapsed;
+                controleXML.ExportarXmlProduto(Produtos, ProdutoViewModel.IdProdutoLista);
+
             }
             else
             {

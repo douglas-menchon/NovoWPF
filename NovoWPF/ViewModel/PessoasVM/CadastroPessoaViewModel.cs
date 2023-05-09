@@ -15,12 +15,9 @@ namespace NovoWPF.ViewModel
         public CadastroPessoaViewModel(ObservableCollection<Pessoa> pessoas, CadastroPessoaView cadastro, PessoaViewModel pessoaViewModel)
         {
             SalvarPessoa = new SalvaPessoaCommand(pessoas, cadastro, pessoaViewModel);
+            EditarPessoa = new EditarPessoaCommand(pessoas, cadastro, pessoaViewModel);
         }     
 
-        public CadastroPessoaViewModel(ObservableCollection<Pessoa> pessoas, CadastroPessoaView cadastro)
-        {
-            EditarPessoa = new EditarPessoaCommand(pessoas, cadastro);
-        }
 
         public CadastroPessoaViewModel()
         {

@@ -1,8 +1,11 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.Comuns;
 using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
+using System.Xml.Linq;
 
 namespace NovoWPF.ViewModel.Commands
 {
@@ -10,9 +13,8 @@ namespace NovoWPF.ViewModel.Commands
     {
         public ObservableCollection<Produto> Produtos { get; set; }
         public CadastroProdutoView CadastroProdutoView { get; set; }
-        public CadastroProdutoViewModel CadastroProdutoViewModel { get; set; }
-        public int IdListaProduto { get; set; }
         public ProdutoViewModel ProdutoViewModel { get; set; }
+
         public SalvarProdutoCommand(ObservableCollection<Produto> produtos, CadastroProdutoView cadastroProdutoView, ProdutoViewModel produtoViewModel)
         {
             Produtos = produtos;
@@ -22,10 +24,9 @@ namespace NovoWPF.ViewModel.Commands
 
         public override void Execute(object parameter)
         {
+            ControleXML controleXML = new ControleXML(Produtos);
 
-            CadastroProdutoViewModel cadastroPessoaViewModel = new CadastroProdutoViewModel();
-
-            if(CadastroProdutoView.nomeProdutoBox.Text != ""  && CadastroProdutoView.codigoProdutoBox.Text != "" 
+            if (CadastroProdutoView.nomeProdutoBox.Text != ""  && CadastroProdutoView.codigoProdutoBox.Text != "" 
                 && CadastroProdutoView.valorProdutoBox.Text != "")
             {
                 double valor = 0;
@@ -33,15 +34,17 @@ namespace NovoWPF.ViewModel.Commands
                 {
                     valor = double.Parse(CadastroProdutoView.valorProdutoBox.Text);
                 }
-
+                
                 Produtos.Add(new Produto(int.Parse(CadastroProdutoView.idProdutoBox.Text)
                                                 , CadastroProdutoView.nomeProdutoBox.Text
                                                 , CadastroProdutoView.codigoProdutoBox.Text
-                                                , valor));
+                                                , valor
+                                                , ProdutoViewModel.IdProdutoLista));
 
                 MessageBox.Show($"Produto {CadastroProdutoView.nomeProdutoBox.Text} cadastrado com sucesso");
                 ProdutoViewModel.IdProdutoLista++;
                 CadastroProdutoView.Visibility = Visibility.Collapsed;
+                controleXML.ExportarXmlProduto(Produtos, ProdutoViewModel.IdProdutoLista);
             }
             else
             {
