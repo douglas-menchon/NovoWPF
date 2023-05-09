@@ -9,8 +9,7 @@ namespace NovoWPF.ViewModel
 {
     public class PessoaViewModel : ViewModelBase
     {
-        public ObservableCollection<Pessoa> Pessoas { get; set; }
-        public ObservableCollection<Pedido> Pedidos { get; set; }
+        public ObservableCollection<Pedido> Pedidos = new ObservableCollection<Pedido>();
         public int IdPessoaLista { get; set; }
         public int IdPedidoLista { get; set; }
         public ICommand AbrirCadastroPessoa { get; }
@@ -24,39 +23,33 @@ namespace NovoWPF.ViewModel
         {
 
         }
-
-        public PessoaViewModel(ObservableCollection<Pessoa> pessoas, ObservableCollection<Pedido> pedidos)
+        
+        public PessoaViewModel(PessoaView pessoaView, ObservableCollection<Pessoa> pessoas, ObservableCollection<Pedido> pedidos, ObservableCollection<Produto> produtos)
         {
-            Pessoas = pessoas;
             Pedidos = pedidos;
+            pessoaView.dataGridPessoa.ItemsSource = pessoas;
+            VerificaIdListaPessoa(pessoas);
+            AbrirEditarPessoa       = new AbrirEditarPessoaCommand(pessoas, pessoaView);
+            AbrirCadastroPessoa     = new AbrirCadastroPessoaCommand(pessoas, this);
+            DeletarPessoa           = new DeletarPessoaCommand(pessoas, pessoaView);
+            PesquisarPessoa         = new PesquisarPessoaCommand(pessoas, pessoaView);
+            CancelarPesquisarPessoa = new CancelarPesquisarPessoaCommand(pessoas, pessoaView);
+            AbrirIncluirPedido      = new AbrirIncluirPedidoCommand(pessoas, pessoaView, pedidos, this, produtos);
         }
 
-        public PessoaViewModel(PessoaView pessoaView)
+        public void VerificaIdListaPessoa(ObservableCollection<Pessoa> pessoas)
         {
-            pessoaView.dataGridPessoa.ItemsSource = Pessoas;
-            VerificaIdListaPessoa();
-            VerificaIdListaPedido();
-            AbrirEditarPessoa       = new AbrirEditarPessoaCommand(Pessoas, pessoaView);
-            AbrirCadastroPessoa     = new AbrirCadastroPessoaCommand(Pessoas, this);
-            DeletarPessoa           = new DeletarPessoaCommand(Pessoas, pessoaView);
-            PesquisarPessoa         = new PesquisarPessoaCommand(Pessoas, pessoaView);
-            CancelarPesquisarPessoa = new CancelarPesquisarPessoaCommand(Pessoas, pessoaView);
-            AbrirIncluirPedido      = new AbrirIncluirPedidoCommand(Pessoas, pessoaView, Pedidos, this);
-        }
-
-        public void VerificaIdListaPessoa()
-        {
-            if (Pessoas.Count < 1)
+            if (pessoas.Count < 1)
                 IdPessoaLista = 1;
             else
-                IdPessoaLista = Pessoas.Count + 1;
+                IdPessoaLista = pessoas.Count + 1;
         }
-        public void VerificaIdListaPedido()
+        public void VerificaIdListaPessoa(ObservableCollection<Pedido> pedidos)
         {
-            if (Pedidos.Count < 1)
+            if (pedidos.Count < 1)
                 IdPedidoLista = 1;
             else
-                IdPedidoLista = Pedidos.Count + 1;
+                IdPedidoLista = pedidos.Count + 1;
         }
     }
 }

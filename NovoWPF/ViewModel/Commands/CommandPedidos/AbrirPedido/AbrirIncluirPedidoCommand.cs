@@ -17,21 +17,23 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido
     {
         public ObservableCollection<Pedido> Pedidos { get; set; }
         public ObservableCollection<Pessoa> Pessoas { get; set; }
+        public ObservableCollection<Produto> Produtos { get; set; }
         public PessoaView PessoaView { get; set; }
         public PessoaViewModel PessoaViewModel { get; set; }
         public int IdPedidoLista { get; set; }
-        public AbrirIncluirPedidoCommand(ObservableCollection<Pessoa> pessoas, PessoaView pessoaView, ObservableCollection<Pedido> pedidos, PessoaViewModel pessoaViewModel)
+        public AbrirIncluirPedidoCommand(ObservableCollection<Pessoa> pessoas, PessoaView pessoaView, ObservableCollection<Pedido> pedidos, PessoaViewModel pessoaViewModel, ObservableCollection<Produto> produtos)
         {
             Pessoas = pessoas;
             PessoaView = pessoaView;
             Pedidos = pedidos;
             PessoaViewModel = pessoaViewModel;
+            Produtos = produtos;
         }
 
         public override void Execute(object parameter)
         {
             InserirPedidoView inserirPedidoView = new InserirPedidoView();
-            inserirPedidoView.DataContext = new InserirPedidoViewModel(inserirPedidoView, Pedidos);
+            inserirPedidoView.DataContext = new InserirPedidoViewModel(inserirPedidoView, Pedidos, Produtos);
 
             dynamic data = PessoaView.dataGridPessoa.SelectedItem;
             string indexData = data.NomePessoa;
