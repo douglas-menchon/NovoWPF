@@ -83,6 +83,7 @@
                      Text="{Binding Pessoa.CPF}"
                      Grid.Column="1" 
                      Grid.Row="3"
+                     TextChanged="CPFBox_TextChanged"
                      Height="20"
                      Width="100"
                      HorizontalAlignment="Left" 

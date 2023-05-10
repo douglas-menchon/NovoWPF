@@ -27,7 +27,7 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.EditarProduto
 
         public override void Execute(object parameter)
         {
-            ControleXML controleXML = new ControleXML();
+            TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
             if (CadastroProdutoView.nomeProdutoBox.Text != "" && CadastroProdutoView.codigoProdutoBox.Text != "" && CadastroProdutoView.valorProdutoBox.Text != "")
             {
 
@@ -46,7 +46,7 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.EditarProduto
                 MessageBox.Show($"Produto: {CadastroProdutoView.nomeProdutoBox.Text} editado com sucesso");
           
                 CadastroProdutoView.Visibility = Visibility.Collapsed;
-                controleXML.ExportarXmlProduto(Produtos, ProdutoViewModel.IdProdutoLista);
+                telaProjetoViewModel.ExportarXmlProduto(Produtos, ProdutoViewModel.IdProdutoLista);
 
             }
             else

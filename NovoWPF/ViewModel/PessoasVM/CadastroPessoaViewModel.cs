@@ -2,6 +2,8 @@
 using NovoWPF.View;
 using NovoWPF.ViewModel.Commands;
 using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace NovoWPF.ViewModel

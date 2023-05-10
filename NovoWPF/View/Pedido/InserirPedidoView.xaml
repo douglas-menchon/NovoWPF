@@ -80,7 +80,7 @@
             </ListBox>
 
             <TextBlock Visibility="Visible" x:Name="qntdProdPedBlock" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Text="Quantidade*"  Margin="0 0 10 0" />
-            <TextBox Visibility="Visible" x:Name="qntdProdPedBox" Grid.Column="1" Grid.Row="3" Width="100" HorizontalAlignment="Left" Margin="0 0 30 10"/>
+            <TextBox Visibility="Visible" TextChanged="QntdProdPedBox_TextChanged" x:Name="qntdProdPedBox" Grid.Column="1" Grid.Row="3" Width="100" HorizontalAlignment="Left" Margin="0 0 30 10"/>
 
             <TextBlock Visibility="Visible" x:Name="DataPedidoBlock" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Text="Data Venda"  Margin="0 0 10 0" />
             <TextBox Visibility="Visible" x:Name="DataPedidoBox" IsReadOnly="True" Grid.Column="1" Grid.Row="5" Width="100" HorizontalAlignment="Left" Margin="0 0 30 10"/>

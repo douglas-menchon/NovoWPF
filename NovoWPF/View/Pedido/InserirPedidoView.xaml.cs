@@ -24,6 +24,17 @@ namespace NovoWPF.View.Pedido
             InitializeComponent();
         }
 
-
+        private void QntdProdPedBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            AceitarApenasNumeros(qntdProdPedBox);
+        }
+        public void AceitarApenasNumeros(TextBox textBox)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Digite apenas números");
+                textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
+            }
+        }
     }
 }

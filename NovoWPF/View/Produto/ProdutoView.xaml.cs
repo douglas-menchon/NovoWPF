@@ -1,28 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace NovoWPF.View
 {
     /// <summary>
     /// Interação lógica para ProdutoView.xaml
     /// </summary>
-public partial class ProdutoView : Window
+    public partial class ProdutoView : Window
 {
     public ProdutoView()
     {
         InitializeComponent();       
     }
-}}
+
+        private void MaximoTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            AceitarApenasNumeros(maximoTB);
+        }
+
+        private void MinimoTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            AceitarApenasNumeros(minimoTB);
+        }
+
+        public void AceitarApenasNumeros(TextBox textBox)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Digite apenas números");
+                textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1);
+            }
+        }
+    }
+}
