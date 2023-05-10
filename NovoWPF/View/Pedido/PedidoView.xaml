@@ -27,7 +27,7 @@
                 </StackPanel>
             </Grid>
 
-        <DataGrid CanUserReorderColumns="False" CanUserResizeColumns="False" 
+            <DataGrid CanUserReorderColumns="False" CanUserResizeColumns="False" SelectionMode="Single"
                       x:Name="dataGridPedidos" Margin="0 10 0 0" Height="280" CanUserAddRows="False" 
                       AutoGenerateColumns="False" CanUserDeleteRows="True" DataContext="{Binding Pedidos}">
 
