@@ -29,5 +29,10 @@ namespace NovoWPF
             DataContext = new PessoaViewModel();
             DataContext = new ProdutoViewModel();
         }
+
+        private void TelaProjetoView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
