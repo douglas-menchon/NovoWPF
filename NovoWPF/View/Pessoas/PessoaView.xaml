@@ -117,8 +117,6 @@
                             </Style>
                         </DataGridTextColumn.EditingElementStyle>
                     </DataGridTextColumn>
-                   
-                  
                 </DataGrid.Columns>
             </DataGrid>
 

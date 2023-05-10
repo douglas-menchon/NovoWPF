@@ -30,11 +30,14 @@
                         
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Produto" 
-                                                    Binding="{Binding NomeProduto}" Width="*" />
+                                                Binding="{Binding NomeProduto}" Width="*" 
+                                                IsReadOnly="True"/>
                             <DataGridTextColumn Header="Quantidade" 
-                                                    Binding="{Binding QntdProduto}" Width="*"/>
+                                                Binding="{Binding QntdProduto}" Width="*"
+                                                IsReadOnly="True"/>
                             <DataGridTextColumn Header="Preço" 
-                                                    Binding="{Binding Valor, StringFormat=N2}" Width="*"/>
+                                                Binding="{Binding Valor, StringFormat=N2}" Width="*"
+                                                IsReadOnly="True"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
