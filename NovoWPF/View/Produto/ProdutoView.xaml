@@ -62,7 +62,7 @@
                         Margin="-30 0 0 4.8" 
                         Height="20" Width="30" 
                         Grid.ColumnSpan="2">
-                    <Image Source="NovoWPF/Images/X.png"/>
+                    <Image Source="C:\Users\matheus.balan\source\repos\NovoWPF\NovoWPF\Images"/>
                 </Button>
                 
                 <TextBlock Text="Valor: " 
@@ -87,7 +87,7 @@
                          Margin="10 0 0 0"/>
             </Grid>
 
-            <DataGrid Visibility="Visible" 
+            <DataGrid Visibility="Visible" SelectionMode="Single"
                       ItemsSource="{Binding Produtos, UpdateSourceTrigger=PropertyChanged}"
                       x:Name="dataGridProduto" 
                       AutoGenerateColumns="False" 

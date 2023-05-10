@@ -29,10 +29,7 @@ namespace NovoWPF.ViewModel
             IdPessoaLista = idPessoaLista;
             pessoaView.dataGridPessoa.ItemsSource = pessoas;
             VerificaIdListaPessoa(pessoas);
-<<<<<<< HEAD
-=======
             VerificaIdListaPedido(pedidos);
->>>>>>> mathew
             AbrirEditarPessoa = new AbrirEditarPessoaCommand(pessoas, pessoaView, this);
             AbrirCadastroPessoa = new AbrirCadastroPessoaCommand(pessoas, this);
             DeletarPessoa = new DeletarPessoaCommand(pessoas, pessoaView);
@@ -54,8 +51,7 @@ namespace NovoWPF.ViewModel
         {
             if (pedidos.Count < 1)
                 IdPedidoLista = 1;
-            else
-                IdPedidoLista = pedidos.Count + 1;
+           
         }
     }
 }
