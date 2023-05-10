@@ -7,7 +7,8 @@
         xmlns:viewmodels="clr-namespace:NovoWPF.ViewModel"
         xmlns:views="clr-namespace:NovoWPF.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" > 
+        Title="Bem vindo!" Height="450" Width="800" WindowStartupLocation="CenterScreen" 
+        Icon="cropped_benner_dot_red__1__AMg_icon.ico"> 
 
     <Grid>
         <views:TelaProjetoView DataContext="{Binding ViewModelAtual}" />
