@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace NovoWPF.ViewModel.Commands.CommandPedidos.ExpandirPedido
 {
@@ -26,8 +27,15 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.ExpandirPedido
         {
             PedidoExpandidoView pedidoExpandidoView = new PedidoExpandidoView();
             dynamic data = PedidoView.dataGridPedidos.SelectedItem;
-            pedidoExpandidoView.DataContext = new PedidoExpandidoViewModel(data, Pedidos, pedidoExpandidoView);
-            pedidoExpandidoView.Show();
+            if(data != null)
+            {
+                pedidoExpandidoView.DataContext = new PedidoExpandidoViewModel(data, Pedidos, pedidoExpandidoView);
+                pedidoExpandidoView.Show();
+            }
+            else
+            {
+                MessageBox.Show("Favor selecionar um pedido!");
+            }
         }
     }
 }
