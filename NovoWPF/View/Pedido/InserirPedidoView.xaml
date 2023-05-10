@@ -8,7 +8,7 @@
         xmlns:local2="clr-namespace:NovoWPF.ViewModel"
         xmlns:local3="clr-namespace:NovoWPF.RegraDeNegocio"
         mc:Ignorable="d"
-        Title="InserirPedidoView" Height="500" Width="900" local2:WindowCloser.EnableWindowClosing="True" WindowStartupLocation="CenterScreen">
+        Title="Inserir Pedido" Height="500" Width="900" local2:WindowCloser.EnableWindowClosing="True" WindowStartupLocation="CenterScreen">
     <Grid>
       <StackPanel>
         <TextBlock FontSize="20" Grid.Column="0" HorizontalAlignment="Left">INSERIR PEDIDO</TextBlock>
