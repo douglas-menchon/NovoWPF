@@ -26,7 +26,7 @@ namespace NovoWPF.ViewModel.Commands
         }
         public override void Execute(object parameter)
         {
-            ControleXML controleXML = new ControleXML();
+            TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
             if (CadastroPessoaView.nomePessoaBox.Text != "" && CadastroPessoaView.CPFBox.Text != "")
             {
                 if (Pessoa.ValidaCpf(CadastroPessoaView.CPFBox.Text))
@@ -41,7 +41,7 @@ namespace NovoWPF.ViewModel.Commands
                     MessageBox.Show($"Pessoa: {CadastroPessoaView.nomePessoaBox.Text} editada com sucesso");
 
                     CadastroPessoaView.Visibility = Visibility.Collapsed;
-                    controleXML.ExportarXmlPessoa(Pessoas, PessoaViewModel.IdPessoaLista);
+                    telaProjetoViewModel.ExportarXmlPessoa(Pessoas, PessoaViewModel.IdPessoaLista);
                 }
                 else
                 {

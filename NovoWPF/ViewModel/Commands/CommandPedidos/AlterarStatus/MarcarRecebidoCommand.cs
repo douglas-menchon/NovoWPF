@@ -1,4 +1,5 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.Comuns;
 using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 using System;
@@ -21,12 +22,15 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AlterarStatus
         }
         public override void Execute(object parameter)
         {
+            TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
+
             dynamic data = PedidoView.dataGridPedidos.SelectedItem;
             int indexPed = data.IdPedido;
             var indexList = Pedidos.Where(p => p.IdPedido == indexPed).FirstOrDefault();
 
             indexList.Status = (Status)3;
             PedidoView.dataGridPedidos.Items.Refresh();
+            telaProjetoViewModel.ExportarXmlPedido(Pedidos);
         }
     }
 }

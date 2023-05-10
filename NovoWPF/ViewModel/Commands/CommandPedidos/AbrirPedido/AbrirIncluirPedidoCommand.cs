@@ -40,7 +40,7 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AbrirPedido
             {
                 string indexData = data.NomePessoa;
         
-                inserirPedidoView.idPedidoBox.Text = PessoaViewModel.IdPedidoLista.ToString();
+                inserirPedidoView.idPedidoBox.Text = (Pedidos.Count + 1).ToString();
 
                 inserirPedidoView.produtosPedListBox.ItemsSource = Produtos;
                 inserirPedidoView.nomePedidoPessoaBox.Text = indexData;

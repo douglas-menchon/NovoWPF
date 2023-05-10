@@ -1,4 +1,5 @@
 ﻿using NovoWPF.Commands;
+using NovoWPF.Comuns;
 using NovoWPF.RegraDeNegocio;
 using NovoWPF.View.Pedido;
 using NovoWPF.ViewModel.PedidosVM;
@@ -27,6 +28,7 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.SalvarPedido
         }
         public override void Execute(object parameter)
         {
+            TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
             double valorPedido = 0;
 
 
@@ -40,13 +42,14 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.SalvarPedido
                     valorPedido += valorPorQntd;
                 }
 
-                Pedidos.Add(new Pedido(PessoaViewModel.IdPedidoLista, InserirPedidoView.nomePedidoPessoaBox.Text.ToUpper(), InserirPedidoViewModel.ProdutosPedido, valorPedido, Convert.ToInt32(InserirPedidoView.FormaPagPedidoBox.SelectedValue), 0, PessoaViewModel.IdPedidoLista + 1));
+                Pedidos.Add(new Pedido(Pedidos.Count + 1, InserirPedidoView.nomePedidoPessoaBox.Text.ToUpper(), InserirPedidoViewModel.ProdutosPedido, valorPedido, Convert.ToInt32(InserirPedidoView.FormaPagPedidoBox.SelectedValue), 0, PessoaViewModel.IdPedidoLista + 1));
                              
                 MessageBox.Show("Cadastro efetuado com sucesso");
 
-                PessoaViewModel.IdPedidoLista++;
+                telaProjetoViewModel.ExportarXmlPedido(Pedidos);
                 InserirPedidoViewModel.ProdutosPedido.Clear();
                 InserirPedidoView.Visibility = Visibility.Collapsed;
+
             }
             else
             {

@@ -29,13 +29,9 @@ namespace NovoWPF.ViewModel
             IdPessoaLista = idPessoaLista;
             pessoaView.dataGridPessoa.ItemsSource = pessoas;
             VerificaIdListaPessoa(pessoas);
-<<<<<<< HEAD
-=======
-            VerificaIdListaPedido(pedidos);
->>>>>>> mathew
             AbrirEditarPessoa = new AbrirEditarPessoaCommand(pessoas, pessoaView, this);
             AbrirCadastroPessoa = new AbrirCadastroPessoaCommand(pessoas, this);
-            DeletarPessoa = new DeletarPessoaCommand(pessoas, pessoaView);
+            DeletarPessoa = new DeletarPessoaCommand(pessoas, pessoaView, this);
             PesquisarPessoa = new PesquisarPessoaCommand(pessoas, pessoaView);
             CancelarPesquisarPessoa = new CancelarPesquisarPessoaCommand(pessoas, pessoaView);
             AbrirIncluirPedido = new AbrirIncluirPedidoCommand(pessoas, pessoaView, pedidos, this, produtos);
@@ -46,16 +42,9 @@ namespace NovoWPF.ViewModel
         {
             if (pessoas.Count < 1)
                 IdPessoaLista = 1;
-            else
-                IdPessoaLista = pessoas.Count + 1;
+            
         }
 
-        public void VerificaIdListaPedido(ObservableCollection<Pedido> pedidos)
-        {
-            if (pedidos.Count < 1)
-                IdPedidoLista = 1;
-            else
-                IdPedidoLista = pedidos.Count + 1;
-        }
+        
     }
 }

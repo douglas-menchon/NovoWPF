@@ -1,4 +1,5 @@
-﻿using NovoWPF.RegraDeNegocio;
+﻿using NovoWPF.Comuns;
+using NovoWPF.RegraDeNegocio;
 using NovoWPF.View;
 using NovoWPF.ViewModel.Commands;
 using NovoWPF.ViewModel.Commands.CommandProdutos.AbrirTelasProduto;
@@ -31,7 +32,7 @@ namespace NovoWPF.ViewModel
             VerificarProdutoId(produtos);
             AbrirEditarProduto = new AbrirEditarProdutoCommand(produtos, produtoView, this);
             AbrirCadastroProduto = new AbrirCadastroProdutoCommand(produtos, this, IdProdutoLista);
-            DeletarProduto = new DeletarProdutoCommand(produtos, produtoView);
+            DeletarProduto = new DeletarProdutoCommand(produtos, produtoView, this);
             PesquisarProduto = new PesquisaProdutoCommand(produtos, produtoView);
             CancelarPesquisarProduto = new CancelarPesquisaProdutoCommand(produtos, produtoView);
 
@@ -48,10 +49,7 @@ namespace NovoWPF.ViewModel
             {
                 IdProdutoLista = 1;
             }
-            else
-            {
-                IdProdutoLista = produtos.Count + 1;
-            }
+            
         }
     }
 }

@@ -21,10 +21,19 @@ namespace NovoWPF.ViewModel.Commands
         }
         public override void Execute(object parameter)
         {
-            ControleXML controleXML = new ControleXML();
+            bool CPFRegistrado = false;
+            TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
             if (CadastroPessoaView.CPFBox.Text != "" && CadastroPessoaView.nomePessoaBox.Text != "")
             {
-                if (Pessoa.ValidaCpf(CadastroPessoaView.CPFBox.Text))
+                foreach (var item in Pessoas)
+                {
+                    if(CadastroPessoaView.CPFBox.Text == item.CPF)
+                    {
+                        CPFRegistrado = true;
+                    }
+                }
+
+                if (Pessoa.ValidaCpf(CadastroPessoaView.CPFBox.Text) && !CPFRegistrado && !Pessoa.IsIdentical(CadastroPessoaView.CPFBox.Text))
                 {
                     Pessoas.Add(new Pessoa(int.Parse(CadastroPessoaView.idPessoaBox.Text)
                                                    , CadastroPessoaView.nomePessoaBox.Text.ToUpper()
@@ -35,11 +44,11 @@ namespace NovoWPF.ViewModel.Commands
                     MessageBox.Show($"Cliente {CadastroPessoaView.nomePessoaBox.Text} cadastrado com sucesso");
                     PessoaViewModel.IdPessoaLista++;
                     CadastroPessoaView.Visibility = Visibility.Collapsed;
-                    controleXML.ExportarXmlPessoa(Pessoas, PessoaViewModel.IdPessoaLista);
+                    telaProjetoViewModel.ExportarXmlPessoa(Pessoas, PessoaViewModel.IdPessoaLista);
                 }
                 else
                 {
-                    MessageBox.Show("CPF Inválido!");
+                    MessageBox.Show("CPF Inválido ou ja cadastrado!");
                 }
             }
             else
@@ -47,6 +56,5 @@ namespace NovoWPF.ViewModel.Commands
                 MessageBox.Show("Campos obrigatórios não preenchidos!!");
             }
         }
-     
     }
 }

@@ -5,6 +5,7 @@ using NovoWPF.View;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using System.Globalization;
 using System.Xml.Linq;
 
 namespace NovoWPF.ViewModel.Commands
@@ -24,7 +25,7 @@ namespace NovoWPF.ViewModel.Commands
 
         public override void Execute(object parameter)
         {
-            ControleXML controleXML = new ControleXML();
+            TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
 
             if (CadastroProdutoView.nomeProdutoBox.Text != ""  && CadastroProdutoView.codigoProdutoBox.Text != "" 
                 && CadastroProdutoView.valorProdutoBox.Text != "")
@@ -32,7 +33,7 @@ namespace NovoWPF.ViewModel.Commands
                 double valor = 0;
                 if (!string.IsNullOrEmpty(CadastroProdutoView.valorProdutoBox.Text))
                 {
-                    valor = double.Parse(CadastroProdutoView.valorProdutoBox.Text);
+                    valor = double.Parse(CadastroProdutoView.valorProdutoBox.Text.ToString(CultureInfo.GetCultureInfo("pt-BR")));
                 }
                 
                 Produtos.Add(new Produto(int.Parse(CadastroProdutoView.idProdutoBox.Text)
@@ -44,7 +45,7 @@ namespace NovoWPF.ViewModel.Commands
                 MessageBox.Show($"Produto {CadastroProdutoView.nomeProdutoBox.Text} cadastrado com sucesso");
                 ProdutoViewModel.IdProdutoLista++;
                 CadastroProdutoView.Visibility = Visibility.Collapsed;
-                controleXML.ExportarXmlProduto(Produtos, ProdutoViewModel.IdProdutoLista);
+                telaProjetoViewModel.ExportarXmlProduto(Produtos, ProdutoViewModel.IdProdutoLista);
             }
             else
             {

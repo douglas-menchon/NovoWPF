@@ -1,4 +1,6 @@
-﻿using NovoWPF.ViewModel;
+﻿using System;
+using System.Text.RegularExpressions;
+using NovoWPF.ViewModel;
 
 namespace NovoWPF.RegraDeNegocio
 {
@@ -130,6 +132,33 @@ namespace NovoWPF.RegraDeNegocio
                 resto = 11 - resto;
             digito = digito + resto.ToString();
             return cpf.EndsWith(digito);
+        }
+
+        public static bool IsIdentical(string str)
+        {
+            // Regex to check eleven or
+            // more consecutive identical
+            // characters or numbers
+            string regex = "\\b([a-zA-Z0-9])\\1{10,}\\b";
+
+            // Compile the ReGex
+            Regex p = new Regex(regex);
+
+            // If the string is empty
+            // return false
+            if (str == null)
+            {
+                return false;
+            }
+
+            // Find match between given string
+            // and regular expression
+            // using Pattern.matcher()
+            Match m = p.Match(str);
+
+            // Return if the string
+            // matched the ReGex
+            return m.Success;
         }
     }
 }

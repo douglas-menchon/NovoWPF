@@ -80,7 +80,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Comuns\ControleXML.cs" />
     <Compile Include="Comuns\EnumBindingSourceExtension.cs" />
     <Compile Include="Comuns\ICloseWindows.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
