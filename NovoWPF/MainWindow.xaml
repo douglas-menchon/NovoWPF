@@ -11,6 +11,6 @@
         Icon="cropped_benner_dot_red__1__AMg_icon.ico"> 
 
     <Grid>
-        <views:TelaProjetoView DataContext="{Binding ViewModelAtual}" />
+        <views:TelaProjetoView DataContext="{Binding ViewModelAtual}" Loaded="TelaProjetoView_Loaded" />
     </Grid>
 </Window>
