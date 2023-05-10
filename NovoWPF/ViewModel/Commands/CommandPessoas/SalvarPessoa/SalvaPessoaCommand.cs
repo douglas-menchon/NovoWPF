@@ -25,6 +25,8 @@ namespace NovoWPF.ViewModel.Commands
             TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
             if (CadastroPessoaView.CPFBox.Text != "" && CadastroPessoaView.nomePessoaBox.Text != "")
             {
+
+
                 foreach (var item in Pessoas)
                 {
                     if(CadastroPessoaView.CPFBox.Text == item.CPF)
