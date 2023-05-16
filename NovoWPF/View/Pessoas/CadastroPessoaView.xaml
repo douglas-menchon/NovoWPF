@@ -67,7 +67,7 @@
                      Margin="0 0 0 10"/>
             </Grid>
 
-            <Grid>
+            <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="4*"/>
@@ -79,6 +79,7 @@
                            Text="CPF*" 
                            Margin="10 0 0 10" 
                            HorizontalAlignment="Left" />
+                
             <TextBox x:Name="CPFBox" 
                      Text="{Binding Pessoa.CPF}"
                      Grid.Column="1" 
@@ -86,8 +87,18 @@
                      TextChanged="CPFBox_TextChanged"
                      Height="20"
                      Width="100"
+                     VerticalAlignment="Center"
                      HorizontalAlignment="Left" 
-                     Margin="0 0 0 10"/>
+                     Margin="0 0 0 0"/>
+
+
+                <TextBlock x:Name="CPFSoNumero" 
+                           Grid.Column="1" 
+                           Grid.Row="3" 
+                           Text="Apenas Números" 
+                           Margin="10 0 70 0" 
+                           HorizontalAlignment="Right" 
+                           VerticalAlignment="Center" />
             </Grid>
 
             <Grid>

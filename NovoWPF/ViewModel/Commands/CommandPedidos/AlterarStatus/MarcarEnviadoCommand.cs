@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace NovoWPF.ViewModel.Commands.CommandPedidos.AlterarStatus
 {
@@ -26,12 +27,18 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.AlterarStatus
             TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
 
             dynamic data = PedidoView.dataGridPedidos.SelectedItem;
-            int indexPed = data.IdPedido;
-            var indexList = Pedidos.Where(p => p.IdPedido == indexPed).FirstOrDefault();
+            if (data != null)
+            {
+                int indexPed = data.IdPedido;
+                var indexList = Pedidos.Where(p => p.IdPedido == indexPed).FirstOrDefault();
 
-            indexList.Status = (Status)2;
-            PedidoView.dataGridPedidos.Items.Refresh();
-            telaProjetoViewModel.ExportarXmlPedido(Pedidos);
+                indexList.Status = (Status)2;
+                PedidoView.dataGridPedidos.Items.Refresh();
+                telaProjetoViewModel.ExportarXmlPedido(Pedidos);
+            }
+            else
+                MessageBox.Show("Favor selecionar uma pessoa");
+
         }
     }
 }

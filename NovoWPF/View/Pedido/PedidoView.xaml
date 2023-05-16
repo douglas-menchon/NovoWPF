@@ -64,7 +64,7 @@
                     </DataGridTextColumn.EditingElementStyle>
                 </DataGridTextColumn>
 
-                    <DataGridTextColumn Header="Pagamento" IsReadOnly="True" 
+                    <DataGridTextColumn Header="Status" IsReadOnly="True" 
                                         Binding="{Binding Status}" Width="*">
                         <DataGridTextColumn.EditingElementStyle>
                             <Style TargetType="TextBox">

@@ -28,15 +28,16 @@ namespace NovoWPF.ViewModel.Commands.CommandProdutos.EditarProduto
         public override void Execute(object parameter)
         {
             TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
-            if (CadastroProdutoView.nomeProdutoBox.Text != "" && CadastroProdutoView.codigoProdutoBox.Text != "" && CadastroProdutoView.valorProdutoBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(CadastroProdutoView.nomeProdutoBox.Text) && !string.IsNullOrWhiteSpace(CadastroProdutoView.codigoProdutoBox.Text)
+                && !string.IsNullOrWhiteSpace(CadastroProdutoView.valorProdutoBox.Text))
             {
 
                 int idText = Convert.ToInt32(CadastroProdutoView.idProdutoBox.Text);
                 int indexList = Produtos.IndexOf(Produtos.Where(p => p.IdProduto == idText).FirstOrDefault());
 
 
-                Produtos[indexList].NomeProduto = CadastroProdutoView.nomeProdutoBox.Text.ToUpper();
-                Produtos[indexList].Codigo = CadastroProdutoView.codigoProdutoBox.Text;
+                Produtos[indexList].NomeProduto = CadastroProdutoView.nomeProdutoBox.Text.ToUpper().Trim();
+                Produtos[indexList].Codigo = CadastroProdutoView.codigoProdutoBox.Text.Trim();
 
                 if (!string.IsNullOrEmpty(CadastroProdutoView.valorProdutoBox.Text))
                 {

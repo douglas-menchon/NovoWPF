@@ -23,10 +23,8 @@ namespace NovoWPF.ViewModel.Commands
         {
             bool CPFRegistrado = false;
             TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
-            if (CadastroPessoaView.CPFBox.Text != "" && CadastroPessoaView.nomePessoaBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(CadastroPessoaView.CPFBox.Text) && !string.IsNullOrWhiteSpace(CadastroPessoaView.nomePessoaBox.Text))
             {
-
-
                 foreach (var item in Pessoas)
                 {
                     if(CadastroPessoaView.CPFBox.Text == item.CPF)
@@ -38,9 +36,9 @@ namespace NovoWPF.ViewModel.Commands
                 if (Pessoa.ValidaCpf(CadastroPessoaView.CPFBox.Text) && !CPFRegistrado && !Pessoa.IsIdentical(CadastroPessoaView.CPFBox.Text))
                 {
                     Pessoas.Add(new Pessoa(int.Parse(CadastroPessoaView.idPessoaBox.Text)
-                                                   , CadastroPessoaView.nomePessoaBox.Text.ToUpper()
+                                                   , CadastroPessoaView.nomePessoaBox.Text.ToUpper().Trim()
                                                    , CadastroPessoaView.CPFBox.Text
-                                                   , CadastroPessoaView.EnderecoBox.Text.ToUpper()
+                                                   , CadastroPessoaView.EnderecoBox.Text.ToUpper().Trim()
                                                    , PessoaViewModel.IdPessoaLista));
 
                     MessageBox.Show($"Cliente {CadastroPessoaView.nomePessoaBox.Text} cadastrado com sucesso");

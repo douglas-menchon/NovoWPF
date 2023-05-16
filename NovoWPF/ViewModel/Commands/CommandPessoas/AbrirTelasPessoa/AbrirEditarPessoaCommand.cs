@@ -43,6 +43,7 @@ namespace NovoWPF.ViewModel.Commands
                     cadastroPessoaView.nomePessoaBox.Text = Pessoas[indexList].NomePessoa;
                     cadastroPessoaView.CPFBox.Text = Pessoas[indexList].CPF;
                     cadastroPessoaView.EnderecoBox.Text = Pessoas[indexList].Endereco;
+                    cadastroPessoaView.CPFBox.IsReadOnly = true;
                 }
                 else
                 {

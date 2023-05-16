@@ -27,8 +27,8 @@ namespace NovoWPF.ViewModel.Commands
         {
             TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
 
-            if (CadastroProdutoView.nomeProdutoBox.Text != ""  && CadastroProdutoView.codigoProdutoBox.Text != "" 
-                && CadastroProdutoView.valorProdutoBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(CadastroProdutoView.nomeProdutoBox.Text) && !string.IsNullOrWhiteSpace(CadastroProdutoView.codigoProdutoBox.Text)
+                && !string.IsNullOrWhiteSpace(CadastroProdutoView.valorProdutoBox.Text))
             {
                 double valor = 0;
                 if (!string.IsNullOrEmpty(CadastroProdutoView.valorProdutoBox.Text))
@@ -37,8 +37,8 @@ namespace NovoWPF.ViewModel.Commands
                 }
                 
                 Produtos.Add(new Produto(int.Parse(CadastroProdutoView.idProdutoBox.Text)
-                                                , CadastroProdutoView.nomeProdutoBox.Text
-                                                , CadastroProdutoView.codigoProdutoBox.Text
+                                                , CadastroProdutoView.nomeProdutoBox.Text.Trim()
+                                                , CadastroProdutoView.codigoProdutoBox.Text.Trim()
                                                 , valor
                                                 , ProdutoViewModel.IdProdutoLista));
 

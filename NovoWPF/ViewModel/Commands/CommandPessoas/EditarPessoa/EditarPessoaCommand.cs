@@ -27,7 +27,7 @@ namespace NovoWPF.ViewModel.Commands
         public override void Execute(object parameter)
         {
             TelaProjetoViewModel telaProjetoViewModel = new TelaProjetoViewModel();
-            if (CadastroPessoaView.nomePessoaBox.Text != "" && CadastroPessoaView.CPFBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(CadastroPessoaView.CPFBox.Text) && !string.IsNullOrWhiteSpace(CadastroPessoaView.nomePessoaBox.Text))
             {
                 if (Pessoa.ValidaCpf(CadastroPessoaView.CPFBox.Text))
                 {

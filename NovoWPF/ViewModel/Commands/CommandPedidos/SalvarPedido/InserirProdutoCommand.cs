@@ -25,14 +25,14 @@ namespace NovoWPF.ViewModel.Commands.CommandPedidos.SalvarPedido
         }
         public override void Execute(object parameter)
         {
-            var dadoProduto = Produtos.IndexOf(Produtos.Where(p => p.NomeProduto == InserirPedidoView.PedProdutosBox.Text).FirstOrDefault());
+            var dadoProduto = Produtos.IndexOf(Produtos.Where(p => p.NomeProduto == InserirPedidoView.PedProdutosBox.Text.Trim()).FirstOrDefault());
 
 
             if (dadoProduto != -1 && InserirPedidoView.PedProdutosBox.Text != "" && InserirPedidoView.qntdProdPedBox.Text != "" && int.Parse(InserirPedidoView.qntdProdPedBox.Text) >= 1)
             {
-                InserirPedidoView.produtosListBox.Items.Add($"{InserirPedidoView.PedProdutosBox.Text}  Qntd: {InserirPedidoView.qntdProdPedBox.Text}   R$ {Produtos[dadoProduto].Valor}");
+                InserirPedidoView.produtosListBox.Items.Add($"{InserirPedidoView.PedProdutosBox.Text.Trim()}  Qntd: {InserirPedidoView.qntdProdPedBox.Text.Trim()}   R$ {Produtos[dadoProduto].Valor}");
 
-                InserirPedidoViewModel.ProdutosPedido.Add(new Produto(Produtos[dadoProduto].IdProduto, InserirPedidoView.PedProdutosBox.Text, Produtos[dadoProduto].Valor, int.Parse(InserirPedidoView.qntdProdPedBox.Text)));
+                InserirPedidoViewModel.ProdutosPedido.Add(new Produto(Produtos[dadoProduto].IdProduto, InserirPedidoView.PedProdutosBox.Text.Trim(), Produtos[dadoProduto].Valor, int.Parse(InserirPedidoView.qntdProdPedBox.Text.Trim())));
                 InserirPedidoView.PedProdutosBox.Text = "";
                 InserirPedidoView.qntdProdPedBox.Text = "";
             }

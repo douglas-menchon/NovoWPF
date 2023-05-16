@@ -23,6 +23,7 @@ namespace NovoWPF.ViewModel.Commands
             cadastroPessoaView.idPessoaBox.Text = PessoaViewModel.IdPessoaLista.ToString();
             cadastroPessoaView.btnSalvarNovaPessoa.Visibility = Visibility.Visible;
             cadastroPessoaView.btnEditarNovaPessoa.Visibility = Visibility.Collapsed;
+            cadastroPessoaView.CPFBox.IsReadOnly = false;
             cadastroPessoaView.Show();
         }
     }
